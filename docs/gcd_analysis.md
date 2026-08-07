@@ -31,9 +31,7 @@
 | Die 0（底） | 142 | 40% |
 | Die 1（顶） | 213 | 60% |
 
-![3D Bottom Die](../figures/gcd_3d_bottom.png)
-
-![3D Top Die](../figures/gcd_3d_top.png)
+![3D Bottom vs Top Die](../figures/gcd_3d_dies.png)
 
 ---
 
