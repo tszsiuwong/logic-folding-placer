@@ -3,6 +3,7 @@
 
 import re, math, random
 import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 matplotlib.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'DejaVu Sans']
 matplotlib.rcParams['axes.unicode_minus'] = False
@@ -72,8 +73,8 @@ fig, ax = plt.subplots(figsize=(8, 7))
 for r in data:
     color = '#2E86AB' if r[5]==0 else '#D66853'
     ax.scatter(r[1]/2000, r[2]/2000, c=color, s=10, alpha=0.55, edgecolors='none')
-ax.scatter([], [], c='#2E86AB', s=15, label=f'-> Die0 ({len(die0d)})')
-ax.scatter([], [], c='#D66853', s=15, label=f'-> Die1 ({len(die1d)})')
+ax.scatter([], [], color='#2E86AB', s=15, label=f'-> Die0 ({len(die0d)})')
+ax.scatter([], [], color='#D66853', s=15, label=f'-> Die1 ({len(die1d)})')
 ax.legend(loc='upper right', fontsize=11)
 ax.set_xlim(0, 89); ax.set_ylim(0, 82); ax.set_aspect('equal')
 ax.set_xlabel('X (um)', fontsize=12); ax.set_ylabel('Y (um)', fontsize=12)

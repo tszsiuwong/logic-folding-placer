@@ -3,6 +3,7 @@
 
 import re, math
 import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 matplotlib.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'DejaVu Sans']
 matplotlib.rcParams['axes.unicode_minus'] = False
@@ -12,6 +13,8 @@ def parse(path):
     with open(path) as f: t = f.read()
     m = re.search(r'DIEAREA\s*\(\s*(\d+)\s+(\d+)\s*\)\s*\(\s*(\d+)\s+(\d+)\s*\)', t)
     if m: da = tuple(map(int, m.groups()))
+    comp = re.search(r'COMPONENTS[^;]*;(.*?)END COMPONENTS', t, re.DOTALL)
+    if comp: t = comp.group(1)
     for m in re.finditer(r'- (\S+) (\S+).*?\+ PLACED\s*\(\s*(\d+)\s+(\d+)\s*\)', t):
         cells.append((m.group(1), int(m.group(3)), int(m.group(4)), m.group(2)))
     return cells, da
@@ -26,7 +29,7 @@ ratio_2d = da2d[2] / da3d[2]
 # 1. 2D placement — zoom to cells
 fig, ax = plt.subplots(figsize=(10, 9))
 xs = [x for _,x,y,_ in d2d]; ys = [y for _,x,y,_ in d2d]
-ax.scatter(xs, ys, c='steelblue', s=60, alpha=0.6, edgecolors='white', linewidth=0.3)
+ax.scatter(xs, ys, c='steelblue', s=60, alpha=0.8)
 m = 6000
 ax.set_xlim(min(xs)-m, max(xs)+m); ax.set_ylim(min(ys)-m, max(ys)+m)
 ax.set_title(f'2D Placement (Area=2A, natural density)\n{len(d2d)} cells, HPWL=7.00M', fontsize=14, fontweight='bold')
@@ -38,7 +41,7 @@ plt.tight_layout(); plt.savefig('figures/gcd_2d.png', dpi=150); plt.close()
 fig, ax = plt.subplots(figsize=(8, 7))
 if bot:
     xs, ys = zip(*bot)
-    ax.scatter(xs, ys, c='#2E86AB', s=250, alpha=0.8, edgecolors='white', linewidth=0.5)
+    ax.scatter(xs, ys, color='#2E86AB', s=250, alpha=0.8)
     margin = 4000
     ax.set_xlim(min(xs)-margin, max(xs)+margin)
     ax.set_ylim(min(ys)-margin, max(ys)+margin)
@@ -51,7 +54,7 @@ plt.tight_layout(); plt.savefig('figures/gcd_3d_bottom.png', dpi=150); plt.close
 fig, ax = plt.subplots(figsize=(8, 7))
 if top:
     xs, ys = zip(*top)
-    ax.scatter(xs, ys, c='#D66853', s=250, alpha=0.8, edgecolors='white', linewidth=0.5)
+    ax.scatter(xs, ys, color='#D66853', s=250, alpha=0.8)
     margin = 4000
     ax.set_xlim(min(xs)-margin, max(xs)+margin)
     ax.set_ylim(min(ys)-margin, max(ys)+margin)
@@ -67,14 +70,14 @@ ax = axes[0]
 xs = [x for _,x,y,_ in d2d]; ys = [y for _,x,y,_ in d2d]
 sf = math.sqrt(ratio_2d)
 m = 6000
-ax.scatter(xs, ys, c='steelblue', s=40*sf, alpha=0.6, edgecolors='white', linewidth=0.3)
+ax.scatter(xs, ys, c='steelblue', s=40*sf, alpha=0.8)
 ax.set_title(f'2D (Area=2A)  {len(d2d)} cells', fontsize=12*sf, fontweight='bold')
 ax.set_xlim(min(xs)-m, max(xs)+m); ax.set_ylim(min(ys)-m, max(ys)+m); ax.set_aspect('equal')
 
 ax = axes[1]
 if bot:
     xs, ys = zip(*bot)
-    ax.scatter(xs, ys, c='#2E86AB', s=200, alpha=0.8, edgecolors='white', linewidth=0.5)
+    ax.scatter(xs, ys, color='#2E86AB', s=200, alpha=0.8)
     m3 = 4000
     ax.set_xlim(min(xs)-m3, max(xs)+m3); ax.set_ylim(min(ys)-m3, max(ys)+m3)
 ax.set_title(f'3D Bottom  {len(bot)} cells', fontsize=12, fontweight='bold')
@@ -83,7 +86,7 @@ ax.set_aspect('equal')
 ax = axes[2]
 if top:
     xs, ys = zip(*top)
-    ax.scatter(xs, ys, c='#D66853', s=200, alpha=0.8, edgecolors='white', linewidth=0.5)
+    ax.scatter(xs, ys, color='#D66853', s=200, alpha=0.8)
     m3 = 4000
     ax.set_xlim(min(xs)-m3, max(xs)+m3); ax.set_ylim(min(ys)-m3, max(ys)+m3)
 ax.set_title(f'3D Top  {len(top)} cells', fontsize=12, fontweight='bold')
