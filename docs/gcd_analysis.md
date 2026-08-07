@@ -31,9 +31,9 @@
 | Die 0（底） | 142 | 40% |
 | Die 1（顶） | 213 | 60% |
 
-![3D Bottom Die](figures/gcd_3d_bottom.png)
+![3D Bottom Die](../figures/gcd_3d_bottom.png)
 
-![3D Top Die](figures/gcd_3d_top.png)
+![3D Top Die](../figures/gcd_3d_top.png)
 
 ---
 
@@ -54,13 +54,13 @@
 | 网线 | 371 |
 | HPWL | **7.00 M DBU** |
 
-![2D Placement](figures/gcd_2d.png)
+![2D Placement](../figures/gcd_2d.png)
 
 ---
 
 ## 三、同面积 HPWL 对比
 
-![2D vs 3D](figures/gcd_2d_vs_3d.png)
+![2D vs 3D](../figures/gcd_2d_vs_3d.png)
 
 | | HPWL (DBU) |
 |---|---|
@@ -87,13 +87,13 @@
 | max | 88.5 |
 | mean ± σ | 47.4 ± 20.1 |
 
-![Displacement Histogram](figures/gcd_disp_hist.png)
+![Displacement Histogram](../figures/gcd_disp_hist.png)
 
 ### 距离-位移相关性
 
 **r = 0.919**（极强正相关）。离 2D 中心越远的单元，位移越大——面积压缩效应主导，非 placement 策略差异。
 
-![Correlation](figures/gcd_disp_corr.png)
+![Correlation](../figures/gcd_disp_corr.png)
 
 ### 方向偏差
 
@@ -111,19 +111,19 @@
 | Die0 | 159 | 44.6 µm |
 | Die1 | 142 | 50.6 µm |
 
-![By Die](figures/gcd_disp_die.png)
+![By Die](../figures/gcd_disp_die.png)
 
 ### 位移方向向量
 
 灰色箭头：每个单元从 2D 位置移到 3D 位置的方向和距离。蓝=Die0，橙=Die1。
 
-![Vectors](figures/gcd_disp_vec.png)
+![Vectors](../figures/gcd_disp_vec.png)
 
 ### 位移热力图
 
 颜色越红，位移越大。外围单元被压缩向中心。
 
-![Heatmap](figures/gcd_disp_heat.png)
+![Heatmap](../figures/gcd_disp_heat.png)
 
 ### 2D 邻近性与 Die 分配
 
@@ -134,7 +134,7 @@
 
 **完全相同。** placer 的层指派与 2D 空间邻近性无关——Die 分配近乎随机（除总线信号外）。
 
-![Die Map](figures/gcd_disp_diemap.png)
+![Die Map](../figures/gcd_disp_diemap.png)
 
 ---
 
