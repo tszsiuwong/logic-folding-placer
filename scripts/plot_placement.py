@@ -38,7 +38,7 @@ plt.tight_layout(); plt.savefig('figures/gcd_2d.png', dpi=150); plt.close()
 fig, ax = plt.subplots(figsize=(8, 7))
 if bot:
     xs, ys = zip(*bot)
-    ax.scatter(xs, ys, c='#2E86AB', s=120, alpha=0.8, edgecolors='white', linewidth=0.5)
+    ax.scatter(xs, ys, c='#2E86AB', s=250, alpha=0.8, edgecolors='white', linewidth=0.5)
     margin = 4000
     ax.set_xlim(min(xs)-margin, max(xs)+margin)
     ax.set_ylim(min(ys)-margin, max(ys)+margin)
@@ -51,7 +51,7 @@ plt.tight_layout(); plt.savefig('figures/gcd_3d_bottom.png', dpi=150); plt.close
 fig, ax = plt.subplots(figsize=(8, 7))
 if top:
     xs, ys = zip(*top)
-    ax.scatter(xs, ys, c='#D66853', s=120, alpha=0.8, edgecolors='white', linewidth=0.5)
+    ax.scatter(xs, ys, c='#D66853', s=250, alpha=0.8, edgecolors='white', linewidth=0.5)
     margin = 4000
     ax.set_xlim(min(xs)-margin, max(xs)+margin)
     ax.set_ylim(min(ys)-margin, max(ys)+margin)
@@ -74,7 +74,7 @@ ax.set_xlim(min(xs)-m, max(xs)+m); ax.set_ylim(min(ys)-m, max(ys)+m); ax.set_asp
 ax = axes[1]
 if bot:
     xs, ys = zip(*bot)
-    ax.scatter(xs, ys, c='#2E86AB', s=100, alpha=0.8, edgecolors='white', linewidth=0.5)
+    ax.scatter(xs, ys, c='#2E86AB', s=200, alpha=0.8, edgecolors='white', linewidth=0.5)
     m3 = 4000
     ax.set_xlim(min(xs)-m3, max(xs)+m3); ax.set_ylim(min(ys)-m3, max(ys)+m3)
 ax.set_title(f'3D Bottom  {len(bot)} cells', fontsize=12, fontweight='bold')
@@ -83,7 +83,7 @@ ax.set_aspect('equal')
 ax = axes[2]
 if top:
     xs, ys = zip(*top)
-    ax.scatter(xs, ys, c='#D66853', s=100, alpha=0.8, edgecolors='white', linewidth=0.5)
+    ax.scatter(xs, ys, c='#D66853', s=200, alpha=0.8, edgecolors='white', linewidth=0.5)
     m3 = 4000
     ax.set_xlim(min(xs)-m3, max(xs)+m3); ax.set_ylim(min(ys)-m3, max(ys)+m3)
 ax.set_title(f'3D Top  {len(top)} cells', fontsize=12, fontweight='bold')
