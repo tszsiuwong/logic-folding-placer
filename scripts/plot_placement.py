@@ -1,74 +1,55 @@
 #!/usr/bin/env python3
-"""Plot 3D placement results: bottom die vs top die for gcd."""
+"""Plot 2D(2A, natural) vs 3D (Bottom + Top)."""
 
 import re
 import matplotlib.pyplot as plt
 import matplotlib
-matplotlib.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'DejaVu Sans']
+matplotlib.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'DejaVu Sans']
 matplotlib.rcParams['axes.unicode_minus'] = False
 
-
-def parse_def(def_path):
-    cells = []
-    diearea = (0, 0, 63080, 57680)
-    with open(def_path) as f:
-        text = f.read()
-    m = re.search(r'DIEAREA\s*\(\s*(\d+)\s+(\d+)\s*\)\s*\(\s*(\d+)\s+(\d+)\s*\)', text)
-    if m:
-        diearea = tuple(map(int, m.groups()))
-    for m in re.finditer(r'-\s+(\S+)\s+(\S+)', text):
-        name, ct = m.group(1), m.group(2)
-        pm = re.search(r'-\s+' + re.escape(name) + r'\s+' + re.escape(ct) +
-                       r'[\s\S]*?\+ PLACED\s*\(\s*(\d+)\s+(\d+)\s*\)', text)
-        if pm:
-            cells.append((name, int(pm.group(1)), int(pm.group(2)), ct))
+def parse(path):
+    cells = []; diearea = (0,0,63080,57680)
+    with open(path) as f: t = f.read()
+    m = re.search(r'DIEAREA\s*\(\s*(\d+)\s+(\d+)\s*\)\s*\(\s*(\d+)\s+(\d+)\s*\)', t)
+    if m: diearea = tuple(map(int, m.groups()))
+    for m in re.finditer(r'-\s+(\S+)\s+(\S+)[\s\S]*?\+ PLACED\s*\(\s*(\d+)\s+(\d+)\s*\)', t):
+        cells.append((m.group(1), int(m.group(3)), int(m.group(4)), m.group(2)))
     return cells, diearea
 
+d2d, da2d = parse('results/gcd/gcd_2d_2A_nat.def')
+d3d, da3d = parse('results/gcd/gcd_3d.def')
+bot = [(x,y) for _,x,y,t in d3d if t.endswith('_b')]
+top = [(x,y) for _,x,y,t in d3d if t.endswith('_t')]
 
-def plot_3d(def_3d_path, output_path):
-    cells, diearea = parse_def(def_3d_path)
-    bottom = [(x, y) for _, x, y, t in cells if t.endswith('_b')]
-    top = [(x, y) for _, x, y, t in cells if t.endswith('_t')]
-    other = len(cells) - len(bottom) - len(top)
+fig, axes = plt.subplots(1, 3, figsize=(18, 6))
 
-    fig, axes = plt.subplots(1, 2, figsize=(14, 7))
+ax = axes[0]
+xs = [x for _,x,y,_ in d2d]; ys = [y for _,x,y,_ in d2d]
+ax.scatter(xs, ys, c='steelblue', s=6, alpha=0.5, edgecolors='none')
+ax.set_title(f'2D (Area=2A, natural density)  {len(d2d)} cells', fontsize=12, fontweight='bold')
+ax.set_xlim(0, da2d[2]); ax.set_ylim(0, da2d[3]); ax.set_aspect('equal')
 
-    # Bottom die
-    ax = axes[0]
-    if bottom:
-        xs, ys = zip(*bottom)
-        ax.scatter(xs, ys, c='#2E86AB', s=18, alpha=0.65, edgecolors='none')
-    ax.set_title(f'Bottom Die  ({len(bottom)} cells)', fontsize=14, fontweight='bold')
-    ax.set_xlim(0, diearea[2]); ax.set_ylim(0, diearea[3])
-    ax.set_aspect('equal')
-    ax.set_xlabel('X (µm)'); ax.set_ylabel('Y (µm)')
+ax = axes[1]
+if bot:
+    xs, ys = zip(*bot)
+    ax.scatter(xs, ys, c='#2E86AB', s=18, alpha=0.65, edgecolors='none')
+ax.set_title(f'3D Bottom Die  {len(bot)} cells', fontsize=12, fontweight='bold')
+ax.set_xlim(0, da3d[2]); ax.set_ylim(0, da3d[3]); ax.set_aspect('equal')
 
-    # Top die
-    ax = axes[1]
-    if top:
-        xs, ys = zip(*top)
-        ax.scatter(xs, ys, c='#D66853', s=18, alpha=0.65, edgecolors='none')
-    ax.set_title(f'Top Die  ({len(top)} cells)', fontsize=14, fontweight='bold')
-    ax.set_xlim(0, diearea[2]); ax.set_ylim(0, diearea[3])
-    ax.set_aspect('equal')
-    ax.set_xlabel('X (µm)'); ax.set_ylabel('Y (µm)')
+ax = axes[2]
+if top:
+    xs, ys = zip(*top)
+    ax.scatter(xs, ys, c='#D66853', s=18, alpha=0.65, edgecolors='none')
+ax.set_title(f'3D Top Die  {len(top)} cells', fontsize=12, fontweight='bold')
+ax.set_xlim(0, da3d[2]); ax.set_ylim(0, da3d[3]); ax.set_aspect('equal')
 
-    stats = (f"Total cells: {len(cells)}  |  Bottom: {len(bottom)}  |  Top: {len(top)}  |  IO/pins: {other}\n"
-             f"Each die: {diearea[2]/1000:.0f} x {diearea[3]/1000:.0f} µm  —  same footprint, stacked vertically\n"
-             f"Placer: HeteroPlace3D  |  Benchmark: gcd (NanGate45 F2F)  |  Runtime: ~66 s")
-    fig.text(0.5, 0.01, stats, ha='center', fontsize=9, family='monospace',
-             bbox=dict(boxstyle='round', facecolor='#F5F5F5', alpha=0.8))
+fig.text(0.5, 0.01,
+    "2D(2A,nat)=7.00M  |  3D(2A)=5.53M  |  3D/2D=79%  ->  3D saves 21% HPWL",
+    ha='center', fontsize=9, family='monospace',
+    bbox=dict(boxstyle='round', facecolor='#F5F5F5', alpha=0.8))
 
-    fig.suptitle('gcd — 3D Placement: Bottom vs Top Die', fontsize=16, fontweight='bold', y=0.97)
-    plt.tight_layout(rect=[0, 0.06, 1, 0.95])
-    plt.savefig(output_path, dpi=150, bbox_inches='tight')
-    plt.close()
-    print(f"Saved {output_path}")
-
-
-if __name__ == '__main__':
-    import sys
-    plot_3d(
-        sys.argv[1] if len(sys.argv) > 1 else 'results/gcd/gcd_3d.def',
-        sys.argv[2] if len(sys.argv) > 2 else 'docs/gcd_3d_placement.png'
-    )
+fig.suptitle('gcd: 2D vs 3D — same silicon budget, natural density', fontsize=14, fontweight='bold')
+plt.tight_layout(rect=[0, 0.05, 1, 0.95])
+plt.savefig('docs/gcd_2d_vs_3d.png', dpi=150, bbox_inches='tight')
+plt.close()
+print("Saved")

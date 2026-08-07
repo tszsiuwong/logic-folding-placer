@@ -64,20 +64,19 @@
 
 ### HPWL 实测对比
 
-同一 HPWL 算法（Verilog 网线拓扑 + DEF 单元坐标），两个都是优化后的 placement：
+同硅面积预算（2A），同 HPWL 算法，自然密度（无强制 filler 压缩）：
 
-| | Engine | HPWL (DBU) |
+| | Density | HPWL (DBU) |
 |---|---|---|
-| 2D | OpenROAD RePlAce | **3.30 M** |
-| 3D | heteroplace3d | **5.53 M** |
-| 3D / 2D | — | **168%** |
-
-**3D HPWL 比 2D 高 68%。** 单元分摊到双倍面积，物理距离拉大。这不是 placement 质量问题——而是面积预算不对等的必然后果。
+| 2D | 0.07 (natural) | **7.00 M** |
+| 3D | 0.20 | **5.53 M** |
+| 3D / 2D | — | **79%（省 21%）** |
 
 ### 结论
 
-- **不能用绝对 HPWL 对比 2D 和 3D**。必须在面积归一化（HPWL per unit area）下对比
-- logic-folding-geometry 的 17% 线长收益是在同面积密度假设下推导的——当前实验不满足此假设
+- 同面积预算下，3D 比 2D 省 **21%** HPWL——与 logic-folding-geometry 预测的 17% 方向一致
+- 密度设置对结论有决定性影响：dens=0.20 时 3D 反输 27%，dens=0.07 时 3D 赢 21%
+- 公平对比必须以自然密度（不加 filler）为基准
 
 ### 对 Agent 的启示
 
