@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Displacement analysis plots."""
+"""Generate individual displacement analysis figures."""
 
-import re, math
-import matplotlib.pyplot as plt
+import re, math, random
 import matplotlib
-import matplotlib.gridspec as gridspec
+import matplotlib.pyplot as plt
 matplotlib.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'DejaVu Sans']
 matplotlib.rcParams['axes.unicode_minus'] = False
 
@@ -31,74 +30,79 @@ for name, (x2, y2, _, _) in c2.items():
     d = math.sqrt(dx*dx + dy*dy)
     data.append((name, x2, y2, x3, y3, die, dx, dy, d, tp3))
 
-fig = plt.figure(figsize=(16, 12))
-gs = gridspec.GridSpec(2, 3, hspace=0.35, wspace=0.3)
-
-# 1. Displacement histogram
-ax = fig.add_subplot(gs[0, 0])
 ds = [r[8]/2000 for r in data]
-ax.hist(ds, bins=20, color='steelblue', edgecolor='white', alpha=0.8)
-ax.axvline(sum(ds)/len(ds), color='red', linestyle='--', linewidth=1.5, label=f'mean={sum(ds)/len(ds):.1f}um')
-ax.set_xlabel('Displacement (um)'); ax.set_ylabel('Count')
-ax.set_title('Per-cell Displacement (2D -> 3D)', fontweight='bold')
-ax.legend()
-
-# 2. Displacement vs distance from 2D center
-ax = fig.add_subplot(gs[0, 1])
 w2, h2 = 89220, 81570; cx, cy = w2/2, h2/2
 cd = [math.sqrt((r[1]-cx)**2+(r[2]-cy)**2)/2000 for r in data]
-ds = [r[8]/2000 for r in data]
-ax.scatter(cd, ds, c=ds, cmap='YlOrRd', s=12, alpha=0.6, edgecolors='none')
-ax.set_xlabel('Distance from 2D center (um)'); ax.set_ylabel('Displacement (um)')
-ax.set_title('r = 0.919: Area compression dominates', fontweight='bold')
+die0d = [r[8]/2000 for r in data if r[5]==0]
+die1d = [r[8]/2000 for r in data if r[5]==1]
 
-# 3. Displacement by die
-ax = fig.add_subplot(gs[0, 2])
-die0 = [r[8]/2000 for r in data if r[5]==0]
-die1 = [r[8]/2000 for r in data if r[5]==1]
-bp = ax.boxplot([die0, die1], labels=['Die0 (n=159)', 'Die1 (n=142)'], patch_artist=True)
+# 1. Histogram
+fig, ax = plt.subplots(figsize=(8, 5))
+ax.hist(ds, bins=20, color='steelblue', edgecolor='white', alpha=0.85)
+ax.axvline(sum(ds)/len(ds), color='crimson', linestyle='--', linewidth=2,
+           label=f'Mean = {sum(ds)/len(ds):.1f} um')
+ax.set_xlabel('Displacement (um)', fontsize=12)
+ax.set_ylabel('Cell count', fontsize=12)
+ax.set_title('Per-cell Displacement Distribution (2D -> 3D)', fontsize=13, fontweight='bold')
+ax.legend(fontsize=11)
+plt.tight_layout(); plt.savefig('figures/gcd_disp_hist.png', dpi=150); plt.close()
+
+# 2. Correlation
+fig, ax = plt.subplots(figsize=(7, 7))
+ax.scatter(cd, ds, c=ds, cmap='YlOrRd', s=14, alpha=0.65, edgecolors='none')
+ax.set_xlabel('Distance from 2D die center (um)', fontsize=12)
+ax.set_ylabel('Displacement (um)', fontsize=12)
+ax.set_title('r = 0.919 — Area compression dominates displacement', fontsize=13, fontweight='bold')
+plt.tight_layout(); plt.savefig('figures/gcd_disp_corr.png', dpi=150); plt.close()
+
+# 3. By die boxplot
+fig, ax = plt.subplots(figsize=(6, 5))
+bp = ax.boxplot([die0d, die1d], labels=['Die0 (n=159)', 'Die1 (n=142)'],
+                patch_artist=True, widths=0.5)
 bp['boxes'][0].set_facecolor('#2E86AB'); bp['boxes'][1].set_facecolor('#D66853')
-ax.set_ylabel('Displacement (um)')
-ax.set_title('Displacement by Die', fontweight='bold')
+for i, dd in enumerate([die0d, die1d]):
+    mean_val = sum(dd)/len(dd)
+    ax.text(i+1.2, mean_val, f'{mean_val:.1f}', va='center', fontsize=10, fontweight='bold')
+ax.set_ylabel('Displacement (um)', fontsize=12)
+ax.set_title('Displacement by Die Assignment', fontsize=13, fontweight='bold')
+plt.tight_layout(); plt.savefig('figures/gcd_disp_die.png', dpi=150); plt.close()
 
-# 4. 2D positions colored by die assignment
-ax = fig.add_subplot(gs[1, 0])
+# 4. Die assignment map
+fig, ax = plt.subplots(figsize=(8, 7))
 for r in data:
     color = '#2E86AB' if r[5]==0 else '#D66853'
-    ax.scatter(r[1]/2000, r[2]/2000, c=color, s=6, alpha=0.5, edgecolors='none')
-ax.scatter([], [], c='#2E86AB', s=12, label=f'-> Die0 ({len(die0)})')
-ax.scatter([], [], c='#D66853', s=12, label=f'-> Die1 ({len(die1)})')
-ax.legend(loc='upper right', fontsize=8)
-ax.set_xlim(0, 89); ax.set_ylim(0, 82)
-ax.set_aspect('equal')
-ax.set_title('2D Position -> Die Assignment', fontweight='bold')
-ax.set_xlabel('X (um)'); ax.set_ylabel('Y (um)')
+    ax.scatter(r[1]/2000, r[2]/2000, c=color, s=10, alpha=0.55, edgecolors='none')
+ax.scatter([], [], c='#2E86AB', s=15, label=f'-> Die0 ({len(die0d)})')
+ax.scatter([], [], c='#D66853', s=15, label=f'-> Die1 ({len(die1d)})')
+ax.legend(loc='upper right', fontsize=11)
+ax.set_xlim(0, 89); ax.set_ylim(0, 82); ax.set_aspect('equal')
+ax.set_xlabel('X (um)', fontsize=12); ax.set_ylabel('Y (um)', fontsize=12)
+ax.set_title('2D Position vs Final Die Assignment', fontsize=13, fontweight='bold')
+plt.tight_layout(); plt.savefig('figures/gcd_disp_diemap.png', dpi=150); plt.close()
 
-# 5. Displacement vectors (subsample for clarity)
-ax = fig.add_subplot(gs[1, 1])
-import random; random.seed(42)
-sample = random.sample(data, min(80, len(data)))
+# 5. Displacement vectors
+fig, ax = plt.subplots(figsize=(8, 7))
+random.seed(42); sample = random.sample(data, min(60, len(data)))
 for r in sample:
     ax.arrow(r[1]/2000, r[2]/2000, r[6]/2000, r[7]/2000,
-             head_width=1.5, head_length=2, fc='gray', ec='gray', alpha=0.4, width=0.3)
+             head_width=1.2, head_length=1.6, fc='#555555', ec='#555555',
+             alpha=0.35, width=0.2, length_includes_head=True)
     color = '#2E86AB' if r[5]==0 else '#D66853'
-    ax.scatter(r[1]/2000, r[2]/2000, c=color, s=15, alpha=0.7, edgecolors='none', zorder=2)
-ax.set_xlim(0, 89); ax.set_ylim(0, 82)
-ax.set_aspect('equal')
-ax.set_title('Displacement Vectors (80 sampled)', fontweight='bold')
-ax.set_xlabel('X (um)'); ax.set_ylabel('Y (um)')
+    ax.scatter(r[1]/2000, r[2]/2000, c=color, s=18, alpha=0.7, edgecolors='none', zorder=2)
+ax.set_xlim(0, 89); ax.set_ylim(0, 82); ax.set_aspect('equal')
+ax.set_xlabel('X (um)', fontsize=12); ax.set_ylabel('Y (um)', fontsize=12)
+ax.set_title('Displacement Vectors (60 sampled)', fontsize=13, fontweight='bold')
+plt.tight_layout(); plt.savefig('figures/gcd_disp_vec.png', dpi=150); plt.close()
 
-# 6. Displacement magnitude map
-ax = fig.add_subplot(gs[1, 2])
+# 6. Heatmap
+fig, ax = plt.subplots(figsize=(8, 7))
 sc = ax.scatter([r[1]/2000 for r in data], [r[2]/2000 for r in data],
-                c=[r[8]/2000 for r in data], cmap='YlOrRd', s=14, alpha=0.6, edgecolors='none')
-plt.colorbar(sc, ax=ax, label='Displacement (um)')
-ax.set_xlim(0, 89); ax.set_ylim(0, 82)
-ax.set_aspect('equal')
-ax.set_title('Displacement Magnitude in 2D Space', fontweight='bold')
-ax.set_xlabel('X (um)'); ax.set_ylabel('Y (um)')
+                c=[r[8]/2000 for r in data], cmap='YlOrRd', s=16, alpha=0.55, edgecolors='none')
+cbar = plt.colorbar(sc, ax=ax, shrink=0.82)
+cbar.set_label('Displacement (um)', fontsize=11)
+ax.set_xlim(0, 89); ax.set_ylim(0, 82); ax.set_aspect('equal')
+ax.set_xlabel('X (um)', fontsize=12); ax.set_ylabel('Y (um)', fontsize=12)
+ax.set_title('Displacement Magnitude in 2D Space', fontsize=13, fontweight='bold')
+plt.tight_layout(); plt.savefig('figures/gcd_disp_heat.png', dpi=150); plt.close()
 
-fig.suptitle('gcd: Per-cell 2D -> 3D Displacement Analysis', fontsize=15, fontweight='bold', y=0.99)
-plt.savefig('figures/gcd_displacement.png', dpi=150, bbox_inches='tight')
-plt.close()
-print("Saved")
+print("All 6 figures saved to figures/")
