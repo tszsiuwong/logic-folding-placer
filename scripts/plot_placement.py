@@ -27,12 +27,14 @@ ratio_2d = da2d[2] / da3d[2]  # ~1.414
 fig = plt.figure(figsize=(16, 6))
 gs = gridspec.GridSpec(1, 3, width_ratios=[ratio_2d, 1, 1])
 
-# 2D
+# 2D scatter/font scaled by area ratio to match visual density
+scale = math.sqrt(ratio_2d)  # ~1.19
 ax = fig.add_subplot(gs[0])
 xs = [x for _,x,y,_ in d2d]; ys = [y for _,x,y,_ in d2d]
-ax.scatter(xs, ys, c='steelblue', s=6, alpha=0.5, edgecolors='none')
-ax.set_title(f'2D (Area=2A, natural density)  {len(d2d)} cells', fontsize=12, fontweight='bold')
+ax.scatter(xs, ys, c='steelblue', s=6*scale, alpha=0.5, edgecolors='none')
+ax.set_title(f'2D (Area=2A, natural density)  {len(d2d)} cells', fontsize=12*scale, fontweight='bold')
 ax.set_xlim(0, da2d[2]); ax.set_ylim(0, da2d[3]); ax.set_aspect('equal')
+ax.xaxis.label.set_size(10*scale); ax.yaxis.label.set_size(10*scale)
 
 # 3D Bottom
 ax = fig.add_subplot(gs[1])
