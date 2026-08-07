@@ -23,30 +23,42 @@ top = [(x,y) for _,x,y,t in d3d if t.endswith('_t')]
 
 ratio_2d = da2d[2] / da3d[2]
 
-# 1. 2D placement
+# 1. 2D placement — zoom to cells
 fig, ax = plt.subplots(figsize=(10, 9))
 xs = [x for _,x,y,_ in d2d]; ys = [y for _,x,y,_ in d2d]
-ax.scatter(xs, ys, c='steelblue', s=40, alpha=0.55, edgecolors='white', linewidth=0.2)
-ax.set_title(f'2D Placement (Area=2A, natural density)\n{len(d2d)} cells, HPWL=7.00M', fontsize=13, fontweight='bold')
-ax.set_xlim(0, da2d[2]); ax.set_ylim(0, da2d[3]); ax.set_aspect('equal')
+ax.scatter(xs, ys, c='steelblue', s=60, alpha=0.6, edgecolors='white', linewidth=0.3)
+m = 6000
+ax.set_xlim(min(xs)-m, max(xs)+m); ax.set_ylim(min(ys)-m, max(ys)+m)
+ax.set_title(f'2D Placement (Area=2A, natural density)\n{len(d2d)} cells, HPWL=7.00M', fontsize=14, fontweight='bold')
+ax.set_aspect('equal')
 ax.set_xlabel('X (DBU)'); ax.set_ylabel('Y (DBU)')
 plt.tight_layout(); plt.savefig('figures/gcd_2d.png', dpi=150); plt.close()
 
-# 2. 3D bottom
+# 2. 3D bottom — zoom to cell bounding box with margin
 fig, ax = plt.subplots(figsize=(8, 7))
-if bot: xs, ys = zip(*bot); ax.scatter(xs, ys, c='#2E86AB', s=80, alpha=0.75, edgecolors='white', linewidth=0.3)
-ax.set_title(f'3D Bottom Die\n{len(bot)} cells  |  Die area: 63 x 58 um', fontsize=13, fontweight='bold')
-ax.set_xlim(0, da3d[2]); ax.set_ylim(0, da3d[3]); ax.set_aspect('equal')
+if bot:
+    xs, ys = zip(*bot)
+    ax.scatter(xs, ys, c='#2E86AB', s=120, alpha=0.8, edgecolors='white', linewidth=0.5)
+    margin = 4000
+    ax.set_xlim(min(xs)-margin, max(xs)+margin)
+    ax.set_ylim(min(ys)-margin, max(ys)+margin)
+ax.set_title(f'3D Bottom Die  ({len(bot)} cells)', fontsize=14, fontweight='bold')
+ax.set_aspect('equal')
 ax.set_xlabel('X (DBU)'); ax.set_ylabel('Y (DBU)')
-plt.tight_layout(); plt.savefig('figures/gcd_3d_bottom.png', dpi=150, facecolor='white'); plt.close()
+plt.tight_layout(); plt.savefig('figures/gcd_3d_bottom.png', dpi=150); plt.close()
 
-# 3. 3D top
+# 3. 3D top — same zoom logic
 fig, ax = plt.subplots(figsize=(8, 7))
-if top: xs, ys = zip(*top); ax.scatter(xs, ys, c='#D66853', s=80, alpha=0.75, edgecolors='white', linewidth=0.3)
-ax.set_title(f'3D Top Die\n{len(top)} cells  |  Die area: 63 x 58 um', fontsize=13, fontweight='bold')
-ax.set_xlim(0, da3d[2]); ax.set_ylim(0, da3d[3]); ax.set_aspect('equal')
+if top:
+    xs, ys = zip(*top)
+    ax.scatter(xs, ys, c='#D66853', s=120, alpha=0.8, edgecolors='white', linewidth=0.5)
+    margin = 4000
+    ax.set_xlim(min(xs)-margin, max(xs)+margin)
+    ax.set_ylim(min(ys)-margin, max(ys)+margin)
+ax.set_title(f'3D Top Die  ({len(top)} cells)', fontsize=14, fontweight='bold')
+ax.set_aspect('equal')
 ax.set_xlabel('X (DBU)'); ax.set_ylabel('Y (DBU)')
-plt.tight_layout(); plt.savefig('figures/gcd_3d_top.png', dpi=150, facecolor='white'); plt.close()
+plt.tight_layout(); plt.savefig('figures/gcd_3d_top.png', dpi=150); plt.close()
 
 # 4. Side-by-side comparison (proportional)
 fig, axes = plt.subplots(1, 3, figsize=(16, 5),
@@ -54,17 +66,26 @@ fig, axes = plt.subplots(1, 3, figsize=(16, 5),
 ax = axes[0]
 xs = [x for _,x,y,_ in d2d]; ys = [y for _,x,y,_ in d2d]
 sf = math.sqrt(ratio_2d)
-ax.scatter(xs, ys, c='steelblue', s=30*sf, alpha=0.55, edgecolors='white', linewidth=0.2)
+m = 6000
+ax.scatter(xs, ys, c='steelblue', s=40*sf, alpha=0.6, edgecolors='white', linewidth=0.3)
 ax.set_title(f'2D (Area=2A)  {len(d2d)} cells', fontsize=12*sf, fontweight='bold')
-ax.set_xlim(0, da2d[2]); ax.set_ylim(0, da2d[3]); ax.set_aspect('equal')
+ax.set_xlim(min(xs)-m, max(xs)+m); ax.set_ylim(min(ys)-m, max(ys)+m); ax.set_aspect('equal')
 
 ax = axes[1]
-if bot: xs, ys = zip(*bot); ax.scatter(xs, ys, c='#2E86AB', s=80, alpha=0.75, edgecolors='white', linewidth=0.3)
+if bot:
+    xs, ys = zip(*bot)
+    ax.scatter(xs, ys, c='#2E86AB', s=100, alpha=0.8, edgecolors='white', linewidth=0.5)
+    m3 = 4000
+    ax.set_xlim(min(xs)-m3, max(xs)+m3); ax.set_ylim(min(ys)-m3, max(ys)+m3)
 ax.set_title(f'3D Bottom  {len(bot)} cells', fontsize=12, fontweight='bold')
-ax.set_xlim(0, da3d[2]); ax.set_ylim(0, da3d[3]); ax.set_aspect('equal')
+ax.set_aspect('equal')
 
 ax = axes[2]
-if top: xs, ys = zip(*top); ax.scatter(xs, ys, c='#D66853', s=80, alpha=0.75, edgecolors='white', linewidth=0.3)
+if top:
+    xs, ys = zip(*top)
+    ax.scatter(xs, ys, c='#D66853', s=100, alpha=0.8, edgecolors='white', linewidth=0.5)
+    m3 = 4000
+    ax.set_xlim(min(xs)-m3, max(xs)+m3); ax.set_ylim(min(ys)-m3, max(ys)+m3)
 ax.set_title(f'3D Top  {len(top)} cells', fontsize=12, fontweight='bold')
 ax.set_xlim(0, da3d[2]); ax.set_ylim(0, da3d[3]); ax.set_aspect('equal')
 
