@@ -52,7 +52,8 @@ agentic_tao_physical_design_flow → 全流程框架
 | [gcd_analysis.md](docs/gcd_analysis.md) | gcd 完整分析报告 |
 | [worklog.md](docs/worklog.md) | 实验过程日志 |
 | [agent_friendliness.md](docs/agent_friendliness.md) | Agent 友好性评估 |
-| [gcd_2d_vs_3d.png](docs/gcd_2d_vs_3d.png) | 2D vs 3D 等比对比图 |
+| [gcd_2d_vs_3d.png](figures/gcd_2d_vs_3d.png) | 2D vs 3D 等比对比图 |
+| [gcd_displacement.png](figures/gcd_displacement.png) | 逐单元位移分析 |
 
 ## 关联仓库
 

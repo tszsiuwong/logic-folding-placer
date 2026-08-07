@@ -99,6 +99,6 @@ ax.set_title('Displacement Magnitude in 2D Space', fontweight='bold')
 ax.set_xlabel('X (um)'); ax.set_ylabel('Y (um)')
 
 fig.suptitle('gcd: Per-cell 2D -> 3D Displacement Analysis', fontsize=15, fontweight='bold', y=0.99)
-plt.savefig('docs/gcd_displacement.png', dpi=150, bbox_inches='tight')
+plt.savefig('figures/gcd_displacement.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("Saved")

@@ -59,6 +59,6 @@ fig.text(0.5, 0.01,
 
 fig.suptitle('gcd: 2D vs 3D — same silicon budget, natural density, proportional scale', fontsize=14, fontweight='bold')
 plt.tight_layout(rect=[0, 0.05, 1, 0.95])
-plt.savefig('docs/gcd_2d_vs_3d.png', dpi=150, bbox_inches='tight')
+plt.savefig('figures/gcd_2d_vs_3d.png', dpi=150, bbox_inches='tight')
 plt.close()
 print("Saved")

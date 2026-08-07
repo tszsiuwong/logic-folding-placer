@@ -82,10 +82,12 @@
 |------|------|
 | `docs/gcd_analysis.md` | 静态分析报告 |
 | `docs/worklog.md` | 本文档 |
-| `docs/gcd_3d_placement.png` | 3D Bottom/Top Die 布局图 |
 | `docs/agent_friendliness.md` | Agent 友好性评估 |
-| `scripts/plot_placement.py` | DEF 解析 + 画图脚本 |
-| `scripts/compute_hpwl.py` | Verilog+DEF HPWL 计算（工具无关） |
+| `figures/gcd_2d_vs_3d.png` | 2D vs 3D 对比图 |
+| `figures/gcd_displacement.png` | 位移分析图 |
+| `scripts/plot_placement.py` | DEF 解析 + 对比画图 |
+| `scripts/plot_displacement.py` | 位移分析画图 |
+| `scripts/compute_hpwl.py` | Verilog+DEF HPWL 计算 |
 
 ---
 
