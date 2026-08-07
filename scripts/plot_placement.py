@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Plot 2D(2A, natural) vs 3D (Bottom + Top)."""
 
-import re
+import re, math
 import matplotlib.pyplot as plt
 import matplotlib
+import matplotlib.gridspec as gridspec
 matplotlib.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'DejaVu Sans']
 matplotlib.rcParams['axes.unicode_minus'] = False
 
@@ -21,22 +22,28 @@ d3d, da3d = parse('results/gcd/gcd_3d.def')
 bot = [(x,y) for _,x,y,t in d3d if t.endswith('_b')]
 top = [(x,y) for _,x,y,t in d3d if t.endswith('_t')]
 
-fig, axes = plt.subplots(1, 3, figsize=(18, 6))
+# Proportional widths: 2D die is sqrt(2) wider than each 3D die
+ratio_2d = da2d[2] / da3d[2]  # ~1.414
+fig = plt.figure(figsize=(16, 6))
+gs = gridspec.GridSpec(1, 3, width_ratios=[ratio_2d, 1, 1])
 
-ax = axes[0]
+# 2D
+ax = fig.add_subplot(gs[0])
 xs = [x for _,x,y,_ in d2d]; ys = [y for _,x,y,_ in d2d]
 ax.scatter(xs, ys, c='steelblue', s=6, alpha=0.5, edgecolors='none')
 ax.set_title(f'2D (Area=2A, natural density)  {len(d2d)} cells', fontsize=12, fontweight='bold')
 ax.set_xlim(0, da2d[2]); ax.set_ylim(0, da2d[3]); ax.set_aspect('equal')
 
-ax = axes[1]
+# 3D Bottom
+ax = fig.add_subplot(gs[1])
 if bot:
     xs, ys = zip(*bot)
     ax.scatter(xs, ys, c='#2E86AB', s=18, alpha=0.65, edgecolors='none')
 ax.set_title(f'3D Bottom Die  {len(bot)} cells', fontsize=12, fontweight='bold')
 ax.set_xlim(0, da3d[2]); ax.set_ylim(0, da3d[3]); ax.set_aspect('equal')
 
-ax = axes[2]
+# 3D Top
+ax = fig.add_subplot(gs[2])
 if top:
     xs, ys = zip(*top)
     ax.scatter(xs, ys, c='#D66853', s=18, alpha=0.65, edgecolors='none')
@@ -48,7 +55,7 @@ fig.text(0.5, 0.01,
     ha='center', fontsize=9, family='monospace',
     bbox=dict(boxstyle='round', facecolor='#F5F5F5', alpha=0.8))
 
-fig.suptitle('gcd: 2D vs 3D — same silicon budget, natural density', fontsize=14, fontweight='bold')
+fig.suptitle('gcd: 2D vs 3D — same silicon budget, natural density, proportional scale', fontsize=14, fontweight='bold')
 plt.tight_layout(rect=[0, 0.05, 1, 0.95])
 plt.savefig('docs/gcd_2d_vs_3d.png', dpi=150, bbox_inches='tight')
 plt.close()
