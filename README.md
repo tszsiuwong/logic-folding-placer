@@ -20,26 +20,26 @@ agentic_tao_physical_design_flow → 全流程框架
 
 ## 实验环境
 
-- 工具：HeteroPlace3D v20260807（基于 DREAMPlace）
-- 基准：NanGate45 3D（TaiWei-Pin-3D），同质双 Die 堆叠
-- GPU：NVIDIA TITAN RTX 24GB，CUDA 13.0
+- 3D placer：HeteroPlace3D v20260807（DREAMPlace），TITAN RTX 24GB，CUDA 13.0
+- 2D placer：OpenROAD 26Q1-951（RePlAce + ABCDPlace）
+- 基准：NanGate45 3D（TaiWei-Pin-3D），同质双 Die F2F 堆叠
 
 ## 当前进展
 
 ### 完成
 
-- [x] gcd 3D placement（heteroplace3d，66s）+ 2D placement（OpenROAD RePlAce）
-- [x] 同一算法下的 2D vs 3D HPWL 对比：**3.30M vs 5.53M（168%）**
+- [x] gcd 2D baseline（OpenROAD，同面积 2A，自然密度） + 3D placement（heteroplace3d）
+- [x] 同面积同算法 2D vs 3D HPWL：**7.00M vs 5.53M，3D 省 21%**
 - [x] 完整分析框架：partition 解析 → HPWL 追踪 → 模块聚类 → 规则提取
-- [x] 图形输出：Bottom Die vs Top Die 布局对比
+- [x] 可视化：2D vs 3D Bottom/Top 等比缩放对比图
 - [x] Agent 友好性评估
 
 ### 核心发现
 
-1. **总线信号同层保留**：req_msg（32 条）、resp_msg（16 条）全在 Die1
-2. **匿名逻辑随机切分**：257 个通用门 45/55，无结构性线索
-3. **面积效应已证实**：3D HPWL = 2D × 168%——双倍硅面积拉大物理距离。不能拿绝对 HPWL 比
-4. **HBT 不可见**：236 个 hybrid bonding terminal 只在 log 中，不在 DEF 中
+1. **3D 省 21% HPWL**：同面积自然密度下，与 geometry 预测（17%）方向一致
+2. **密度决定结论**：dens=0.20（强制 filler）时 3D 反输 27%，公平对比须用自然密度
+3. **总线信号同层保留**：req_msg（32）、resp_msg（16）全在 Die1
+4. **匿名逻辑随机切分**：257 个门 45/55，无结构性线索
 
 ### 受阻
 
@@ -52,7 +52,7 @@ agentic_tao_physical_design_flow → 全流程框架
 | [gcd_analysis.md](docs/gcd_analysis.md) | gcd 完整分析报告 |
 | [worklog.md](docs/worklog.md) | 实验过程日志 |
 | [agent_friendliness.md](docs/agent_friendliness.md) | Agent 友好性评估 |
-| [gcd_3d_placement.png](docs/gcd_3d_placement.png) | 3D 布局可视化 |
+| [gcd_2d_vs_3d.png](docs/gcd_2d_vs_3d.png) | 2D vs 3D 等比对比图 |
 
 ## 关联仓库
 
