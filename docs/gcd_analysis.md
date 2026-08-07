@@ -55,20 +55,33 @@
 
 一个重要发现：当前的 2D vs 3D HPWL 对比**不是在同等硅面积预算下进行的**。
 
-| | 2D | 3D |
+| | 2D（Innovus floorplan） | 3D（heteroplace3d） |
 |---|---|---|
 | Die 数量 | 1 | 2（上下堆叠） |
 | 每 Die 面积 | A | A（同 footprint） |
 | 总硅面积 | A | **2A** |
 | 每 Die 利用率 | 355 单元 / A | ~150 单元 / A |
 
-3D 把 355 个单元分摊到两倍面积的硅上，每层只有一半不到的单元，布局器有更大的自由空间——线长下降可能有相当一部分来自"多了一倍的面积"，而非来自"垂直折叠缩短了关键路径"。
+### HPWL 实测对比
 
-**这对 Agent 的启示**：
+同一 HPWL 算法（Verilog 网线拓扑 + DEF 单元坐标），两个都是优化后的 placement：
 
-- 不能简单地把 3D HPWL < 2D HPWL 当作"折叠收益"
-- 必须做面积归一化的对比：2D 在面积 A 下的 HPWL vs 3D 在面积 A/2（或等效利用率）下的 HPWL
-- logic-folding-geometry 的 17% 线长收益是在**同面积密度**假设下推导的（p=1, 双 Die 各放 N/2 单元），当前实验条件不满足这个假设
+| | Engine | HPWL (DBU) |
+|---|---|---|
+| 2D | OpenROAD RePlAce | **3.30 M** |
+| 3D | heteroplace3d | **5.53 M** |
+| 3D / 2D | — | **168%** |
+
+**3D HPWL 比 2D 高 68%。** 单元分摊到双倍面积，物理距离拉大。这不是 placement 质量问题——而是面积预算不对等的必然后果。
+
+### 结论
+
+- **不能用绝对 HPWL 对比 2D 和 3D**。必须在面积归一化（HPWL per unit area）下对比
+- logic-folding-geometry 的 17% 线长收益是在同面积密度假设下推导的——当前实验不满足此假设
+
+### 对 Agent 的启示
+
+> Agent 不能把 "3D HPWL < 2D HPWL" 作为优化信号。需要设计面积归一化的 PPA 指标。
 
 ## 七、对 Agent 的启示
 

@@ -28,20 +28,21 @@ agentic_tao_physical_design_flow → 全流程框架
 
 ### 完成
 
-- [x] gcd（~412 实例）3D placement：66s，9.80M HPWL
+- [x] gcd 3D placement（heteroplace3d，66s）+ 2D placement（OpenROAD RePlAce）
+- [x] 同一算法下的 2D vs 3D HPWL 对比：**3.30M vs 5.53M（168%）**
 - [x] 完整分析框架：partition 解析 → HPWL 追踪 → 模块聚类 → 规则提取
 - [x] 图形输出：Bottom Die vs Top Die 布局对比
+- [x] Agent 友好性评估
 
 ### 核心发现
 
-1. **总线信号同层保留**：req_msg（32 条）、resp_msg（16 条）全在 Die1，未被切散
-2. **匿名逻辑随机切分**：257 个通用门 45/55 分布，placer 无结构性线索
-3. **面积不对等**：3D 用双倍硅面积（2A vs A），HPWL 对比不公平
-4. **HBT 不可见**：236 个 hybrid bonding terminal 只在 log 中，不出现在输出 DEF
+1. **总线信号同层保留**：req_msg（32 条）、resp_msg（16 条）全在 Die1
+2. **匿名逻辑随机切分**：257 个通用门 45/55，无结构性线索
+3. **面积效应已证实**：3D HPWL = 2D × 168%——双倍硅面积拉大物理距离。不能拿绝对 HPWL 比
+4. **HBT 不可见**：236 个 hybrid bonding terminal 只在 log 中，不在 DEF 中
 
 ### 受阻
 
-- [ ] 纯 2D baseline：四种方式均失败——当前 heteroplace3d 不支持
 - [ ] 模块亲和性：gcd 层级太浅，需更大设计验证
 
 ## 文档
@@ -49,7 +50,8 @@ agentic_tao_physical_design_flow → 全流程框架
 | 文件 | 内容 |
 |------|------|
 | [gcd_analysis.md](docs/gcd_analysis.md) | gcd 完整分析报告 |
-| [worklog.md](docs/worklog.md) | 实验过程日志（踩坑记录） |
+| [worklog.md](docs/worklog.md) | 实验过程日志 |
+| [agent_friendliness.md](docs/agent_friendliness.md) | Agent 友好性评估 |
 | [gcd_3d_placement.png](docs/gcd_3d_placement.png) | 3D 布局可视化 |
 
 ## 关联仓库

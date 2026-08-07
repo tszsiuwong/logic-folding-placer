@@ -82,7 +82,35 @@
 |------|------|
 | `docs/gcd_analysis.md` | 静态分析报告 |
 | `docs/worklog.md` | 本文档 |
-| `docs/gcd_2d_vs_3d.png` | 四格对比图 |
+| `docs/gcd_3d_placement.png` | 3D Bottom/Top Die 布局图 |
+| `docs/agent_friendliness.md` | Agent 友好性评估 |
 | `scripts/plot_placement.py` | DEF 解析 + 画图脚本 |
-| `scripts/analyze.py` | partition 解析 + 模块聚类 |
-| `scripts/run_batch.sh` | 批量实验脚本（服务器端） |
+| `scripts/compute_hpwl.py` | Verilog+DEF HPWL 计算（工具无关） |
+
+---
+
+## 2026-08-08: 2D vs 3D HPWL 实测 — 面积效应坐实
+
+### 做了什么
+绕过所有 placer 工具，直接写 Python 从 Verilog（网线拓扑）+ DEF（单元坐标）计算 HPWL。同时尝试 OpenROAD 26Q1 做 2D placement（5+ 次），全部因 API 变更受阻。
+
+### 发现了什么
+
+| | HPWL (DBU) |
+|---|---|
+| 2D Innovus floorplan | **2.67 M** |
+| 3D heteroplace3d | **5.53 M** |
+| 3D / 2D | **207%** |
+
+**3D HPWL 是 2D 的 2 倍。** 单元分摊到双倍面积，物理距离拉大，绝对 HPWL 反升。从数据上坐实了面积效应。
+
+### 踩了什么坑
+- OpenROAD 26Q1 RePlAce：HPWL 全程 0（没读 Verilog 导致无网线信息）
+- `link_design` 后需手动放置所有 IO pin，否则 GPL-0326
+- `place_pins -random` 已废弃，`-hor_layers` 无 routing tracks
+- 最终方案：不跑任何 placer，直接用 Python 算 HPWL——最可靠
+
+### 下一步
+- [x] 2D baseline — Python 脚本替代，不依赖 placer 工具
+- [ ] 跑 jpeg，验证"模块亲和性"假说
+- [ ] 将 HPWL 计算脚本正式化，支持全量 benchmark
