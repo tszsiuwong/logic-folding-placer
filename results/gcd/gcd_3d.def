@@ -1,0 +1,1045 @@
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN gr3d ;
+UNITS DISTANCE MICRONS 2000 ;
+
+DIEAREA ( 0 0 ) ( 63080 57680 ) ;
+
+COMPONENTS 301 ;
+- FE_DBTC9_n_1865 INV_X1_b
+  + PLACED ( 33060 49840 ) FS ;
+- FE_DBTC8_dpath_a_reg_out_7 INV_X1_t
+  + PLACED ( 43700 38640 ) FN ;
+- FE_DBTC7_dpath_a_reg_out_2 INV_X1_t
+  + PLACED ( 2280 52640 ) FS ;
+- FE_DBTC6_dpath_a_reg_out_0 INV_X1_b
+  + PLACED ( 10640 21840 ) FS ;
+- FE_DBTC5_dpath_b_reg_out_12 INV_X1_b
+  + PLACED ( 2280 24640 ) FS ;
+- FE_DBTC4_dpath_b_reg_out_4 INV_X1_t
+  + PLACED ( 55860 52640 ) FS ;
+- FE_DBTC3_n_2127 INV_X1_b
+  + PLACED ( 9500 7840 ) N ;
+- FE_DBTC2_n_1173 INV_X1_t
+  + PLACED ( 31160 2240 ) N ;
+- FE_DBTC1_n_2149 INV_X1_b
+  + PLACED ( 39520 44240 ) FS ;
+- FE_DBTC0_n_2200 INV_X1_t
+  + PLACED ( 55100 2240 ) FN ;
+- dpath_a_reg_out_reg\[10\] DFF_X1_b
+  + PLACED ( 47880 33040 ) FS ;
+- dpath_a_reg_out_reg\[11\] DFF_X1_b
+  + PLACED ( 47880 5040 ) FS ;
+- dpath_a_reg_out_reg\[14\] DFF_X1_b
+  + PLACED ( 12540 7840 ) S ;
+- dpath_a_reg_out_reg\[13\] DFF_X1_b
+  + PLACED ( 5700 44240 ) S ;
+- dpath_a_reg_out_reg\[12\] DFF_X1_b
+  + PLACED ( 9500 24640 ) N ;
+- dpath_a_reg_out_reg\[15\] DFF_X1_t
+  + PLACED ( 28500 10640 ) N ;
+- dpath_a_reg_out_reg\[9\] DFF_X1_t
+  + PLACED ( 53960 5040 ) FS ;
+- dpath_a_reg_out_reg\[8\] DFF_X1_t
+  + PLACED ( 35720 33040 ) N ;
+- dpath_a_reg_out_reg\[7\] DFF_X1_b
+  + PLACED ( 26980 30240 ) FN ;
+- dpath_a_reg_out_reg\[4\] DFF_X1_t
+  + PLACED ( 39520 52640 ) FS ;
+- dpath_a_reg_out_reg\[5\] DFF_X1_t
+  + PLACED ( 52440 47040 ) FS ;
+- dpath_a_reg_out_reg\[3\] DFF_X1_t
+  + PLACED ( 23180 30240 ) FS ;
+- dpath_a_reg_out_reg\[6\] DFF_X1_t
+  + PLACED ( 52440 24640 ) FN ;
+- dpath_a_reg_out_reg\[2\] DFF_X1_t
+  + PLACED ( 9500 52640 ) N ;
+- dpath_a_reg_out_reg\[0\] DFF_X1_t
+  + PLACED ( 10260 38640 ) S ;
+- dpath_a_reg_out_reg\[1\] DFF_X1_t
+  + PLACED ( 23560 52640 ) N ;
+- g13664__3680 OAI221_X1_b
+  + PLACED ( 13300 38640 ) FS ;
+- g13663__2802 OAI221_X1_b
+  + PLACED ( 42560 49840 ) FS ;
+- dpath_b_reg_out_reg\[1\] DFF_X1_t
+  + PLACED ( 5320 33040 ) S ;
+- dpath_b_reg_out_reg\[0\] DFF_X1_t
+  + PLACED ( 26600 21840 ) FS ;
+- dpath_b_reg_out_reg\[11\] DFF_X1_b
+  + PLACED ( 23560 19040 ) FN ;
+- dpath_b_reg_out_reg\[4\] DFF_X1_t
+  + PLACED ( 47500 30240 ) N ;
+- dpath_b_reg_out_reg\[15\] DFF_X1_t
+  + PLACED ( 18240 10640 ) S ;
+- dpath_b_reg_out_reg\[5\] DFF_X1_t
+  + PLACED ( 54340 30240 ) S ;
+- dpath_b_reg_out_reg\[2\] DFF_X1_t
+  + PLACED ( 4560 7840 ) FS ;
+- dpath_b_reg_out_reg\[3\] DFF_X1_t
+  + PLACED ( 3040 30240 ) FN ;
+- dpath_b_reg_out_reg\[6\] DFF_X1_t
+  + PLACED ( 51680 16240 ) S ;
+- g13662__1705 OAI221_X1_b
+  + PLACED ( 35340 44240 ) FS ;
+- g13661__5122 OAI221_X1_b
+  + PLACED ( 22800 16240 ) FS ;
+- g13660__8246 OAI221_X1_b
+  + PLACED ( 4940 49840 ) FS ;
+- g13649__7098 OAI221_X1_b
+  + PLACED ( 29640 38640 ) N ;
+- g13658__6131 OAI221_X1_b
+  + PLACED ( 51680 44240 ) FS ;
+- g13659__1881 OAI221_X1_b
+  + PLACED ( 17100 44240 ) N ;
+- dpath_b_reg_out_reg\[12\] DFF_X1_t
+  + PLACED ( 37620 16240 ) FS ;
+- dpath_b_reg_out_reg\[14\] DFF_X1_t
+  + PLACED ( 5700 16240 ) FN ;
+- dpath_b_reg_out_reg\[13\] DFF_X1_b
+  + PLACED ( 19760 30240 ) FN ;
+- dpath_b_reg_out_reg\[9\] DFF_X1_b
+  + PLACED ( 42940 30240 ) N ;
+- dpath_b_reg_out_reg\[7\] DFF_X1_t
+  + PLACED ( 38760 35840 ) S ;
+- dpath_b_reg_out_reg\[8\] DFF_X1_b
+  + PLACED ( 40280 41440 ) FN ;
+- dpath_b_reg_out_reg\[10\] DFF_X1_b
+  + PLACED ( 47500 47040 ) FN ;
+- g13671__5115 OAI22_X1_b
+  + PLACED ( 45600 38640 ) FS ;
+- g13667__7482 OAI22_X1_t
+  + PLACED ( 24320 21840 ) N ;
+- g13668__4733 OAI22_X1_t
+  + PLACED ( 9120 35840 ) FS ;
+- g13669__6161 OAI22_X1_t
+  + PLACED ( 4560 10640 ) N ;
+- g13673__2346 OAI22_X1_b
+  + PLACED ( 44840 44240 ) FS ;
+- g13674__1666 OAI22_X1_b
+  + PLACED ( 34200 35840 ) N ;
+- g13679__2398 OAI22_X1_b
+  + PLACED ( 39520 19040 ) N ;
+- g13693 INV_X1_b
+  + PLACED ( 24320 24640 ) N ;
+- g13692 INV_X1_t
+  + PLACED ( 28880 5040 ) FS ;
+- g13697__2802 XNOR2_X1_b
+  + PLACED ( 5320 24640 ) S ;
+- g13691 INV_X1_b
+  + PLACED ( 28880 38640 ) N ;
+- g13696__1705 XNOR2_X1_t
+  + PLACED ( 26220 5040 ) FS ;
+- g13695__5122 XNOR2_X1_t
+  + PLACED ( 38000 38640 ) S ;
+- g13708 INV_X1_b
+  + PLACED ( 25460 38640 ) N ;
+- g13706__4733 OAI211_X1_t
+  + PLACED ( 4560 21840 ) S ;
+- g13710 INV_X1_t
+  + PLACED ( 38000 49840 ) FS ;
+- g13709 INV_X1_b
+  + PLACED ( 48640 44240 ) FS ;
+- g13717__7410 XNOR2_X1_t
+  + PLACED ( 32680 30240 ) S ;
+- ctrl_state_out_reg\[0\] DFF_X1_b
+  + PLACED ( 28120 24640 ) N ;
+- ctrl_state_out_reg\[1\] DFF_X1_b
+  + PLACED ( 18240 10640 ) S ;
+- g13727 INV_X1_t
+  + PLACED ( 32680 44240 ) FS ;
+- g13744__4319 NAND2_X1_b
+  + PLACED ( 3420 24640 ) FN ;
+- g13721 INV_X1_b
+  + PLACED ( 19380 44240 ) N ;
+- g13725__8428 AOI21_X1_t
+  + PLACED ( 10260 19040 ) FS ;
+- g13737__6783 NOR2_X1_b
+  + PLACED ( 10260 7840 ) FS ;
+- g13734__3680 XNOR2_X1_t
+  + PLACED ( 34960 41440 ) FN ;
+- g13722__2802 XNOR2_X1_t
+  + PLACED ( 16340 44240 ) FS ;
+- g13735__1705 AOI21_X1_t
+  + PLACED ( 34960 44240 ) FS ;
+- g13749__8246 AOI21_X1_t
+  + PLACED ( 12160 10640 ) N ;
+- g13740 INV_X1_b
+  + PLACED ( 2280 49840 ) FS ;
+- g13745__7098 NAND2_X1_t
+  + PLACED ( 34200 49840 ) N ;
+- g13748__6131 OAI21_X1_t
+  + PLACED ( 10640 10640 ) FS ;
+- g13757 INV_X1_t
+  + PLACED ( 13300 44240 ) FS ;
+- g13755__1881 NOR2_X1_t
+  + PLACED ( 16720 5040 ) FN ;
+- g13766__5115 OAI21_X1_t
+  + PLACED ( 26980 2240 ) N ;
+- g13739__7482 OAI21_X1_t
+  + PLACED ( 7600 44240 ) S ;
+- g13742__4733 XNOR2_X1_t
+  + PLACED ( 7220 52640 ) S ;
+- g13754__6161 NOR2_X1_b
+  + PLACED ( 3800 30240 ) S ;
+- g13767__9315 XNOR2_X1_b
+  + PLACED ( 12920 49840 ) S ;
+- g13770 INV_X1_t
+  + PLACED ( 13680 5040 ) S ;
+- g13775 INV_X1_t
+  + PLACED ( 53200 5040 ) FN ;
+- g13772__5107 NAND4_X1_b
+  + PLACED ( 21660 21840 ) FS ;
+- g13774 INV_X1_b
+  + PLACED ( 12920 44240 ) N ;
+- g13829__8428 AOI21_X1_t
+  + PLACED ( 19380 49840 ) S ;
+- g13845__5526 OAI21_X1_t
+  + PLACED ( 10260 44240 ) N ;
+- g13756__6783 NAND2_X1_b
+  + PLACED ( 20140 44240 ) N ;
+- g13789__2802 NAND3_X1_t
+  + PLACED ( 33440 44240 ) FN ;
+- g13826__1705 NOR2_X1_b
+  + PLACED ( 46360 52640 ) S ;
+- g13823 INV_X1_t
+  + PLACED ( 2660 38640 ) FN ;
+- g13834__7098 NOR2_X1_t
+  + PLACED ( 7220 49840 ) FS ;
+- g13819__6131 AOI22_X1_b
+  + PLACED ( 36860 35840 ) N ;
+- g13846__5115 NAND2_X1_t
+  + PLACED ( 2280 21840 ) FN ;
+- g13816__6161 AOI22_X1_b
+  + PLACED ( 55860 38640 ) N ;
+- g13801__2346 AOI22_X1_b
+  + PLACED ( 28500 21840 ) FS ;
+- g13814__5477 AOI22_X1_b
+  + PLACED ( 15200 49840 ) FS ;
+- g13807__2398 AOI22_X1_b
+  + PLACED ( 53960 21840 ) N ;
+- g13808__5107 AOI22_X1_b
+  + PLACED ( 17100 38640 ) N ;
+- g13810__4319 AOI22_X1_b
+  + PLACED ( 45220 47040 ) FS ;
+- g13811__8428 AOI22_X1_t
+  + PLACED ( 23560 24640 ) S ;
+- g13813__5526 AOI22_X1_b
+  + PLACED ( 21280 24640 ) FS ;
+- g13825__6783 AND2_X1_t
+  + PLACED ( 6080 13440 ) FS ;
+- g13815__3680 AOI22_X1_b
+  + PLACED ( 57380 41440 ) N ;
+- g13818__2802 AOI22_X1_b
+  + PLACED ( 36860 19040 ) N ;
+- g13820__1705 AOI22_X1_b
+  + PLACED ( 50540 16240 ) N ;
+- g13821__5122 AOI22_X1_b
+  + PLACED ( 42180 21840 ) FS ;
+- g13822__8246 AOI22_X1_b
+  + PLACED ( 18620 24640 ) N ;
+- g13844__1881 NOR2_X1_b
+  + PLACED ( 32680 5040 ) S ;
+- g13847__5115 NOR2_X1_t
+  + PLACED ( 7600 2240 ) N ;
+- g13785__7482 AOI22_X1_t
+  + PLACED ( 55100 38640 ) N ;
+- g13858 INV_X1_b
+  + PLACED ( 7980 49840 ) FS ;
+- g13782__6161 AOI22_X1_t
+  + PLACED ( 56620 49840 ) FS ;
+- g13839__9315 AND4_X1_t
+  + PLACED ( 9500 27440 ) N ;
+- g13781__9945 AOI22_X1_t
+  + PLACED ( 14820 41440 ) FN ;
+- g13804__7410 AOI22_X1_t
+  + PLACED ( 38760 10640 ) FN ;
+- g13791__6417 AOI22_X1_t
+  + PLACED ( 32300 38640 ) FS ;
+- g13792__5477 AOI22_X1_t
+  + PLACED ( 25460 38640 ) N ;
+- g13793__2398 AOI22_X1_t
+  + PLACED ( 45220 10640 ) FN ;
+- g13794__5107 AOI22_X1_t
+  + PLACED ( 14060 49840 ) N ;
+- g13803__4319 AOI22_X1_t
+  + PLACED ( 42940 24640 ) S ;
+- g13788__8428 AOI22_X1_t
+  + PLACED ( 14440 35840 ) FN ;
+- g13805__5526 AOI22_X1_t
+  + PLACED ( 28120 38640 ) N ;
+- g13806__6783 AOI22_X1_t
+  + PLACED ( 26220 16240 ) FN ;
+- g13835__3680 NAND2_X1_t
+  + PLACED ( 44080 44240 ) S ;
+- g13812__1617 AOI22_X1_t
+  + PLACED ( 49020 49840 ) FS ;
+- g13786__2802 AOI22_X1_t
+  + PLACED ( 17480 35840 ) N ;
+- g13885 INV_X1_t
+  + PLACED ( 44840 2240 ) FN ;
+- g13879 INV_X1_b
+  + PLACED ( 29260 2240 ) FS ;
+- g13853 INV_X1_t
+  + PLACED ( 19000 44240 ) FN ;
+- g13824__8246 NAND2_X1_b
+  + PLACED ( 37620 2240 ) FS ;
+- g13857 INV_X1_b
+  + PLACED ( 10640 49840 ) S ;
+- g13860 INV_X1_t
+  + PLACED ( 7220 35840 ) S ;
+- g13841__7098 AOI21_X1_b
+  + PLACED ( 23560 7840 ) FS ;
+- g13877__9945 NAND2_X1_t
+  + PLACED ( 3040 24640 ) N ;
+- g13892__2883 NOR2_X1_t
+  + PLACED ( 41040 10640 ) S ;
+- g13898__7410 OR2_X2_t
+  + PLACED ( 2280 27440 ) FN ;
+- g13904__2398 NOR2_X1_t
+  + PLACED ( 2280 49840 ) N ;
+- g13891__8428 NOR2_X1_b
+  + PLACED ( 27360 5040 ) FS ;
+- g13838__5526 AND4_X1_t
+  + PLACED ( 31160 19040 ) S ;
+- g13895__3680 NAND2_X1_b
+  + PLACED ( 57000 52640 ) N ;
+- g13868__1617 AND2_X1_t
+  + PLACED ( 30020 52640 ) S ;
+- g13871__5115 NAND2_X1_t
+  + PLACED ( 4180 44240 ) FN ;
+- g13901__7482 OR2_X2_t
+  + PLACED ( 45980 47040 ) FN ;
+- g13909 INV_X1_b
+  + PLACED ( 19760 38640 ) N ;
+- g13934 INV_X1_b
+  + PLACED ( 4560 41440 ) N ;
+- g13911 INV_X1_b
+  + PLACED ( 44840 24640 ) N ;
+- g13932 INV_X1_t
+  + PLACED ( 23940 49840 ) N ;
+- g13947 INV_X1_b
+  + PLACED ( 26220 5040 ) N ;
+- g13948 INV_X1_b
+  + PLACED ( 54340 16240 ) S ;
+- g13916 INV_X1_b
+  + PLACED ( 58140 52640 ) S ;
+- g13922 INV_X1_t
+  + PLACED ( 6840 38640 ) FS ;
+- g13931 INV_X1_b
+  + PLACED ( 46360 10640 ) FS ;
+- g13914 INV_X1_t
+  + PLACED ( 38000 10640 ) N ;
+- g13941 INV_X1_t
+  + PLACED ( 6080 27440 ) S ;
+- g13912 INV_X1_b
+  + PLACED ( 56240 44240 ) FN ;
+- fopt2 INV_X1_t
+  + PLACED ( 37240 5040 ) FN ;
+- g14024 INV_X1_t
+  + PLACED ( 47120 49840 ) N ;
+- g14030 INV_X1_b
+  + PLACED ( 34580 49840 ) S ;
+- g14033 INV_X1_b
+  + PLACED ( 29640 49840 ) FS ;
+- fopt14054 INV_X1_b
+  + PLACED ( 55480 44240 ) N ;
+- g13644__14055 OAI221_X1_b
+  + PLACED ( 22420 27440 ) FS ;
+- g13840__14058 AND4_X1_b
+  + PLACED ( 34580 30240 ) S ;
+- g13672__14078 OAI22_X1_b
+  + PLACED ( 41800 35840 ) N ;
+- g13680__14103 OAI22_X1_t
+  + PLACED ( 15580 10640 ) FS ;
+- g13893__14104 OR2_X1_t
+  + PLACED ( 6460 41440 ) S ;
+- g13681__14106 OAI22_X1_t
+  + PLACED ( 6460 19040 ) S ;
+- g13677__14112 OAI22_X1_b
+  + PLACED ( 42560 44240 ) FS ;
+- g13900__14113 OR2_X2_t
+  + PLACED ( 49780 19040 ) FN ;
+- g13666__14114 OAI22_X1_t
+  + PLACED ( 19000 21840 ) FS ;
+- g13873__14115 AND2_X1_t
+  + PLACED ( 35340 5040 ) N ;
+- g13894__14116 NOR2_X1_b
+  + PLACED ( 34580 10640 ) N ;
+- g13670__14117 OAI22_X1_b
+  + PLACED ( 42940 24640 ) FS ;
+- g13678__14125 OAI22_X1_b
+  + PLACED ( 32300 19040 ) FS ;
+- g13906__14126 AND2_X2_t
+  + PLACED ( 42180 10640 ) FN ;
+- g14147 INV_X1_b
+  + PLACED ( 24700 49840 ) FN ;
+- g13843__14150 NAND2_X1_b
+  + PLACED ( 31160 35840 ) FS ;
+- g13833__14154 NAND2_X1_b
+  + PLACED ( 39900 33040 ) FS ;
+- fopt14165 INV_X1_b
+  + PLACED ( 54720 24640 ) N ;
+- g13849__14166 AND2_X1_b
+  + PLACED ( 39140 49840 ) FN ;
+- g13704__14174 OAI21_X1_b
+  + PLACED ( 38760 7840 ) FN ;
+- g13828__14179 NOR2_X1_b
+  + PLACED ( 9880 2240 ) FS ;
+- g13764__14182 AOI21_X1_b
+  + PLACED ( 18620 2240 ) FN ;
+- g13784__14183 OAI21_X1_b
+  + PLACED ( 22420 2240 ) FN ;
+- g13743__14186 OAI21_X1_b
+  + PLACED ( 50160 7840 ) N ;
+- g13687__14223 XNOR2_X1_b
+  + PLACED ( 28880 27440 ) S ;
+- g14224 XOR2_X1_t
+  + PLACED ( 9120 2240 ) N ;
+- g13694__14225 XNOR2_X1_b
+  + PLACED ( 2280 10640 ) S ;
+- g13676__14241 OAI22_X1_t
+  + PLACED ( 3800 35840 ) N ;
+- g13864__14243 NAND2_X1_t
+  + PLACED ( 13300 35840 ) FS ;
+- g443 OAI21_X1_b
+  + PLACED ( 34960 52640 ) N ;
+- g449 NAND2_X1_t
+  + PLACED ( 48640 44240 ) N ;
+- g451 NOR2_X1_b
+  + PLACED ( 55480 49840 ) N ;
+- g446 NAND2_X1_t
+  + PLACED ( 50160 52640 ) N ;
+- g28 NOR2_X1_t
+  + PLACED ( 30780 35840 ) FS ;
+- g30 INV_X1_t
+  + PLACED ( 22800 52640 ) FS ;
+- g381 OAI21_X1_b
+  + PLACED ( 3040 16240 ) S ;
+- g389 INV_X1_b
+  + PLACED ( 2660 13440 ) FS ;
+- g390 AND2_X1_b
+  + PLACED ( 12540 10640 ) FN ;
+- g383 NAND2_X1_t
+  + PLACED ( 2280 5040 ) FS ;
+- g393 OR2_X1_t
+  + PLACED ( 9120 10640 ) N ;
+- g382 OR2_X1_b
+  + PLACED ( 2280 5040 ) FS ;
+- g391 INV_X1_t
+  + PLACED ( 6840 2240 ) FN ;
+- g384 INV_X1_b
+  + PLACED ( 4180 2240 ) S ;
+- g43 OR2_X1_b
+  + PLACED ( 45600 24640 ) S ;
+- g14300 OAI221_X1_b
+  + PLACED ( 19000 7840 ) FS ;
+- g52 AOI22_X1_b
+  + PLACED ( 47880 49840 ) S ;
+- g53 AOI22_X1_t
+  + PLACED ( 56620 33040 ) FN ;
+- g14309 INV_X1_t
+  + PLACED ( 49780 2240 ) FS ;
+- g14311 OAI21_X1_b
+  + PLACED ( 4940 21840 ) FS ;
+- g14313 NOR2_X1_b
+  + PLACED ( 2280 21840 ) N ;
+- g14316 INV_X1_t
+  + PLACED ( 30780 33040 ) FS ;
+- g13897__14318 AND2_X1_t
+  + PLACED ( 12160 30240 ) FN ;
+- g13705__14322 OAI21_X1_b
+  + PLACED ( 21660 44240 ) FN ;
+- g14324 NAND2_X1_b
+  + PLACED ( 41420 52640 ) N ;
+- g13850__14325 AND2_X1_t
+  + PLACED ( 31160 30240 ) S ;
+- g14326 AND2_X1_b
+  + PLACED ( 38380 52640 ) N ;
+- g78 OAI221_X1_b
+  + PLACED ( 25840 13440 ) FS ;
+- g79 INV_X1_b
+  + PLACED ( 33820 10640 ) N ;
+- g80 XNOR2_X1_b
+  + PLACED ( 30020 2240 ) S ;
+- g14354 OAI221_X1_t
+  + PLACED ( 29640 5040 ) N ;
+- g14355 INV_X1_t
+  + PLACED ( 25080 2240 ) N ;
+- g14356 XNOR2_X1_b
+  + PLACED ( 20520 13440 ) FS ;
+- g14357 OAI221_X1_b
+  + PLACED ( 9880 16240 ) FS ;
+- g14358 INV_X1_b
+  + PLACED ( 7980 13440 ) FS ;
+- g14359 XNOR2_X1_b
+  + PLACED ( 6460 10640 ) FS ;
+- g7 NOR2_X1_b
+  + PLACED ( 42560 52640 ) FN ;
+- fopt14360 INV_X1_b
+  + PLACED ( 42560 7840 ) S ;
+- fopt14363 INV_X1_t
+  + PLACED ( 2280 24640 ) N ;
+- fopt14366 INV_X1_t
+  + PLACED ( 58140 16240 ) FN ;
+- g13665__14406 OAI221_X1_b
+  + PLACED ( 26600 38640 ) FS ;
+- g13802__14407 AOI22_X1_t
+  + PLACED ( 25840 33040 ) N ;
+- g13809__14409 AOI22_X1_b
+  + PLACED ( 39140 47040 ) FS ;
+- g13837__14416 AND4_X1_t
+  + PLACED ( 28880 24640 ) S ;
+- g14433 NOR2_X1_t
+  + PLACED ( 56620 52640 ) N ;
+- g14435 AOI21_X1_t
+  + PLACED ( 41420 49840 ) N ;
+- fopt14439 INV_X1_b
+  + PLACED ( 52440 2240 ) N ;
+- g13736__14471 OAI21_X1_b
+  + PLACED ( 26220 49840 ) N ;
+- g13716__14472 XNOR2_X1_b
+  + PLACED ( 23180 33040 ) FN ;
+- g13719__14475 AOI21_X1_b
+  + PLACED ( 35720 2240 ) FN ;
+- g13707__14476 AOI21_X1_t
+  + PLACED ( 7980 5040 ) FS ;
+- g14477 OAI221_X4_t
+  + PLACED ( 38000 5040 ) S ;
+- g13702__14478 AOI21_X1_t
+  + PLACED ( 23180 5040 ) N ;
+- g13714__14479 AOI21_X1_b
+  + PLACED ( 23940 2240 ) N ;
+- g13715__14480 AOI21_X1_t
+  + PLACED ( 10260 5040 ) N ;
+- g63 NAND2_X1_b
+  + PLACED ( 34960 19040 ) N ;
+- g223 AOI21_X1_b
+  + PLACED ( 20900 49840 ) N ;
+- g14512 OAI21_X1_t
+  + PLACED ( 14440 44240 ) N ;
+- g14513 NOR3_X1_b
+  + PLACED ( 3420 44240 ) FN ;
+- g225 NAND2_X1_b
+  + PLACED ( 20140 52640 ) S ;
+- g227 OR2_X1_b
+  + PLACED ( 23940 52640 ) N ;
+- g13827__14526 AND2_X1_b
+  + PLACED ( 33060 16240 ) FN ;
+- g13648__14529 OAI221_X1_b
+  + PLACED ( 47880 2240 ) S ;
+- g14628 AND2_X1_t
+  + PLACED ( 2280 13440 ) FN ;
+- g3 NAND2_X1_b
+  + PLACED ( 8360 38640 ) FS ;
+- g13870__14629 AND2_X2_b
+  + PLACED ( 3420 38640 ) S ;
+- g13738__14824 OAI21_X1_b
+  + PLACED ( 6840 5040 ) FS ;
+- g23 AOI21_X1_t
+  + PLACED ( 39520 44240 ) FS ;
+- g24 INV_X1_b
+  + PLACED ( 51300 52640 ) S ;
+- g14935 XNOR2_X1_b
+  + PLACED ( 31160 44240 ) FS ;
+- g14936 AND2_X1_t
+  + PLACED ( 45980 52640 ) S ;
+- g14940 AND2_X1_b
+  + PLACED ( 15200 2240 ) N ;
+- g13798__14947 AND2_X1_b
+  + PLACED ( 49020 10640 ) N ;
+- g108 XNOR2_X1_t
+  + PLACED ( 33440 21840 ) FS ;
+- g109 AOI21_X1_b
+  + PLACED ( 50160 19040 ) FN ;
+- g111 NAND2_X1_b
+  + PLACED ( 49020 24640 ) N ;
+- g110 INV_X1_b
+  + PLACED ( 33440 30240 ) S ;
+- g14969 OAI211_X1_b
+  + PLACED ( 47120 19040 ) FS ;
+- g13905__14970 NOR2_X1_b
+  + PLACED ( 41040 30240 ) N ;
+- g14980 OAI21_X1_t
+  + PLACED ( 14820 5040 ) N ;
+- g15018 OAI211_X1_b
+  + PLACED ( 43320 5040 ) N ;
+- g15019 AOI21_X2_b
+  + PLACED ( 54340 10640 ) FS ;
+- g15020 OAI21_X1_t
+  + PLACED ( 58520 10640 ) FS ;
+- g13842__15021 NOR2_X1_b
+  + PLACED ( 56240 16240 ) N ;
+- g13724__15023 OAI211_X1_b
+  + PLACED ( 39520 5040 ) S ;
+- g15038 OAI21_X2_b
+  + PLACED ( 41800 13440 ) FN ;
+- g15039 NAND2_X1_b
+  + PLACED ( 44460 13440 ) FS ;
+- g48 AND2_X1_b
+  + PLACED ( 44840 2240 ) FS ;
+- g15042 INV_X1_b
+  + PLACED ( 48640 21840 ) FN ;
+- g15043 INV_X1_t
+  + PLACED ( 44460 10640 ) FN ;
+- g13752__15044 NAND2_X1_t
+  + PLACED ( 2280 19040 ) FS ;
+- g15045 AND4_X1_t
+  + PLACED ( 42940 5040 ) S ;
+- g15048 INV_X1_t
+  + PLACED ( 2660 2240 ) S ;
+- g15049 AND2_X1_b
+  + PLACED ( 45980 7840 ) N ;
+- g15051 AND2_X1_t
+  + PLACED ( 51300 2240 ) S ;
+- g15057 OAI22_X1_b
+  + PLACED ( 40280 44240 ) S ;
+- g13902__15058 NAND2_X1_b
+  + PLACED ( 44080 38640 ) FS ;
+- g96 OAI21_X1_b
+  + PLACED ( 43320 19040 ) N ;
+- g98 OR2_X1_t
+  + PLACED ( 38000 2240 ) FN ;
+- g99 AND2_X1_t
+  + PLACED ( 48260 7840 ) S ;
+- g97 NAND2_X1_t
+  + PLACED ( 38000 44240 ) FS ;
+- g15225 OR2_X1_b
+  + PLACED ( 40280 7840 ) FN ;
+- g15226 INV_X1_t
+  + PLACED ( 27740 10640 ) FN ;
+END COMPONENTS
+
+PINS 54 ;
+- clk_b + NET clk_b + PLACED ( 4430 -140 ) N ;
+- req_msg[31]_b + NET req_msg[31]_b + PLACED ( 17870 57540 ) N ;
+- req_msg[30]_b + NET req_msg[30]_b + PLACED ( 21790 57540 ) N ;
+- req_msg[29]_b + NET req_msg[29]_b + PLACED ( 25710 57540 ) N ;
+- req_msg[28]_b + NET req_msg[28]_b + PLACED ( 29630 57540 ) N ;
+- req_msg[27]_b + NET req_msg[27]_b + PLACED ( 34110 57540 ) N ;
+- req_msg[26]_b + NET req_msg[26]_b + PLACED ( 38030 57540 ) N ;
+- req_msg[25]_b + NET req_msg[25]_b + PLACED ( 41950 57540 ) N ;
+- req_msg[24]_b + NET req_msg[24]_b + PLACED ( 45870 57540 ) N ;
+- req_msg[23]_b + NET req_msg[23]_b + PLACED ( 50350 57540 ) N ;
+- req_msg[22]_b + NET req_msg[22]_b + PLACED ( 54270 57540 ) N ;
+- req_msg[21]_b + NET req_msg[21]_b + PLACED ( 58190 57540 ) N ;
+- req_msg[20]_b + NET req_msg[20]_b + PLACED ( 62800 52080 ) N ;
+- req_msg[19]_b + NET req_msg[19]_b + PLACED ( 62800 48160 ) N ;
+- req_msg[18]_b + NET req_msg[18]_b + PLACED ( 62800 44240 ) N ;
+- req_msg[17]_b + NET req_msg[17]_b + PLACED ( 62800 40320 ) N ;
+- req_msg[16]_b + NET req_msg[16]_b + PLACED ( 62800 36400 ) N ;
+- req_msg[15]_b + NET req_msg[15]_b + PLACED ( 62800 31920 ) N ;
+- req_msg[14]_b + NET req_msg[14]_b + PLACED ( 62800 28000 ) N ;
+- req_msg[13]_b + NET req_msg[13]_b + PLACED ( 62800 24080 ) N ;
+- req_msg[12]_b + NET req_msg[12]_b + PLACED ( 62800 20160 ) N ;
+- req_msg[11]_b + NET req_msg[11]_b + PLACED ( 62800 15680 ) N ;
+- req_msg[10]_b + NET req_msg[10]_b + PLACED ( 62800 11760 ) N ;
+- req_msg[9]_b + NET req_msg[9]_b + PLACED ( 62800 7840 ) N ;
+- req_msg[8]_b + NET req_msg[8]_b + PLACED ( 62800 3920 ) N ;
+- req_msg[7]_b + NET req_msg[7]_b + PLACED ( 57070 -140 ) N ;
+- req_msg[6]_b + NET req_msg[6]_b + PLACED ( 53150 -140 ) N ;
+- req_msg[5]_b + NET req_msg[5]_b + PLACED ( 48670 -140 ) N ;
+- req_msg[4]_b + NET req_msg[4]_b + PLACED ( 44750 -140 ) N ;
+- req_msg[3]_b + NET req_msg[3]_b + PLACED ( 40830 -140 ) N ;
+- req_msg[2]_b + NET req_msg[2]_b + PLACED ( 36910 -140 ) N ;
+- req_msg[1]_b + NET req_msg[1]_b + PLACED ( 32430 -140 ) N ;
+- req_msg[0]_b + NET req_msg[0]_b + PLACED ( 28510 -140 ) N ;
+- req_rdy_b + NET req_rdy_b + PLACED ( 8350 -140 ) N ;
+- req_val_b + NET req_val_b + PLACED ( 12270 -140 ) N ;
+- reset_b + NET reset_b + PLACED ( 16750 -140 ) N ;
+- resp_msg[15]_b + NET resp_msg[15]_b + PLACED ( -280 5040 ) N ;
+- resp_msg[14]_b + NET resp_msg[14]_b + PLACED ( -280 8960 ) N ;
+- resp_msg[13]_b + NET resp_msg[13]_b + PLACED ( -280 12880 ) N ;
+- resp_msg[12]_b + NET resp_msg[12]_b + PLACED ( -280 17360 ) N ;
+- resp_msg[11]_b + NET resp_msg[11]_b + PLACED ( -280 21280 ) N ;
+- resp_msg[10]_b + NET resp_msg[10]_b + PLACED ( -280 25200 ) N ;
+- resp_msg[9]_b + NET resp_msg[9]_b + PLACED ( -280 29120 ) N ;
+- resp_msg[8]_b + NET resp_msg[8]_b + PLACED ( -280 33600 ) N ;
+- resp_msg[7]_b + NET resp_msg[7]_b + PLACED ( -280 37520 ) N ;
+- resp_msg[6]_b + NET resp_msg[6]_b + PLACED ( -280 41440 ) N ;
+- resp_msg[5]_b + NET resp_msg[5]_b + PLACED ( -280 45360 ) N ;
+- resp_msg[4]_b + NET resp_msg[4]_b + PLACED ( -280 49280 ) N ;
+- resp_msg[3]_b + NET resp_msg[3]_b + PLACED ( -280 53760 ) N ;
+- resp_msg[2]_b + NET resp_msg[2]_b + PLACED ( 5550 57540 ) N ;
+- resp_msg[1]_b + NET resp_msg[1]_b + PLACED ( 9470 57540 ) N ;
+- resp_msg[0]_b + NET resp_msg[0]_b + PLACED ( 13950 57540 ) N ;
+- resp_rdy_b + NET resp_rdy_b + PLACED ( 20670 -140 ) N ;
+- resp_val_b + NET resp_val_b + PLACED ( 24590 -140 ) N ;
+END PINS
+
+NETS 371 ;
+- clk ( PIN clk_b ) ( dpath_a_reg_out_reg\[10\] CK ) ( dpath_a_reg_out_reg\[11\] CK ) ( dpath_a_reg_out_reg\[14\] CK ) ( dpath_a_reg_out_reg\[13\] CK ) ( dpath_a_reg_out_reg\[12\] CK ) ( dpath_a_reg_out_reg\[15\] CK ) ( dpath_a_reg_out_reg\[9\] CK ) ( dpath_a_reg_out_reg\[8\] CK ) ( dpath_a_reg_out_reg\[7\] CK ) ( dpath_a_reg_out_reg\[4\] CK ) ( dpath_a_reg_out_reg\[5\] CK ) ( dpath_a_reg_out_reg\[3\] CK ) ( dpath_a_reg_out_reg\[6\] CK ) ( dpath_a_reg_out_reg\[2\] CK ) ( dpath_a_reg_out_reg\[0\] CK ) ( dpath_a_reg_out_reg\[1\] CK ) ( dpath_b_reg_out_reg\[1\] CK ) ( dpath_b_reg_out_reg\[0\] CK ) ( dpath_b_reg_out_reg\[11\] CK ) ( dpath_b_reg_out_reg\[4\] CK ) ( dpath_b_reg_out_reg\[15\] CK ) ( dpath_b_reg_out_reg\[5\] CK ) ( dpath_b_reg_out_reg\[2\] CK ) ( dpath_b_reg_out_reg\[3\] CK ) ( dpath_b_reg_out_reg\[6\] CK ) ( dpath_b_reg_out_reg\[12\] CK ) ( dpath_b_reg_out_reg\[14\] CK ) ( dpath_b_reg_out_reg\[13\] CK ) ( dpath_b_reg_out_reg\[9\] CK ) ( dpath_b_reg_out_reg\[7\] CK ) ( dpath_b_reg_out_reg\[8\] CK ) ( dpath_b_reg_out_reg\[10\] CK ) ( ctrl_state_out_reg\[0\] CK ) ( ctrl_state_out_reg\[1\] CK ) ;
+- req_msg[31] ( PIN req_msg[31]_b ) ( g13806__6783 A2 ) ;
+- req_msg[30] ( PIN req_msg[30]_b ) ( g13805__5526 A2 ) ;
+- req_msg[29] ( PIN req_msg[29]_b ) ( g13788__8428 A2 ) ;
+- req_msg[28] ( PIN req_msg[28]_b ) ( g13781__9945 A2 ) ;
+- req_msg[27] ( PIN req_msg[27]_b ) ( g13804__7410 A2 ) ;
+- req_msg[26] ( PIN req_msg[26]_b ) ( g13803__4319 A2 ) ;
+- req_msg[25] ( PIN req_msg[25]_b ) ( g13793__2398 A2 ) ;
+- req_msg[24] ( PIN req_msg[24]_b ) ( g13802__14407 A2 ) ;
+- req_msg[23] ( PIN req_msg[23]_b ) ( g13812__1617 A2 ) ;
+- req_msg[22] ( PIN req_msg[22]_b ) ( g53 B2 ) ;
+- req_msg[21] ( PIN req_msg[21]_b ) ( g13782__6161 A2 ) ;
+- req_msg[20] ( PIN req_msg[20]_b ) ( g13785__7482 A2 ) ;
+- req_msg[19] ( PIN req_msg[19]_b ) ( g13786__2802 A2 ) ;
+- req_msg[18] ( PIN req_msg[18]_b ) ( g13794__5107 A2 ) ;
+- req_msg[17] ( PIN req_msg[17]_b ) ( g13792__5477 A2 ) ;
+- req_msg[16] ( PIN req_msg[16]_b ) ( g13791__6417 A2 ) ;
+- req_msg[15] ( PIN req_msg[15]_b ) ( g13807__2398 A2 ) ;
+- req_msg[14] ( PIN req_msg[14]_b ) ( g13808__5107 A2 ) ;
+- req_msg[13] ( PIN req_msg[13]_b ) ( g13822__8246 A2 ) ;
+- req_msg[12] ( PIN req_msg[12]_b ) ( g13818__2802 A2 ) ;
+- req_msg[11] ( PIN req_msg[11]_b ) ( g13821__5122 A2 ) ;
+- req_msg[10] ( PIN req_msg[10]_b ) ( g13810__4319 A2 ) ;
+- req_msg[9] ( PIN req_msg[9]_b ) ( g13820__1705 A2 ) ;
+- req_msg[8] ( PIN req_msg[8]_b ) ( g13809__14409 A2 ) ;
+- req_msg[7] ( PIN req_msg[7]_b ) ( g13819__6131 A2 ) ;
+- req_msg[6] ( PIN req_msg[6]_b ) ( g52 B2 ) ;
+- req_msg[5] ( PIN req_msg[5]_b ) ( g13816__6161 A2 ) ;
+- req_msg[4] ( PIN req_msg[4]_b ) ( g13815__3680 A2 ) ;
+- req_msg[3] ( PIN req_msg[3]_b ) ( g13814__5477 A2 ) ;
+- req_msg[2] ( PIN req_msg[2]_b ) ( g13813__5526 A2 ) ;
+- req_msg[1] ( PIN req_msg[1]_b ) ( g13801__2346 A2 ) ;
+- req_msg[0] ( PIN req_msg[0]_b ) ( g13811__8428 A2 ) ;
+- req_rdy ( FE_DBTC9_n_1865 ZN ) ( PIN req_rdy_b ) ( g13819__6131 A1 ) ( g13816__6161 A1 ) ( g13801__2346 A1 ) ( g13814__5477 A1 ) ( g13807__2398 A1 ) ( g13808__5107 A1 ) ( g13810__4319 A1 ) ( g13811__8428 A1 ) ( g13813__5526 A1 ) ( g13815__3680 A1 ) ( g13818__2802 A1 ) ( g13820__1705 A1 ) ( g13821__5122 A1 ) ( g13822__8246 A1 ) ( g13785__7482 A1 ) ( g13782__6161 A1 ) ( g13781__9945 A1 ) ( g13804__7410 A1 ) ( g13791__6417 A1 ) ( g13792__5477 A1 ) ( g13793__2398 A1 ) ( g13794__5107 A1 ) ( g13803__4319 A1 ) ( g13788__8428 A1 ) ( g13805__5526 A1 ) ( g13806__6783 A1 ) ( g13812__1617 A1 ) ( g13786__2802 A1 ) ( g13824__8246 A1 ) ( g52 B1 ) ( g53 B1 ) ( g13802__14407 A1 ) ( g13809__14409 A1 ) ;
+- req_val ( PIN req_val_b ) ( g13824__8246 A2 ) ;
+- reset ( PIN reset_b ) ( g13725__8428 A ) ( g13737__6783 A2 ) ;
+- resp_msg[15] ( g80 ZN ) ( g79 A ) ( PIN resp_msg[15]_b ) ;
+- resp_msg[14] ( g13694__14225 ZN ) ( PIN resp_msg[14]_b ) ;
+- resp_msg[13] ( g13697__2802 ZN ) ( g13693 A ) ( PIN resp_msg[13]_b ) ;
+- resp_msg[12] ( g14359 ZN ) ( g14358 A ) ( PIN resp_msg[12]_b ) ;
+- resp_msg[11] ( g14356 ZN ) ( g14355 A ) ( PIN resp_msg[11]_b ) ;
+- resp_msg[10] ( g13687__14223 ZN ) ( PIN resp_msg[10]_b ) ;
+- resp_msg[9] ( g13696__1705 ZN ) ( g13692 A ) ( PIN resp_msg[9]_b ) ;
+- resp_msg[8] ( g13716__14472 ZN ) ( g13708 A ) ( PIN resp_msg[8]_b ) ;
+- resp_msg[7] ( g13695__5122 ZN ) ( g13691 A ) ( PIN resp_msg[7]_b ) ;
+- resp_msg[6] ( g13717__7410 ZN ) ( g13709 A ) ( PIN resp_msg[6]_b ) ;
+- resp_msg[5] ( g14935 ZN ) ( g13710 A ) ( PIN resp_msg[5]_b ) ;
+- resp_msg[4] ( g13734__3680 ZN ) ( g13727 A ) ( PIN resp_msg[4]_b ) ;
+- resp_msg[3] ( g13722__2802 ZN ) ( g13721 A ) ( PIN resp_msg[3]_b ) ;
+- resp_msg[2] ( g13742__4733 ZN ) ( g13740 A ) ( PIN resp_msg[2]_b ) ;
+- resp_msg[1] ( g13767__9315 ZN ) ( g13757 A ) ( PIN resp_msg[1]_b ) ;
+- resp_msg[0] ( g13845__5526 ZN ) ( g13774 A ) ( PIN resp_msg[0]_b ) ;
+- resp_rdy ( PIN resp_rdy_b ) ( g13841__7098 B1 ) ;
+- resp_val ( g13891__8428 ZN ) ( PIN resp_val_b ) ;
+- FE_DBTN8_dpath_a_reg_out_7 ( FE_DBTC8_dpath_a_reg_out_7 ZN ) ( g13819__6131 B2 ) ( g13812__1617 B2 ) ( g13901__7482 A1 ) ( g449 A1 ) ;
+- FE_DBTN7_dpath_a_reg_out_2 ( FE_DBTC7_dpath_a_reg_out_2 ZN ) ( g13813__5526 B2 ) ( g13794__5107 B2 ) ( g13904__2398 A1 ) ( g13871__5115 A1 ) ;
+- FE_DBTN6_dpath_a_reg_out_0 ( FE_DBTC6_dpath_a_reg_out_0 ZN ) ( g13811__8428 B2 ) ( g13791__6417 B2 ) ( g28 A1 ) ;
+- FE_DBTN5_dpath_b_reg_out_12 ( FE_DBTC5_dpath_b_reg_out_12 ZN ) ( g13877__9945 A2 ) ( g13898__7410 A2 ) ;
+- FE_DBTN4_dpath_b_reg_out_4 ( FE_DBTC4_dpath_b_reg_out_4 ZN ) ( g13895__3680 A2 ) ( g14433 A1 ) ;
+- FE_DBTN3_n_2127 ( FE_DBTC3_n_2127 ZN ) ( g13744__4319 A1 ) ( g13715__14480 A ) ;
+- FE_DBTN2_n_1173 ( FE_DBTC2_n_1173 ZN ) ( g13664__3680 C1 ) ( g13663__2802 C1 ) ( g13662__1705 C1 ) ( g13661__5122 C1 ) ( g13660__8246 C1 ) ( g13649__7098 C1 ) ( g13658__6131 C1 ) ( g13659__1881 C1 ) ( g13644__14055 C1 ) ( g43 A1 ) ( g14300 C1 ) ( g78 C1 ) ( g14354 C1 ) ( g14357 C1 ) ( g13665__14406 C1 ) ( g13648__14529 C1 ) ;
+- FE_DBTN1_n_2149 ( FE_DBTC1_n_2149 ZN ) ( g13671__5115 A1 ) ( g13667__7482 A1 ) ( g13668__4733 A1 ) ( g13669__6161 A1 ) ( g13673__2346 A1 ) ( g13674__1666 A1 ) ( g13679__2398 A1 ) ( g13672__14078 A1 ) ( g13680__14103 A1 ) ( g13681__14106 A1 ) ( g13677__14112 A1 ) ( g13666__14114 A1 ) ( g13670__14117 A1 ) ( g13678__14125 A1 ) ( g13676__14241 A1 ) ( g15057 B1 ) ;
+- FE_DBTN0_n_2200 ( FE_DBTC0_n_2200 ZN ) ( g63 A2 ) ( g15045 A3 ) ( g15051 A1 ) ;
+- dpath_a_reg$out[15] ( dpath_a_reg_out_reg\[15\] QN ) ( g13914 A ) ( g13873__14115 A2 ) ( g13894__14116 A1 ) ;
+- dpath_a_reg$out[14] ( dpath_a_reg_out_reg\[14\] QN ) ( g13909 A ) ( g390 A2 ) ( g393 A2 ) ;
+- dpath_a_reg$out[13] ( dpath_a_reg_out_reg\[13\] QN ) ( g13934 A ) ( g13893__14104 A2 ) ( g3 A2 ) ( g13870__14629 A2 ) ;
+- dpath_a_reg$out[12] ( dpath_a_reg_out_reg\[12\] QN ) ( g13877__9945 A1 ) ( g13898__7410 A1 ) ( g13941 A ) ;
+- dpath_a_reg$out[11] ( dpath_a_reg_out_reg\[11\] QN ) ( g13931 A ) ( g13906__14126 A2 ) ( g15225 A2 ) ;
+- dpath_a_reg$out[10] ( dpath_a_reg_out_reg\[10\] QN ) ( g13911 A ) ( g13900__14113 A2 ) ;
+- dpath_a_reg$out[9] ( dpath_a_reg_out_reg\[9\] QN ) ( g14309 A ) ( g98 A2 ) ( g99 A2 ) ;
+- dpath_a_reg$out[8] ( dpath_a_reg_out_reg\[8\] QN ) ( g13902__15058 A2 ) ;
+- dpath_a_reg$out[7] ( dpath_a_reg_out_reg\[7\] QN ) ( FE_DBTC8_dpath_a_reg_out_7 A ) ;
+- dpath_a_reg$out[6] ( dpath_a_reg_out_reg\[6\] QN ) ( fopt14366 A ) ;
+- dpath_a_reg$out[5] ( dpath_a_reg_out_reg\[5\] QN ) ( g13912 A ) ( g451 A2 ) ( g446 A2 ) ;
+- dpath_a_reg$out[4] ( dpath_a_reg_out_reg\[4\] QN ) ( g13895__3680 A1 ) ( g13916 A ) ( g14433 A2 ) ;
+- dpath_a_reg$out[3] ( dpath_a_reg_out_reg\[3\] QN ) ( g14147 A ) ( g13897__14318 A2 ) ;
+- dpath_a_reg$out[2] ( dpath_a_reg_out_reg\[2\] QN ) ( FE_DBTC7_dpath_a_reg_out_2 A ) ;
+- dpath_a_reg$out[1] ( dpath_a_reg_out_reg\[1\] QN ) ( g13868__1617 A1 ) ( g13932 A ) ( g227 A2 ) ;
+- dpath_a_reg$out[0] ( dpath_a_reg_out_reg\[0\] QN ) ( FE_DBTC6_dpath_a_reg_out_0 A ) ( g13845__5526 B1 ) ;
+- dpath_b_reg$out[15] ( dpath_b_reg_out_reg\[15\] QN ) ( g13666__14114 B2 ) ( g78 C2 ) ( g13837__14416 A2 ) ;
+- dpath_b_reg$out[14] ( dpath_b_reg_out_reg\[14\] QN ) ( g13838__5526 A2 ) ( g13681__14106 B2 ) ( g14300 C2 ) ;
+- dpath_b_reg$out[13] ( dpath_b_reg_out_reg\[13\] QN ) ( g13644__14055 C2 ) ( g13840__14058 A2 ) ( g13680__14103 B2 ) ;
+- dpath_b_reg$out[12] ( dpath_b_reg_out_reg\[12\] QN ) ( FE_DBTC5_dpath_b_reg_out_12 A ) ( g13679__2398 B2 ) ( g14357 C2 ) ( g13837__14416 A3 ) ;
+- dpath_b_reg$out[11] ( dpath_b_reg_out_reg\[11\] QN ) ( g13838__5526 A3 ) ( g13678__14125 B2 ) ( g14354 C2 ) ( g15226 A ) ;
+- dpath_b_reg$out[10] ( dpath_b_reg_out_reg\[10\] QN ) ( g13838__5526 A1 ) ( g13677__14112 B2 ) ( g43 A2 ) ( g13905__14970 A2 ) ;
+- dpath_b_reg$out[9] ( dpath_b_reg_out_reg\[9\] QN ) ( g13838__5526 A4 ) ( fopt2 A ) ( g13670__14117 B2 ) ( g13648__14529 C2 ) ;
+- dpath_b_reg$out[8] ( dpath_b_reg_out_reg\[8\] QN ) ( g13665__14406 C2 ) ( g13837__14416 A4 ) ( g15057 A2 ) ( g97 A2 ) ;
+- dpath_b_reg$out[7] ( dpath_b_reg_out_reg\[7\] QN ) ( g13649__7098 C2 ) ( g13674__1666 B2 ) ( g13901__7482 A2 ) ( g449 A2 ) ( g13837__14416 A1 ) ;
+- dpath_b_reg$out[6] ( dpath_b_reg_out_reg\[6\] QN ) ( g13658__6131 C2 ) ( g13673__2346 B2 ) ( g13840__14058 A1 ) ( g14324 A2 ) ( g7 A1 ) ;
+- dpath_b_reg$out[5] ( dpath_b_reg_out_reg\[5\] QN ) ( fopt14165 A ) ;
+- dpath_b_reg$out[4] ( dpath_b_reg_out_reg\[4\] QN ) ( FE_DBTC4_dpath_b_reg_out_4 A ) ( g13662__1705 C2 ) ( g13671__5115 B2 ) ( g13840__14058 A4 ) ;
+- dpath_b_reg$out[3] ( dpath_b_reg_out_reg\[3\] QN ) ( g13661__5122 C2 ) ( g13839__9315 A2 ) ( g13676__14241 B2 ) ( g13864__14243 A2 ) ;
+- dpath_b_reg$out[2] ( dpath_b_reg_out_reg\[2\] QN ) ( g13660__8246 C2 ) ( g13669__6161 B2 ) ( g13839__9315 A4 ) ( g13904__2398 A2 ) ( g13871__5115 A2 ) ;
+- dpath_b_reg$out[1] ( dpath_b_reg_out_reg\[1\] QN ) ( g13659__1881 C2 ) ( g13668__4733 B2 ) ( g13829__8428 B2 ) ( g13839__9315 A1 ) ( g30 A ) ;
+- dpath_b_reg$out[0] ( dpath_b_reg_out_reg\[0\] QN ) ( g13664__3680 C2 ) ( g13667__7482 B2 ) ( g13839__9315 A3 ) ( g13922 A ) ( g28 A2 ) ;
+- ctrl_state$out[1] ( ctrl_state_out_reg\[1\] QN ) ( g13841__7098 A ) ( g13891__8428 A1 ) ( g13948 A ) ( g15018 B ) ( g15039 A1 ) ;
+- ctrl_state$out[0] ( ctrl_state_out_reg\[0\] QN ) ( g13841__7098 B2 ) ( g13892__2883 A2 ) ( g13947 A ) ( g15039 A2 ) ;
+- UNCONNECTED ( dpath_a_reg_out_reg\[11\] Q ) ;
+- UNCONNECTED0 ( dpath_a_reg_out_reg\[14\] Q ) ;
+- UNCONNECTED1 ( dpath_a_reg_out_reg\[13\] Q ) ;
+- UNCONNECTED2 ( dpath_a_reg_out_reg\[12\] Q ) ;
+- UNCONNECTED3 ( dpath_a_reg_out_reg\[15\] Q ) ;
+- UNCONNECTED4 ( dpath_a_reg_out_reg\[9\] Q ) ;
+- UNCONNECTED5 ( dpath_a_reg_out_reg\[7\] Q ) ;
+- UNCONNECTED6 ( dpath_a_reg_out_reg\[4\] Q ) ;
+- UNCONNECTED7 ( dpath_a_reg_out_reg\[5\] Q ) ;
+- UNCONNECTED8 ( dpath_a_reg_out_reg\[3\] Q ) ;
+- UNCONNECTED9 ( dpath_a_reg_out_reg\[6\] Q ) ;
+- UNCONNECTED10 ( dpath_a_reg_out_reg\[2\] Q ) ;
+- UNCONNECTED11 ( dpath_a_reg_out_reg\[0\] Q ) ;
+- UNCONNECTED12 ( dpath_a_reg_out_reg\[1\] Q ) ;
+- UNCONNECTED13 ( dpath_b_reg_out_reg\[1\] Q ) ;
+- UNCONNECTED14 ( dpath_b_reg_out_reg\[0\] Q ) ;
+- UNCONNECTED15 ( dpath_b_reg_out_reg\[4\] Q ) ;
+- UNCONNECTED16 ( dpath_b_reg_out_reg\[2\] Q ) ;
+- UNCONNECTED17 ( dpath_b_reg_out_reg\[6\] Q ) ;
+- UNCONNECTED18 ( dpath_b_reg_out_reg\[12\] Q ) ;
+- UNCONNECTED19 ( dpath_b_reg_out_reg\[7\] Q ) ;
+- UNCONNECTED20 ( ctrl_state_out_reg\[0\] Q ) ;
+- UNCONNECTED21 ( ctrl_state_out_reg\[1\] Q ) ;
+- n_2 ( g30 ZN ) ( g13868__1617 A2 ) ( g227 A1 ) ;
+- n_11 ( g13922 ZN ) ( g13845__5526 B2 ) ;
+- n_18 ( g13838__5526 ZN ) ( g13772__5107 A1 ) ;
+- n_24 ( g13841__7098 ZN ) ( g13749__8246 A ) ;
+- n_27 ( g13895__3680 ZN ) ( g13849__14166 A2 ) ( g23 B2 ) ( g24 A ) ;
+- n_29 ( g13857 ZN ) ( g13834__7098 A1 ) ;
+- n_30 ( g13824__8246 ZN ) ( g13725__8428 B2 ) ;
+- n_33 ( g13877__9945 ZN ) ( g13825__6783 A2 ) ( g13744__4319 A2 ) ( g14628 A2 ) ( g13752__15044 A2 ) ;
+- n_36 ( g13868__1617 ZN ) ( g13853 A ) ( g13829__8428 A ) ( g14513 A1 ) ;
+- n_38 ( g13892__2883 ZN ) ( g14477 A ) ( g13724__15023 B ) ;
+- n_41 ( g13879 ZN ) ( g13784__14183 A ) ;
+- n_43 ( g13885 ZN ) ( g13704__14174 B2 ) ;
+- n_46 ( g13786__2802 ZN ) ( g13661__5122 A ) ;
+- n_50 ( g13812__1617 ZN ) ( g13649__7098 A ) ;
+- n_52 ( g13835__3680 ZN ) ( g13695__5122 B ) ;
+- n_53 ( g13914 ZN ) ( g13806__6783 B2 ) ( g13807__2398 B2 ) ;
+- n_54 ( g13806__6783 ZN ) ( g78 A ) ;
+- n_55 ( g13909 ZN ) ( g13805__5526 B2 ) ( g13808__5107 B2 ) ;
+- n_56 ( g13805__5526 ZN ) ( g14300 A ) ;
+- n_57 ( g13934 ZN ) ( g13788__8428 B2 ) ( g13822__8246 B2 ) ;
+- n_58 ( g13788__8428 ZN ) ( g13644__14055 A ) ;
+- n_59 ( g13911 ZN ) ( g13803__4319 B2 ) ( g13810__4319 B2 ) ;
+- n_60 ( g13803__4319 ZN ) ( g14969 B ) ;
+- n_64 ( g13794__5107 ZN ) ( g13660__8246 A ) ;
+- n_66 ( g13793__2398 ZN ) ( g13648__14529 A ) ;
+- n_67 ( g13792__5477 ZN ) ( g13659__1881 A ) ;
+- n_69 ( g13791__6417 ZN ) ( g13664__3680 A ) ;
+- n_70 ( g13931 ZN ) ( g13804__7410 B2 ) ( g13821__5122 B2 ) ;
+- n_71 ( g13804__7410 ZN ) ( g14354 A ) ;
+- n_75 ( g13941 ZN ) ( g13781__9945 B2 ) ( g13818__2802 B2 ) ;
+- n_76 ( g13781__9945 ZN ) ( g14357 A ) ;
+- n_78 ( g13839__9315 ZN ) ( g13772__5107 A4 ) ;
+- n_79 ( g13912 ZN ) ( g13782__6161 B2 ) ( g13816__6161 B2 ) ;
+- n_80 ( g13782__6161 ZN ) ( g13663__2802 A ) ;
+- n_83 ( g13858 ZN ) ( g13845__5526 A ) ;
+- n_84 ( g13853 ZN ) ( g13756__6783 A2 ) ;
+- n_86 ( g13916 ZN ) ( g13785__7482 B2 ) ( g13815__3680 B2 ) ;
+- n_87 ( g13948 ZN ) ( g13785__7482 B1 ) ( g13782__6161 B1 ) ( g13781__9945 B1 ) ( g13804__7410 B1 ) ( g13791__6417 B1 ) ( g13792__5477 B1 ) ( g13793__2398 B1 ) ( g13794__5107 B1 ) ( g13803__4319 B1 ) ( g13788__8428 B1 ) ( g13805__5526 B1 ) ( g13806__6783 B1 ) ( g13812__1617 B1 ) ( g13786__2802 B1 ) ( g13892__2883 A1 ) ( g13748__6131 B2 ) ( g53 A1 ) ( g13802__14407 B1 ) ;
+- n_88 ( g13785__7482 ZN ) ( g13662__1705 A ) ;
+- n_89 ( g13847__5115 ZN ) ( g14224 B ) ( g13694__14225 B ) ;
+- n_91 ( g13844__1881 ZN ) ( g80 B ) ;
+- n_99 ( g13822__8246 ZN ) ( g13680__14103 A2 ) ;
+- n_100 ( g13821__5122 ZN ) ( g13678__14125 A2 ) ;
+- n_101 ( g13820__1705 ZN ) ( g13670__14117 A2 ) ;
+- n_102 ( g13818__2802 ZN ) ( g13679__2398 A2 ) ;
+- n_104 ( g13815__3680 ZN ) ( g13671__5115 A2 ) ;
+- n_105 ( g13825__6783 ZN ) ( g14359 B ) ;
+- n_106 ( g13813__5526 ZN ) ( g13669__6161 A2 ) ;
+- n_107 ( g13811__8428 ZN ) ( g13667__7482 A2 ) ;
+- n_108 ( g13810__4319 ZN ) ( g13677__14112 A2 ) ;
+- n_110 ( g13808__5107 ZN ) ( g13681__14106 A2 ) ;
+- n_111 ( g13807__2398 ZN ) ( g13666__14114 A2 ) ;
+- n_112 ( g13814__5477 ZN ) ( g13676__14241 A2 ) ;
+- n_114 ( g13898__7410 ZN ) ( g13825__6783 A1 ) ( g13706__4733 B ) ( g14311 B1 ) ( g14313 A1 ) ;
+- n_118 ( g13932 ZN ) ( g13801__2346 B2 ) ( g13792__5477 B2 ) ( g13829__8428 B1 ) ;
+- n_119 ( g13801__2346 ZN ) ( g13668__4733 A2 ) ;
+- n_122 ( g13871__5115 ZN ) ( g13857 A ) ( g13739__7482 A ) ( g14512 B1 ) ;
+- n_127 ( g13816__6161 ZN ) ( g13672__14078 A2 ) ;
+- n_128 ( g13860 ZN ) ( g13789__2802 A1 ) ( g13850__14325 A1 ) ;
+- n_131 ( g13846__5115 ZN ) ( g13697__2802 B ) ;
+- n_133 ( g13819__6131 ZN ) ( g13674__1666 A2 ) ;
+- n_134 ( g13904__2398 ZN ) ( g13834__7098 A2 ) ( g13739__7482 B2 ) ( g14513 A2 ) ;
+- n_135 ( g13834__7098 ZN ) ( g13742__4733 B ) ;
+- n_141 ( g13826__1705 ZN ) ( g13734__3680 B ) ;
+- n_142 ( g13901__7482 ZN ) ( g13789__2802 A3 ) ( g13835__3680 A1 ) ( g13745__7098 A2 ) ;
+- n_144 ( g13789__2802 ZN ) ( g13736__14471 B2 ) ;
+- n_151 ( g13829__8428 ZN ) ( g13767__9315 A ) ;
+- n_153 ( g15042 ZN ) ( g111 A1 ) ( g13798__14947 A2 ) ( g15045 A1 ) ;
+- n_157 ( g13774 ZN ) ( g13664__3680 B2 ) ;
+- n_162 ( g13772__5107 ZN ) ( g13770 A ) ( g13748__6131 B1 ) ;
+- n_163 ( g13770 ZN ) ( g13749__8246 B1 ) ;
+- n_165 ( g13775 ZN ) ( g13743__14186 B2 ) ( g15018 C1 ) ( g13724__15023 C2 ) ;
+- n_173 ( g13823 ZN ) ( g13754__6161 A2 ) ( g382 A1 ) ( g13738__14824 B2 ) ;
+- n_175 ( g13754__6161 ZN ) ( g13707__14476 B2 ) ;
+- n_176 ( g13756__6783 ZN ) ( g13742__4733 A ) ( g13739__7482 B1 ) ;
+- n_178 ( g13739__7482 ZN ) ( g13722__2802 A ) ;
+- n_181 ( g13766__5115 ZN ) ( g13714__14479 A ) ;
+- n_183 ( g13755__1881 ZN ) ( g13702__14478 B2 ) ;
+- n_185 ( g13757 ZN ) ( g13659__1881 B2 ) ;
+- n_187 ( g13947 ZN ) ( g13748__6131 A ) ( g13891__8428 A2 ) ( g13749__8246 B2 ) ;
+- n_188 ( g13748__6131 ZN ) ( g13725__8428 B1 ) ;
+- n_189 ( g13745__7098 ZN ) ( g13736__14471 A ) ;
+- n_191 ( g13740 ZN ) ( g13660__8246 B2 ) ;
+- n_194 ( g13749__8246 ZN ) ( g13737__6783 A1 ) ;
+- n_200 ( g13737__6783 ZN ) ( ctrl_state_out_reg\[1\] D ) ;
+- n_203 ( g13725__8428 ZN ) ( ctrl_state_out_reg\[0\] D ) ;
+- n_205 ( g13721 ZN ) ( g13661__5122 B2 ) ;
+- n_206 ( g13744__4319 ZN ) ( g13706__4733 A ) ;
+- n_215 ( g13727 ZN ) ( g13662__1705 B2 ) ;
+- n_217 ( g13735__1705 ZN ) ( g13717__7410 A ) ( g13705__14322 B1 ) ;
+- n_221 ( g13709 ZN ) ( g13658__6131 B2 ) ;
+- n_228 ( g13710 ZN ) ( g13663__2802 B2 ) ;
+- n_231 ( g13706__4733 ZN ) ( g13697__2802 A ) ;
+- n_241 ( g13708 ZN ) ( g13665__14406 B2 ) ;
+- n_243 ( g13691 ZN ) ( g13649__7098 B2 ) ;
+- n_245 ( g13692 ZN ) ( g13648__14529 B2 ) ;
+- n_247 ( g13693 ZN ) ( g13644__14055 B2 ) ;
+- n_259 ( g13679__2398 ZN ) ( dpath_b_reg_out_reg\[12\] D ) ;
+- n_265 ( g13674__1666 ZN ) ( dpath_b_reg_out_reg\[7\] D ) ;
+- n_266 ( g13673__2346 ZN ) ( dpath_b_reg_out_reg\[6\] D ) ;
+- n_270 ( g13669__6161 ZN ) ( dpath_b_reg_out_reg\[2\] D ) ;
+- n_272 ( g13668__4733 ZN ) ( dpath_b_reg_out_reg\[1\] D ) ;
+- n_276 ( g13667__7482 ZN ) ( dpath_b_reg_out_reg\[0\] D ) ;
+- n_277 ( g13671__5115 ZN ) ( dpath_b_reg_out_reg\[4\] D ) ;
+- n_278 ( g13659__1881 ZN ) ( dpath_a_reg_out_reg\[1\] D ) ;
+- n_279 ( g13658__6131 ZN ) ( dpath_a_reg_out_reg\[6\] D ) ;
+- n_280 ( g13649__7098 ZN ) ( dpath_a_reg_out_reg\[7\] D ) ;
+- n_281 ( g13660__8246 ZN ) ( dpath_a_reg_out_reg\[2\] D ) ;
+- n_282 ( g13661__5122 ZN ) ( dpath_a_reg_out_reg\[3\] D ) ;
+- n_283 ( g13662__1705 ZN ) ( dpath_a_reg_out_reg\[4\] D ) ;
+- n_284 ( g13663__2802 ZN ) ( dpath_a_reg_out_reg\[5\] D ) ;
+- n_287 ( g13664__3680 ZN ) ( dpath_a_reg_out_reg\[0\] D ) ;
+- n_357 ( fopt2 ZN ) ( g98 A1 ) ;
+- n_371 ( fopt14054 ZN ) ( g13663__2802 C2 ) ( g13840__14058 A3 ) ( g13672__14078 B2 ) ;
+- n_390 ( g14024 ZN ) ( g14936 A1 ) ;
+- n_397 ( g14030 ZN ) ( g13735__1705 A ) ;
+- n_403 ( g14033 ZN ) ( g13735__1705 B1 ) ( g23 B1 ) ;
+- n_425 ( g13644__14055 ZN ) ( dpath_a_reg_out_reg\[13\] D ) ;
+- n_426 ( g13840__14058 ZN ) ( g13772__5107 A3 ) ;
+- n_445 ( g13672__14078 ZN ) ( dpath_b_reg_out_reg\[5\] D ) ;
+- n_446 ( dpath_b_reg_out_reg\[5\] Q ) ( fopt14054 A ) ( g451 A1 ) ;
+- n_470 ( g13680__14103 ZN ) ( dpath_b_reg_out_reg\[13\] D ) ;
+- n_471 ( dpath_b_reg_out_reg\[13\] Q ) ( g13893__14104 A1 ) ( g3 A1 ) ( g13870__14629 A1 ) ;
+- n_472 ( g13893__14104 ZN ) ( g13846__5115 A2 ) ( g383 A1 ) ( g14311 A ) ;
+- n_474 ( g13681__14106 ZN ) ( dpath_b_reg_out_reg\[14\] D ) ;
+- n_475 ( dpath_b_reg_out_reg\[14\] Q ) ( g390 A1 ) ( g393 A1 ) ;
+- n_479 ( dpath_b_reg_out_reg\[3\] Q ) ( g13897__14318 A1 ) ;
+- n_482 ( g13677__14112 ZN ) ( dpath_b_reg_out_reg\[10\] D ) ;
+- n_483 ( dpath_b_reg_out_reg\[10\] Q ) ( g13900__14113 A1 ) ;
+- n_484 ( g13900__14113 ZN ) ( g13766__5115 A ) ( g111 A2 ) ( g15020 B2 ) ;
+- n_485 ( g13666__14114 ZN ) ( dpath_b_reg_out_reg\[15\] D ) ;
+- n_486 ( dpath_b_reg_out_reg\[15\] Q ) ( g13873__14115 A1 ) ( g13894__14116 A2 ) ;
+- n_487 ( g13873__14115 ZN ) ( g13844__1881 A2 ) ( g13828__14179 A2 ) ( g13784__14183 B1 ) ;
+- n_488 ( g13894__14116 ZN ) ( g13879 A ) ( g13844__1881 A1 ) ;
+- n_489 ( g13670__14117 ZN ) ( dpath_b_reg_out_reg\[9\] D ) ;
+- n_490 ( dpath_b_reg_out_reg\[9\] Q ) ( g99 A1 ) ;
+- n_497 ( g13678__14125 ZN ) ( dpath_b_reg_out_reg\[11\] D ) ;
+- n_498 ( dpath_b_reg_out_reg\[11\] Q ) ( g13906__14126 A1 ) ;
+- n_499 ( g13906__14126 ZN ) ( g15020 B1 ) ( g13842__15021 A2 ) ( g15043 A ) ;
+- n_520 ( g14147 ZN ) ( g13786__2802 B2 ) ( g13814__5477 B2 ) ( g13864__14243 A1 ) ;
+- n_524 ( g13843__14150 ZN ) ( g13722__2802 B ) ;
+- n_529 ( g13833__14154 ZN ) ( g13716__14472 B ) ;
+- n_537 ( fopt14165 ZN ) ( g446 A1 ) ;
+- n_540 ( g13849__14166 ZN ) ( g13789__2802 A2 ) ( g13735__1705 B2 ) ;
+- n_541 ( g446 ZN ) ( g13849__14166 A1 ) ( g14435 B1 ) ( g14936 A2 ) ;
+- n_550 ( g13704__14174 ZN ) ( g13696__1705 A ) ;
+- n_553 ( g13828__14179 ZN ) ( g13764__14182 B1 ) ( g14940 A1 ) ;
+- n_555 ( g13784__14183 ZN ) ( g13764__14182 A ) ;
+- n_556 ( g13764__14182 ZN ) ( g13743__14186 A ) ( g15018 A ) ( g13724__15023 A ) ;
+- n_560 ( g13743__14186 ZN ) ( g14477 B2 ) ( g14477 C2 ) ;
+- n_596 ( g14224 Z ) ( g14300 B1 ) ;
+- n_612 ( g13676__14241 ZN ) ( dpath_b_reg_out_reg\[3\] D ) ;
+- n_614 ( g13864__14243 ZN ) ( g13843__14150 A1 ) ( g14512 A ) ;
+- n_636 ( dpath_a_reg_out_reg\[8\] Q ) ( g13802__14407 B2 ) ( g13809__14409 B2 ) ( g97 A1 ) ;
+- n_748 ( g449 ZN ) ( g13835__3680 A2 ) ( g14326 A2 ) ;
+- n_750 ( g451 ZN ) ( g14024 A ) ( g14435 A ) ;
+- n_755 ( g443 ZN ) ( g13745__7098 A1 ) ;
+- n_758 ( g28 ZN ) ( g13858 A ) ( g13767__9315 B ) ( g225 A2 ) ;
+- n_823 ( g390 ZN ) ( g13828__14179 A1 ) ( g389 A ) ( g13847__5115 A2 ) ( g382 A2 ) ;
+- n_824 ( g389 ZN ) ( g381 A ) ;
+- n_826 ( g393 ZN ) ( g383 A2 ) ( g13784__14183 B2 ) ( g391 A ) ;
+- n_828 ( g383 ZN ) ( g381 B2 ) ;
+- n_829 ( g381 ZN ) ( g14980 A ) ;
+- n_830 ( g382 ZN ) ( g13755__1881 A2 ) ( g14980 B1 ) ;
+- n_835 ( g391 ZN ) ( g13847__5115 A1 ) ;
+- n_837 ( g384 ZN ) ( g13738__14824 A ) ;
+- n_857 ( g43 ZN ) ( g14969 A ) ;
+- n_861 ( g14300 ZN ) ( dpath_a_reg_out_reg\[14\] D ) ;
+- n_867 ( g52 ZN ) ( g13673__2346 A2 ) ;
+- n_868 ( g53 ZN ) ( g13658__6131 A ) ;
+- n_892 ( g14309 ZN ) ( g13793__2398 B2 ) ( g13820__1705 B2 ) ;
+- n_894 ( g14311 ZN ) ( g384 A ) ( g13764__14182 B2 ) ;
+- n_896 ( g14313 ZN ) ( g381 B1 ) ;
+- n_898 ( g13897__14318 ZN ) ( g14316 A ) ( g14512 B2 ) ( g14513 A3 ) ;
+- n_900 ( g14316 ZN ) ( g13843__14150 A2 ) ;
+- n_904 ( g14324 ZN ) ( g13705__14322 A ) ( g13850__14325 A2 ) ( g14326 A1 ) ;
+- n_906 ( g13705__14322 ZN ) ( g13695__5122 A ) ;
+- n_907 ( g13850__14325 ZN ) ( g13717__7410 B ) ;
+- n_908 ( g14326 ZN ) ( g443 A ) ;
+- n_1016 ( g79 ZN ) ( g78 B1 ) ;
+- n_1017 ( g78 ZN ) ( dpath_a_reg_out_reg\[15\] D ) ;
+- n_1021 ( g14355 ZN ) ( g14354 B1 ) ;
+- n_1022 ( g14354 ZN ) ( dpath_a_reg_out_reg\[11\] D ) ;
+- n_1024 ( g14358 ZN ) ( g14357 B1 ) ;
+- n_1025 ( g14357 ZN ) ( dpath_a_reg_out_reg\[12\] D ) ;
+- n_1032 ( g7 ZN ) ( g443 B2 ) ( g13705__14322 B2 ) ( g13860 A ) ;
+- n_1053 ( fopt14360 ZN ) ( g13704__14174 B1 ) ( g13706__4733 C1 ) ;
+- n_1060 ( fopt14363 ZN ) ( g13846__5115 A1 ) ;
+- n_1064 ( fopt14366 ZN ) ( g53 A2 ) ( g14324 A1 ) ( g7 A2 ) ( g52 A2 ) ;
+- n_1106 ( g13802__14407 ZN ) ( g13665__14406 A ) ;
+- n_1107 ( g13665__14406 ZN ) ( dpath_a_reg_out_reg\[8\] D ) ;
+- n_1110 ( g13809__14409 ZN ) ( g15057 B2 ) ;
+- n_1116 ( g13837__14416 ZN ) ( g13772__5107 A2 ) ;
+- n_1132 ( g14433 ZN ) ( g13826__1705 A1 ) ( g14435 B2 ) ( g23 A ) ;
+- n_1135 ( g14435 ZN ) ( g443 B1 ) ( g14030 A ) ;
+- n_1141 ( fopt14439 ZN ) ( g13766__5115 B1 ) ;
+- n_1169 ( g13736__14471 ZN ) ( fopt14360 A ) ( g13716__14472 A ) ( g13719__14475 B1 ) ( g13707__14476 B1 ) ( g14477 B1 ) ( g13702__14478 B1 ) ( g13714__14479 B1 ) ( g13715__14480 B1 ) ( g109 B1 ) ( g48 A1 ) ;
+- n_1173 ( g13719__14475 ZN ) ( FE_DBTC2_n_1173 A ) ;
+- n_1174 ( g13707__14476 ZN ) ( g13694__14225 A ) ( g14224 A ) ;
+- n_1175 ( g14477 ZN ) ( g13663__2802 B1 ) ( g13662__1705 B1 ) ( g13661__5122 B1 ) ( g13660__8246 B1 ) ( g13649__7098 B1 ) ( g13658__6131 B1 ) ( g13659__1881 B1 ) ( g13644__14055 B1 ) ( g14300 B2 ) ( g78 B2 ) ( g14354 B2 ) ( g14357 B2 ) ( g13665__14406 B1 ) ( g13664__3680 B1 ) ( g13648__14529 B1 ) ( g14969 C1 ) ;
+- n_1176 ( g13702__14478 ZN ) ( g80 A ) ;
+- n_1177 ( g13714__14479 ZN ) ( g14356 A ) ;
+- n_1178 ( g13715__14480 ZN ) ( g14359 A ) ;
+- n_1322 ( g63 ZN ) ( g13696__1705 B ) ;
+- n_1333 ( g14512 ZN ) ( g223 A ) ;
+- n_1334 ( g14513 ZN ) ( g223 B1 ) ;
+- n_1335 ( g227 ZN ) ( g225 A1 ) ;
+- n_1336 ( g225 ZN ) ( g223 B2 ) ( g13756__6783 A1 ) ;
+- n_1337 ( g223 ZN ) ( g14033 A ) ( g13736__14471 B1 ) ( g13734__3680 A ) ;
+- n_1356 ( g13827__14526 ZN ) ( g14356 B ) ;
+- n_1357 ( g13648__14529 ZN ) ( dpath_a_reg_out_reg\[9\] D ) ;
+- n_1458 ( g3 ZN ) ( g14628 A1 ) ;
+- n_1459 ( g14628 ZN ) ( g13823 A ) ( g14940 A2 ) ;
+- n_1460 ( g13870__14629 ZN ) ( g14313 A2 ) ( fopt14363 A ) ( g14311 B2 ) ;
+- n_1756 ( g13738__14824 ZN ) ( g13707__14476 A ) ;
+- n_1865 ( g15039 ZN ) ( g13819__6131 B1 ) ( g13816__6161 B1 ) ( g13801__2346 B1 ) ( g13814__5477 B1 ) ( g13807__2398 B1 ) ( g13808__5107 B1 ) ( g13810__4319 B1 ) ( g13811__8428 B1 ) ( g13813__5526 B1 ) ( g13815__3680 B1 ) ( g13818__2802 B1 ) ( g13820__1705 B1 ) ( g13821__5122 B1 ) ( g13822__8246 B1 ) ( g52 A1 ) ( g13809__14409 B1 ) ( g15038 A ) ( FE_DBTC9_n_1865 A ) ;
+- n_1875 ( g23 ZN ) ( g14935 A ) ;
+- n_1879 ( g24 ZN ) ( g13826__1705 A2 ) ;
+- n_1890 ( g14936 ZN ) ( g14935 B ) ;
+- n_1900 ( g14940 ZN ) ( g13775 A ) ( g15049 A2 ) ;
+- n_1956 ( g13798__14947 ZN ) ( g13714__14479 B2 ) ;
+- n_1969 ( g109 ZN ) ( g108 A ) ( g13687__14223 A ) ;
+- n_1970 ( g111 ZN ) ( g108 B ) ( g110 A ) ;
+- n_1971 ( g108 ZN ) ( g14969 C2 ) ;
+- n_1972 ( g110 ZN ) ( g13687__14223 B ) ;
+- n_2056 ( g14969 ZN ) ( dpath_a_reg_out_reg\[10\] D ) ;
+- n_2057 ( dpath_a_reg_out_reg\[10\] Q ) ( g13905__14970 A1 ) ;
+- n_2058 ( g13905__14970 ZN ) ( g13766__5115 B2 ) ( g13842__15021 A1 ) ( g15042 A ) ;
+- n_2077 ( g14980 ZN ) ( g13702__14478 A ) ;
+- n_2125 ( g15020 ZN ) ( g15019 A ) ;
+- n_2126 ( g13842__15021 ZN ) ( g15019 B2 ) ;
+- n_2127 ( g15019 ZN ) ( g13743__14186 B1 ) ( g13738__14824 B1 ) ( g14980 B2 ) ( g15018 C2 ) ( FE_DBTC3_n_2127 A ) ( g13724__15023 C1 ) ;
+- n_2128 ( g15018 ZN ) ( g15038 B2 ) ;
+- n_2131 ( g13724__15023 ZN ) ( g13719__14475 A ) ;
+- n_2148 ( g48 ZN ) ( g15038 B1 ) ;
+- n_2149 ( g15038 ZN ) ( g13671__5115 B1 ) ( g13667__7482 B1 ) ( g13668__4733 B1 ) ( g13669__6161 B1 ) ( g13673__2346 B1 ) ( g13674__1666 B1 ) ( g13679__2398 B1 ) ( g13672__14078 B1 ) ( g13680__14103 B1 ) ( g13681__14106 B1 ) ( g13677__14112 B1 ) ( g13666__14114 B1 ) ( g13670__14117 B1 ) ( g13678__14125 B1 ) ( g13676__14241 B1 ) ( FE_DBTC1_n_2149 A ) ( g15057 A1 ) ;
+- n_2153 ( g15043 ZN ) ( g13827__14526 A1 ) ( g15045 A2 ) ;
+- n_2155 ( g15045 ZN ) ( g13752__15044 A1 ) ( g13715__14480 B2 ) ( g15048 A ) ( g15049 A1 ) ;
+- n_2156 ( g13752__15044 ZN ) ( g13706__4733 C2 ) ;
+- n_2158 ( g15048 ZN ) ( g13754__6161 A1 ) ( g13755__1881 A1 ) ;
+- n_2159 ( g15049 ZN ) ( g14477 C1 ) ( g48 A2 ) ( g13719__14475 B2 ) ;
+- n_2160 ( g15051 ZN ) ( g109 B2 ) ( g13798__14947 A1 ) ;
+- n_2166 ( g15057 ZN ) ( dpath_b_reg_out_reg\[8\] D ) ;
+- n_2167 ( dpath_b_reg_out_reg\[8\] Q ) ( g13902__15058 A1 ) ;
+- n_2168 ( g13902__15058 ZN ) ( g13833__14154 A2 ) ( g15045 A4 ) ( g15051 A2 ) ( g13885 A ) ;
+- n_2199 ( g98 ZN ) ( g96 A ) ( g63 A1 ) ;
+- n_2200 ( g99 ZN ) ( g96 B1 ) ( FE_DBTC0_n_2200 A ) ;
+- n_2201 ( g97 ZN ) ( g13704__14174 A ) ( g96 B2 ) ( g13833__14154 A1 ) ;
+- n_2202 ( g96 ZN ) ( g109 A ) ( g15019 B1 ) ( fopt14439 A ) ;
+- n_2449 ( g15226 ZN ) ( g15225 A1 ) ;
+- n_2450 ( g15225 ZN ) ( g15020 A ) ( g13827__14526 A2 ) ;
+END NETS
+
+END DESIGN
