@@ -69,7 +69,7 @@ HBT 均匀分布在整个 die 区域，无明显聚集。
 
 ![HBT Spacing](../figures/gcd_hbt_spacing.png)
 
-最近邻间距集中在 0.5–1.5 µm，平均 0.98 µm——间距远小于混合键合工艺的典型能力（亚 10 µm），说明键合点资源极度充裕，不是瓶颈。
+最近邻间距分布。
 
 ![HBT X/Y](../figures/gcd_hbt_xy.png)
 
