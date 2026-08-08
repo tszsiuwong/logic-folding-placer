@@ -12,7 +12,8 @@
 | 工具 | heteroplace3d v20260807（DREAMPlace） |
 | GPU | NVIDIA TITAN RTX 24GB，CUDA 13.0 |
 | 输入 | `2_2_floorplan_io.def`（Innovus 2D floorplan）+ `.v` 网表 |
-| Die 面积 | 63.08 × 57.68 µm（A），总硅面积 2A，双 Die F2F 堆叠 |
+| Floorplan | **Bottom/Upper 各 63080×57680 DBU（31.54×28.84 µm），面积 909 µm²/Die，总计 1819 µm²** |
+| 工艺 | NanGate45，双 Die 同质 F2F 堆叠 |
 | 目标密度 | 0.2 per die（含 HBT filler） |
 
 ### 流水线
@@ -38,20 +39,20 @@
 
 ## 二、2D Baseline（OpenROAD）
 
+### 自然密度（同面积 2A）
+
 | 参数 | 值 |
 |------|-----|
 | 工具 | OpenROAD 26Q1-951（RePlAce + ABCDPlace） |
-| 工艺 | NanGate45，FreePDK45_38x28_10R_NP_162NW_34O |
-| 输入 | `2_2_floorplan_io.v` 网表，`initialize_floorplan` 创建 floorplan |
-| Die 面积 | 89.22 × 81.57 µm（2A，√2 等比放大） |
-| 目标密度 | 0.07（自然密度，无 filler） |
-| 引擎 | RePlAce Nesterov 全局布局 + ABCDPlace 细节布局 |
+| Floorplan | **89220×81570 DBU（44.61×40.79 µm），面积 1819 µm²** |
+| 利用率 | 6.4%（自然密度，无 filler） |
 
-| 指标 | 值 |
+### 典型密度（~50%）
+
+| 参数 | 值 |
 |------|-----|
-| 实例 | 301 可移动 |
-| 网线 | 371 |
-| HPWL | **7.00 M DBU** |
+| Floorplan | **60000×60000 DBU（30×30 µm），面积 900 µm²** |
+| 利用率 | 48%（缩小 die 自然达到） |
 
 ![2D Placement](../figures/gcd_2d.png)
 
@@ -61,7 +62,9 @@
 
 > **背景**：在 [logic-folding-geometry](https://github.com/tszsiuwong/logic-folding-geometry) 中，我们曾用完全图（p=1）推导 3D 折叠的几何上界：双 Die 堆叠可节省约 17% 总曼哈顿线长。本次实验用真实布局器在真实网表（p=0.698）上检验。
 
-### 自然密度（6.4%）
+### 自然密度（6.4%，同面积 2A）
+
+2D die = 44.61×40.79 µm (1819 µm²)，3D 每 Die = 31.54×28.84 µm (909 µm²，总 1819 µm²)。
 
 ![2D vs 3D (natural)](../figures/gcd_2d_vs_3d.png)
 
@@ -73,7 +76,7 @@
 
 ### 典型密度（~50%）
 
-> 方法：缩小 2D floorplan 使自然利用率达到约 50%（cell area 429µm² → die 30×30µm，利用率 48%）。
+2D die = 30×30 µm (900 µm²)，3D 每 Die = 31.54×28.84 µm (909 µm²，总 1819 µm²)。
 
 ![2D vs 3D](../figures/gcd_2d_vs_3d_typ.png)
 
