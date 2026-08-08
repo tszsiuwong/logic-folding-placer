@@ -1,0 +1,51 @@
+# jpeg 实验数据（未对齐面积）
+
+**设计**: jpeg_encoder（39,866 实例，48,436 网线，47 IO），NanGate45 同质双裸片堆叠。
+
+> ⚠️ 2D 和 3D 的 die 面积未对齐。2D 使用了原始 Innovus floorplan，3D 是 heteroplace3d 的内生 floorplan。数据仅供记录，不做物理结论。
+
+## 实验条件
+
+| | 2D | 3D |
+|---|---|---|
+| 工具 | OpenROAD 26Q1（RePlAce） | heteroplace3d v20260807 |
+| Die 面积 | 684×679 µm（464,369 µm²） | 每 Die 342×340 µm（116,092 µm²），总 232,184 µm² |
+| 备注 | 原始 Innovus floorplan | heteroplace3d 内生 |
+
+## HPWL（同算法：Verilog+DEF）
+
+| | HPWL |
+|---|---|
+| 2D | 229,656 µm |
+| 3D | 349,983 µm |
+| 3D/2D | 152% |
+
+**2D die 面积约为 3D 总面积的 2 倍。** 面积未对齐前，HPWL 对比不具物理意义。
+
+## 3D Placement 详情
+
+| 指标 | 值 |
+|------|-----|
+| 工具 | heteroplace3d v20260807 |
+| 耗时 | 198s |
+| 节点 | 39,866 movable / 39,913 total |
+| 网线 | 48,436 |
+| 层分布 | Die0=19,735（49.4%），Die1=20,178（50.6%） |
+| HBT | 11,587 |
+| 最终 HPWL | 485,570 µm（placer 内部报告） |
+
+## 2D Placement 详情
+
+| 指标 | 值 |
+|------|-----|
+| 工具 | OpenROAD 26Q1（RePlAce + ABCDPlace） |
+| 原始 HPWL | 256,421 µm |
+| 合法化 HPWL | 295,175 µm |
+
+## 待完成
+
+- [ ] 同面积 2D baseline（die ~232K µm²）
+- [ ] 逐网线 2D/3D 对比
+- [ ] 逐单元位移分析
+- [ ] HBT 溢流分析
+- [ ] 模块亲和性分析（FDCT/Zigzag 层级）
