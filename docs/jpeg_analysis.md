@@ -12,6 +12,8 @@
 | Die 面积 | 684×679 µm（464,369 µm²） | 每 Die 342×340 µm（116,092 µm²），总 232,184 µm² |
 | 备注 | 原始 Innovus floorplan | heteroplace3d 内生 |
 
+![2D Placement](../figures/jpeg_2d.png)
+
 ## HPWL（同算法：Verilog+DEF）
 
 | | HPWL |
@@ -31,6 +33,8 @@
 | 节点 | 39,866 movable / 39,913 total |
 | 网线 | 48,436 |
 | 层分布 | Die0=19,735（49.4%），Die1=20,178（50.6%） |
+
+![3D Dies](../figures/jpeg_3d_dies.png)
 | HBT | 11,587 |
 | 最终 HPWL | 485,570 µm（placer 内部报告） |
 
