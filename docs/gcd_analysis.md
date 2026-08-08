@@ -65,7 +65,7 @@ HBT 均匀分布在整个 die 区域，无明显聚集。
 
 ![HBT Density](../figures/gcd_hbt_density.png)
 
-密度较均匀，中心区域略高于边缘。
+以 1.5 µm 间距为约束：**74%（163/221）的 HBT 在 1.5 µm 内有邻居，42%（92 个）有 3 个以上邻居。** 无孤立 HBT。局部密度集中在 die 中心区域最高。
 
 ![HBT Spacing](../figures/gcd_hbt_spacing.png)
 
