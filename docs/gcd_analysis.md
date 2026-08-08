@@ -69,9 +69,7 @@ HBT 位置覆盖在上下 Die 图上。
 
 
 
-![HBT X/Y](../figures/gcd_hbt_xy.png)
 
-X/Y 方向分布。
 
 | 指标 | 值 |
 |------|-----|
