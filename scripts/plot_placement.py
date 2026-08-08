@@ -54,7 +54,7 @@ plt.tight_layout(); plt.savefig('figures/gcd_3d_bottom.png', dpi=150); plt.close
 fig, ax = plt.subplots(figsize=(8, 7))
 if top:
     xs, ys = zip(*top)
-    ax.scatter(xs, ys, color='#D66853', s=250, alpha=0.8)
+    ax.scatter(xs, ys, color='#7B2D8E', s=250, alpha=0.8)
     margin = 4000
     ax.set_xlim(min(xs)-margin, max(xs)+margin)
     ax.set_ylim(min(ys)-margin, max(ys)+margin)
@@ -86,7 +86,7 @@ ax.set_aspect('equal')
 ax = axes[2]
 if top:
     xs, ys = zip(*top)
-    ax.scatter(xs, ys, color='#D66853', s=200, alpha=0.8)
+    ax.scatter(xs, ys, color='#7B2D8E', s=200, alpha=0.8)
     m3 = 4000
     ax.set_xlim(min(xs)-m3, max(xs)+m3); ax.set_ylim(min(ys)-m3, max(ys)+m3)
 ax.set_title(f'3D Top  {len(top)} cells', fontsize=12, fontweight='bold')
