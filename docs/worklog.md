@@ -43,8 +43,10 @@
 
 ### 视角切换
 
-全部文档从"后端分析 placer 行为"重写为"架构决策的物理后果量化"。不再以后端技术细节为主线，改为以架构师关心的问题为起点，后端数据为回答。详见 `agent_friendliness.md`。
+全部文档从"后端分析 placer 行为"重写为"架构决策的物理后果量化"。详见 `agent_friendliness.md`。
+
+### 已知限制
 
 - OpenROAD GPL 逐迭代 HPWL 为 0（已知 bug，只在阶段汇总可用）
 - heteroplace3d partition_input 是软约束
-- 3D 阶段 HPWL 只有 BIHPWL（bindary HPWL），与 2D 阶段 HPWL 不可比
+- 3D 阶段 HPWL 只有 BIHPWL，与 2D 阶段 HPWL 不可比
