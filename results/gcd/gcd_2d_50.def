@@ -1,0 +1,944 @@
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN gcd ;
+UNITS DISTANCE MICRONS 2000 ;
+DIEAREA ( 0 0 ) ( 60000 60000 ) ;
+ROW ROW_0 FreePDK45_38x28_10R_NP_162NW_34O 4180 5600 N DO 136 BY 1 STEP 380 0 ;
+ROW ROW_1 FreePDK45_38x28_10R_NP_162NW_34O 4180 8400 FS DO 136 BY 1 STEP 380 0 ;
+ROW ROW_2 FreePDK45_38x28_10R_NP_162NW_34O 4180 11200 N DO 136 BY 1 STEP 380 0 ;
+ROW ROW_3 FreePDK45_38x28_10R_NP_162NW_34O 4180 14000 FS DO 136 BY 1 STEP 380 0 ;
+ROW ROW_4 FreePDK45_38x28_10R_NP_162NW_34O 4180 16800 N DO 136 BY 1 STEP 380 0 ;
+ROW ROW_5 FreePDK45_38x28_10R_NP_162NW_34O 4180 19600 FS DO 136 BY 1 STEP 380 0 ;
+ROW ROW_6 FreePDK45_38x28_10R_NP_162NW_34O 4180 22400 N DO 136 BY 1 STEP 380 0 ;
+ROW ROW_7 FreePDK45_38x28_10R_NP_162NW_34O 4180 25200 FS DO 136 BY 1 STEP 380 0 ;
+ROW ROW_8 FreePDK45_38x28_10R_NP_162NW_34O 4180 28000 N DO 136 BY 1 STEP 380 0 ;
+ROW ROW_9 FreePDK45_38x28_10R_NP_162NW_34O 4180 30800 FS DO 136 BY 1 STEP 380 0 ;
+ROW ROW_10 FreePDK45_38x28_10R_NP_162NW_34O 4180 33600 N DO 136 BY 1 STEP 380 0 ;
+ROW ROW_11 FreePDK45_38x28_10R_NP_162NW_34O 4180 36400 FS DO 136 BY 1 STEP 380 0 ;
+ROW ROW_12 FreePDK45_38x28_10R_NP_162NW_34O 4180 39200 N DO 136 BY 1 STEP 380 0 ;
+ROW ROW_13 FreePDK45_38x28_10R_NP_162NW_34O 4180 42000 FS DO 136 BY 1 STEP 380 0 ;
+ROW ROW_14 FreePDK45_38x28_10R_NP_162NW_34O 4180 44800 N DO 136 BY 1 STEP 380 0 ;
+ROW ROW_15 FreePDK45_38x28_10R_NP_162NW_34O 4180 47600 FS DO 136 BY 1 STEP 380 0 ;
+ROW ROW_16 FreePDK45_38x28_10R_NP_162NW_34O 4180 50400 N DO 136 BY 1 STEP 380 0 ;
+ROW ROW_17 FreePDK45_38x28_10R_NP_162NW_34O 4180 53200 FS DO 136 BY 1 STEP 380 0 ;
+TRACKS X 190 DO 158 STEP 380 LAYER M2 ;
+TRACKS Y 140 DO 214 STEP 280 LAYER M2 ;
+TRACKS X 190 DO 158 STEP 380 LAYER M3 ;
+TRACKS Y 140 DO 214 STEP 280 LAYER M3 ;
+COMPONENTS 301 ;
+    - FE_DBTC0_n_2200 INV_X1 + PLACED ( 14820 36400 ) FS ;
+    - FE_DBTC1_n_2149 INV_X1 + PLACED ( 44460 47600 ) FS ;
+    - FE_DBTC2_n_1173 INV_X1 + PLACED ( 14060 53200 ) FS ;
+    - FE_DBTC3_n_2127 INV_X1 + PLACED ( 32680 50400 ) N ;
+    - FE_DBTC4_dpath_b_reg_out_4 INV_X1 + PLACED ( 55100 19600 ) FS ;
+    - FE_DBTC5_dpath_b_reg_out_12 INV_X1 + PLACED ( 25840 47600 ) FS ;
+    - FE_DBTC6_dpath_a_reg_out_0 INV_X1 + PLACED ( 40280 8400 ) FS ;
+    - FE_DBTC7_dpath_a_reg_out_2 INV_X1 + PLACED ( 30780 8400 ) FS ;
+    - FE_DBTC8_dpath_a_reg_out_7 INV_X1 + PLACED ( 30020 22400 ) N ;
+    - FE_DBTC9_n_1865 INV_X1 + PLACED ( 44460 36400 ) FS ;
+    - ctrl_state_out_reg\[0\] DFF_X1 + PLACED ( 4180 5600 ) N ;
+    - ctrl_state_out_reg\[1\] DFF_X1 + PLACED ( 5700 8400 ) FS ;
+    - dpath_a_reg_out_reg\[0\] DFF_X1 + PLACED ( 31920 8400 ) FS ;
+    - dpath_a_reg_out_reg\[10\] DFF_X1 + PLACED ( 4180 47600 ) FS ;
+    - dpath_a_reg_out_reg\[11\] DFF_X1 + PLACED ( 4180 22400 ) N ;
+    - dpath_a_reg_out_reg\[12\] DFF_X1 + PLACED ( 21280 53200 ) FS ;
+    - dpath_a_reg_out_reg\[13\] DFF_X1 + PLACED ( 49400 53200 ) FS ;
+    - dpath_a_reg_out_reg\[14\] DFF_X1 + PLACED ( 31920 33600 ) N ;
+    - dpath_a_reg_out_reg\[15\] DFF_X1 + PLACED ( 49400 44800 ) N ;
+    - dpath_a_reg_out_reg\[1\] DFF_X1 + PLACED ( 49400 8400 ) FS ;
+    - dpath_a_reg_out_reg\[2\] DFF_X1 + PLACED ( 24320 8400 ) FS ;
+    - dpath_a_reg_out_reg\[3\] DFF_X1 + PLACED ( 4180 16800 ) N ;
+    - dpath_a_reg_out_reg\[4\] DFF_X1 + PLACED ( 49400 16800 ) N ;
+    - dpath_a_reg_out_reg\[5\] DFF_X1 + PLACED ( 49400 36400 ) FS ;
+    - dpath_a_reg_out_reg\[6\] DFF_X1 + PLACED ( 38760 19600 ) FS ;
+    - dpath_a_reg_out_reg\[7\] DFF_X1 + PLACED ( 23560 22400 ) N ;
+    - dpath_a_reg_out_reg\[8\] DFF_X1 + PLACED ( 18240 33600 ) N ;
+    - dpath_a_reg_out_reg\[9\] DFF_X1 + PLACED ( 14820 25200 ) FS ;
+    - dpath_b_reg_out_reg\[0\] DFF_X1 + PLACED ( 34960 14000 ) FS ;
+    - dpath_b_reg_out_reg\[10\] DFF_X1 + PLACED ( 4180 53200 ) FS ;
+    - dpath_b_reg_out_reg\[11\] DFF_X1 + PLACED ( 4180 25200 ) FS ;
+    - dpath_b_reg_out_reg\[12\] DFF_X1 + PLACED ( 23560 44800 ) N ;
+    - dpath_b_reg_out_reg\[13\] DFF_X1 + PLACED ( 45220 50400 ) N ;
+    - dpath_b_reg_out_reg\[14\] DFF_X1 + PLACED ( 36860 36400 ) FS ;
+    - dpath_b_reg_out_reg\[15\] DFF_X1 + PLACED ( 49020 42000 ) FS ;
+    - dpath_b_reg_out_reg\[1\] DFF_X1 + PLACED ( 49400 11200 ) N ;
+    - dpath_b_reg_out_reg\[2\] DFF_X1 + PLACED ( 27360 14000 ) FS ;
+    - dpath_b_reg_out_reg\[3\] DFF_X1 + PLACED ( 4180 14000 ) FS ;
+    - dpath_b_reg_out_reg\[4\] DFF_X1 + PLACED ( 46360 19600 ) FS ;
+    - dpath_b_reg_out_reg\[5\] DFF_X1 + PLACED ( 45980 33600 ) N ;
+    - dpath_b_reg_out_reg\[6\] DFF_X1 + PLACED ( 30780 19600 ) FS ;
+    - dpath_b_reg_out_reg\[7\] DFF_X1 + PLACED ( 22420 28000 ) N ;
+    - dpath_b_reg_out_reg\[8\] DFF_X1 + PLACED ( 22420 39200 ) N ;
+    - dpath_b_reg_out_reg\[9\] DFF_X1 + PLACED ( 8360 28000 ) N ;
+    - fopt14054 INV_X1 + PLACED ( 50920 30800 ) FS ;
+    - fopt14165 INV_X1 + PLACED ( 52820 33600 ) N ;
+    - fopt14360 INV_X1 + PLACED ( 29260 42000 ) FS ;
+    - fopt14363 INV_X1 + PLACED ( 39900 53200 ) FS ;
+    - fopt14366 INV_X1 + PLACED ( 45220 19600 ) FS ;
+    - fopt14439 INV_X1 + PLACED ( 9880 39200 ) N ;
+    - fopt2 INV_X1 + PLACED ( 14060 30800 ) FS ;
+    - g108 XNOR2_X1 + PLACED ( 9500 42000 ) FS ;
+    - g109 AOI21_X1 + PLACED ( 11780 39200 ) N ;
+    - g110 INV_X1 + PLACED ( 11780 42000 ) FS ;
+    - g111 NAND2_X1 + PLACED ( 8740 39200 ) N ;
+    - g13644__14055 OAI221_X1 + PLACED ( 51680 50400 ) N ;
+    - g13648__14529 OAI221_X1 + PLACED ( 16720 22400 ) N ;
+    - g13649__7098 OAI221_X1 + PLACED ( 21280 22400 ) N ;
+    - g13658__6131 OAI221_X1 + PLACED ( 38380 16800 ) N ;
+    - g13659__1881 OAI221_X1 + PLACED ( 49020 5600 ) N ;
+    - g13660__8246 OAI221_X1 + PLACED ( 22040 8400 ) FS ;
+    - g13661__5122 OAI221_X1 + PLACED ( 10640 14000 ) FS ;
+    - g13662__1705 OAI221_X1 + PLACED ( 48640 14000 ) FS ;
+    - g13663__2802 OAI221_X1 + PLACED ( 48260 28000 ) N ;
+    - g13664__3680 OAI221_X1 + PLACED ( 31920 5600 ) N ;
+    - g13665__14406 OAI221_X1 + PLACED ( 19000 30800 ) FS ;
+    - g13666__14114 OAI22_X1 + PLACED ( 45980 39200 ) N ;
+    - g13667__7482 OAI22_X1 + PLACED ( 35720 11200 ) N ;
+    - g13668__4733 OAI22_X1 + PLACED ( 45980 11200 ) N ;
+    - g13669__6161 OAI22_X1 + PLACED ( 28120 11200 ) N ;
+    - g13670__14117 OAI22_X1 + PLACED ( 12920 25200 ) FS ;
+    - g13671__5115 OAI22_X1 + PLACED ( 44840 16800 ) N ;
+    - g13672__14078 OAI22_X1 + PLACED ( 44080 33600 ) N ;
+    - g13673__2346 OAI22_X1 + PLACED ( 28880 19600 ) FS ;
+    - g13674__1666 OAI22_X1 + PLACED ( 22800 25200 ) FS ;
+    - g13676__14241 OAI22_X1 + PLACED ( 11020 11200 ) N ;
+    - g13677__14112 OAI22_X1 + PLACED ( 10260 50400 ) N ;
+    - g13678__14125 OAI22_X1 + PLACED ( 11020 25200 ) FS ;
+    - g13679__2398 OAI22_X1 + PLACED ( 22800 42000 ) FS ;
+    - g13680__14103 OAI22_X1 + PLACED ( 45220 47600 ) FS ;
+    - g13681__14106 OAI22_X1 + PLACED ( 38760 33600 ) N ;
+    - g13687__14223 XNOR2_X1 + PLACED ( 12540 42000 ) FS ;
+    - g13691 INV_X1 + PLACED ( 20520 22400 ) N ;
+    - g13692 INV_X1 + PLACED ( 21280 25200 ) FS ;
+    - g13693 INV_X1 + PLACED ( 47500 53200 ) FS ;
+    - g13694__14225 XNOR2_X1 + PLACED ( 28880 39200 ) N ;
+    - g13695__5122 XNOR2_X1 + PLACED ( 30400 25200 ) FS ;
+    - g13696__1705 XNOR2_X1 + PLACED ( 18620 39200 ) N ;
+    - g13697__2802 XNOR2_X1 + PLACED ( 35720 53200 ) FS ;
+    - g13702__14478 AOI21_X1 + PLACED ( 34960 42000 ) FS ;
+    - g13704__14174 OAI21_X1 + PLACED ( 20900 39200 ) N ;
+    - g13705__14322 OAI21_X1 + PLACED ( 38000 25200 ) FS ;
+    - g13706__4733 OAI211_X1 + PLACED ( 30780 50400 ) N ;
+    - g13707__14476 AOI21_X1 + PLACED ( 31160 42000 ) FS ;
+    - g13708 INV_X1 + PLACED ( 16340 33600 ) N ;
+    - g13709 INV_X1 + PLACED ( 38000 19600 ) FS ;
+    - g13710 INV_X1 + PLACED ( 47500 28000 ) N ;
+    - g13714__14479 AOI21_X1 + PLACED ( 8740 33600 ) N ;
+    - g13715__14480 AOI21_X1 + PLACED ( 28120 47600 ) FS ;
+    - g13716__14472 XNOR2_X1 + PLACED ( 12920 33600 ) N ;
+    - g13717__7410 XNOR2_X1 + PLACED ( 40280 25200 ) FS ;
+    - g13719__14475 AOI21_X1 + PLACED ( 14060 47600 ) FS ;
+    - g13721 INV_X1 + PLACED ( 9880 11200 ) N ;
+    - g13722__2802 XNOR2_X1 + PLACED ( 17480 14000 ) FS ;
+    - g13724__15023 OAI211_X1 + PLACED ( 15580 50400 ) N ;
+    - g13725__8428 AOI21_X1 + PLACED ( 15200 5600 ) N ;
+    - g13727 INV_X1 + PLACED ( 47500 16800 ) N ;
+    - g13734__3680 XNOR2_X1 + PLACED ( 45220 22400 ) N ;
+    - g13735__1705 AOI21_X1 + PLACED ( 44080 25200 ) FS ;
+    - g13736__14471 OAI21_X1 + PLACED ( 35340 28000 ) N ;
+    - g13737__6783 NOR2_X1 + PLACED ( 12920 8400 ) FS ;
+    - g13738__14824 OAI21_X1 + PLACED ( 33060 44800 ) N ;
+    - g13739__7482 OAI21_X1 + PLACED ( 20900 16800 ) N ;
+    - g13740 INV_X1 + PLACED ( 24320 5600 ) N ;
+    - g13742__4733 XNOR2_X1 + PLACED ( 21660 11200 ) N ;
+    - g13743__14186 OAI21_X1 + PLACED ( 17860 47600 ) FS ;
+    - g13744__4319 NAND2_X1 + PLACED ( 31160 53200 ) FS ;
+    - g13745__7098 NAND2_X1 + PLACED ( 34200 28000 ) N ;
+    - g13748__6131 OAI21_X1 + PLACED ( 15960 8400 ) FS ;
+    - g13749__8246 AOI21_X1 + PLACED ( 14060 8400 ) FS ;
+    - g13752__15044 NAND2_X1 + PLACED ( 29640 53200 ) FS ;
+    - g13754__6161 NOR2_X1 + PLACED ( 30020 42000 ) FS ;
+    - g13755__1881 NOR2_X1 + PLACED ( 33820 39200 ) N ;
+    - g13756__6783 NAND2_X1 + PLACED ( 25080 14000 ) FS ;
+    - g13757 INV_X1 + PLACED ( 47880 5600 ) N ;
+    - g13764__14182 AOI21_X1 + PLACED ( 37620 47600 ) FS ;
+    - g13766__5115 OAI21_X1 + PLACED ( 6840 39200 ) N ;
+    - g13767__9315 XNOR2_X1 + PLACED ( 42560 8400 ) FS ;
+    - g13770 INV_X1 + PLACED ( 17480 8400 ) FS ;
+    - g13772__5107 NAND4_X1 + PLACED ( 29260 30800 ) FS ;
+    - g13774 INV_X1 + PLACED ( 28880 5600 ) N ;
+    - g13775 INV_X1 + PLACED ( 16720 47600 ) FS ;
+    - g13781__9945 AOI22_X1 + PLACED ( 20520 44800 ) N ;
+    - g13782__6161 AOI22_X1 + PLACED ( 45220 28000 ) N ;
+    - g13784__14183 OAI21_X1 + PLACED ( 41040 44800 ) N ;
+    - g13785__7482 AOI22_X1 + PLACED ( 46740 14000 ) FS ;
+    - g13786__2802 AOI22_X1 + PLACED ( 14440 14000 ) FS ;
+    - g13788__8428 AOI22_X1 + PLACED ( 47500 44800 ) N ;
+    - g13789__2802 NAND3_X1 + PLACED ( 36860 28000 ) N ;
+    - g13791__6417 AOI22_X1 + PLACED ( 39900 5600 ) N ;
+    - g13792__5477 AOI22_X1 + PLACED ( 45980 5600 ) N ;
+    - g13793__2398 AOI22_X1 + PLACED ( 17480 19600 ) FS ;
+    - g13794__5107 AOI22_X1 + PLACED ( 22420 5600 ) N ;
+    - g13798__14947 AND2_X1 + PLACED ( 7600 36400 ) FS ;
+    - g13801__2346 AOI22_X1 + PLACED ( 45600 8400 ) FS ;
+    - g13802__14407 AOI22_X1 + PLACED ( 25460 30800 ) FS ;
+    - g13803__4319 AOI22_X1 + PLACED ( 12920 44800 ) N ;
+    - g13804__7410 AOI22_X1 + PLACED ( 11020 19600 ) FS ;
+    - g13805__5526 AOI22_X1 + PLACED ( 31160 30800 ) FS ;
+    - g13806__6783 AOI22_X1 + PLACED ( 46740 36400 ) FS ;
+    - g13807__2398 AOI22_X1 + PLACED ( 44080 39200 ) N ;
+    - g13808__5107 AOI22_X1 + PLACED ( 39520 30800 ) FS ;
+    - g13809__14409 AOI22_X1 + PLACED ( 27360 33600 ) N ;
+    - g13810__4319 AOI22_X1 + PLACED ( 11020 44800 ) N ;
+    - g13811__8428 AOI22_X1 + PLACED ( 37620 11200 ) N ;
+    - g13812__1617 AOI22_X1 + PLACED ( 21280 19600 ) FS ;
+    - g13813__5526 AOI22_X1 + PLACED ( 29640 5600 ) N ;
+    - g13814__5477 AOI22_X1 + PLACED ( 14440 11200 ) N ;
+    - g13815__3680 AOI22_X1 + PLACED ( 44460 14000 ) FS ;
+    - g13816__6161 AOI22_X1 + PLACED ( 43700 30800 ) FS ;
+    - g13818__2802 AOI22_X1 + PLACED ( 24700 42000 ) FS ;
+    - g13819__6131 AOI22_X1 + PLACED ( 24700 25200 ) FS ;
+    - g13820__1705 AOI22_X1 + PLACED ( 15580 19600 ) FS ;
+    - g13821__5122 AOI22_X1 + PLACED ( 12920 19600 ) FS ;
+    - g13822__8246 AOI22_X1 + PLACED ( 45600 44800 ) N ;
+    - g13823 INV_X1 + PLACED ( 34580 47600 ) FS ;
+    - g13824__8246 NAND2_X1 + PLACED ( 16720 5600 ) N ;
+    - g13825__6783 AND2_X1 + PLACED ( 28880 50400 ) N ;
+    - g13826__1705 NOR2_X1 + PLACED ( 50540 22400 ) N ;
+    - g13827__14526 AND2_X1 + PLACED ( 4940 33600 ) N ;
+    - g13828__14179 NOR2_X1 + PLACED ( 37620 44800 ) N ;
+    - g13829__8428 AOI21_X1 + PLACED ( 41040 8400 ) FS ;
+    - g13833__14154 NAND2_X1 + PLACED ( 15200 33600 ) N ;
+    - g13834__7098 NOR2_X1 + PLACED ( 20520 11200 ) N ;
+    - g13835__3680 NAND2_X1 + PLACED ( 32680 25200 ) FS ;
+    - g13837__14416 AND4_X1 + PLACED ( 27740 36400 ) FS ;
+    - g13838__5526 AND4_X1 + PLACED ( 11400 30800 ) FS ;
+    - g13839__9315 AND4_X1 + PLACED ( 31160 11200 ) N ;
+    - g13840__14058 AND4_X1 + PLACED ( 42560 28000 ) N ;
+    - g13841__7098 AOI21_X1 + PLACED ( 10640 5600 ) N ;
+    - g13842__15021 NOR2_X1 + PLACED ( 4180 39200 ) N ;
+    - g13843__14150 NAND2_X1 + PLACED ( 16340 14000 ) FS ;
+    - g13844__1881 NOR2_X1 + PLACED ( 43700 44800 ) N ;
+    - g13845__5526 OAI21_X1 + PLACED ( 37620 5600 ) N ;
+    - g13846__5115 NAND2_X1 + PLACED ( 38760 53200 ) FS ;
+    - g13847__5115 NOR2_X1 + PLACED ( 36100 39200 ) N ;
+    - g13849__14166 AND2_X1 + PLACED ( 53960 25200 ) FS ;
+    - g13850__14325 AND2_X1 + PLACED ( 42560 25200 ) FS ;
+    - g13853 INV_X1 + PLACED ( 26220 14000 ) FS ;
+    - g13857 INV_X1 + PLACED ( 18620 11200 ) N ;
+    - g13858 INV_X1 + PLACED ( 39900 11200 ) N ;
+    - g13860 INV_X1 + PLACED ( 39520 25200 ) FS ;
+    - g13864__14243 NAND2_X1 + PLACED ( 15580 16800 ) N ;
+    - g13868__1617 AND2_X1 + PLACED ( 42940 11200 ) N ;
+    - g13870__14629 AND2_X2 + PLACED ( 42180 50400 ) N ;
+    - g13871__5115 NAND2_X1 + PLACED ( 19380 11200 ) N ;
+    - g13873__14115 AND2_X1 + PLACED ( 52820 47600 ) FS ;
+    - g13877__9945 NAND2_X1 + PLACED ( 25080 50400 ) N ;
+    - g13879 INV_X1 + PLACED ( 42940 44800 ) N ;
+    - g13885 INV_X1 + PLACED ( 19760 36400 ) FS ;
+    - g13891__8428 NOR2_X1 + PLACED ( 18620 5600 ) N ;
+    - g13892__2883 NOR2_X1 + PLACED ( 16720 42000 ) FS ;
+    - g13893__14104 OR2_X1 + PLACED ( 40660 50400 ) N ;
+    - g13894__14116 NOR2_X1 + PLACED ( 51680 47600 ) FS ;
+    - g13895__3680 NAND2_X1 + PLACED ( 53960 19600 ) FS ;
+    - g13897__14318 AND2_X1 + PLACED ( 12920 14000 ) FS ;
+    - g13898__7410 OR2_X2 + PLACED ( 26220 50400 ) N ;
+    - g13900__14113 OR2_X2 + PLACED ( 8360 50400 ) N ;
+    - g13901__7482 OR2_X2 + PLACED ( 28500 25200 ) FS ;
+    - g13902__15058 NAND2_X1 + PLACED ( 23180 36400 ) FS ;
+    - g13904__2398 NOR2_X1 + PLACED ( 23940 11200 ) N ;
+    - g13905__14970 NOR2_X1 + PLACED ( 7600 44800 ) N ;
+    - g13906__14126 AND2_X2 + PLACED ( 6460 28000 ) N ;
+    - g13909 INV_X1 + PLACED ( 40660 33600 ) N ;
+    - g13911 INV_X1 + PLACED ( 11020 47600 ) FS ;
+    - g13912 INV_X1 + PLACED ( 53960 30800 ) FS ;
+    - g13914 INV_X1 + PLACED ( 52440 39200 ) N ;
+    - g13916 INV_X1 + PLACED ( 53200 14000 ) FS ;
+    - g13922 INV_X1 + PLACED ( 38380 8400 ) FS ;
+    - g13931 INV_X1 + PLACED ( 12920 22400 ) N ;
+    - g13932 INV_X1 + PLACED ( 44840 8400 ) FS ;
+    - g13934 INV_X1 + PLACED ( 47120 47600 ) FS ;
+    - g13941 INV_X1 + PLACED ( 25080 47600 ) FS ;
+    - g13947 INV_X1 + PLACED ( 18240 8400 ) FS ;
+    - g13948 INV_X1 + PLACED ( 18620 42000 ) FS ;
+    - g14024 INV_X1 + PLACED ( 52060 28000 ) N ;
+    - g14030 INV_X1 + PLACED ( 45600 25200 ) FS ;
+    - g14033 INV_X1 + PLACED ( 46360 25200 ) FS ;
+    - g14147 INV_X1 + PLACED ( 12920 11200 ) N ;
+    - g14224 XOR2_X1 + PLACED ( 31160 39200 ) N ;
+    - g14300 OAI221_X1 + PLACED ( 29640 33600 ) N ;
+    - g14309 INV_X1 + PLACED ( 15960 22400 ) N ;
+    - g14311 OAI21_X1 + PLACED ( 38380 50400 ) N ;
+    - g14313 NOR2_X1 + PLACED ( 37240 50400 ) N ;
+    - g14316 INV_X1 + PLACED ( 17480 16800 ) N ;
+    - g14324 NAND2_X1 + PLACED ( 41040 22400 ) N ;
+    - g14326 AND2_X1 + PLACED ( 34960 25200 ) FS ;
+    - g14354 OAI221_X1 + PLACED ( 10640 22400 ) N ;
+    - g14355 INV_X1 + PLACED ( 7980 19600 ) FS ;
+    - g14356 XNOR2_X1 + PLACED ( 6460 33600 ) N ;
+    - g14357 OAI221_X1 + PLACED ( 22040 47600 ) FS ;
+    - g14358 INV_X1 + PLACED ( 24320 47600 ) FS ;
+    - g14359 XNOR2_X1 + PLACED ( 29640 47600 ) FS ;
+    - g14433 NOR2_X1 + PLACED ( 52820 19600 ) FS ;
+    - g14435 AOI21_X1 + PLACED ( 52440 25200 ) FS ;
+    - g14477 OAI221_X4 + PLACED ( 17480 50400 ) N ;
+    - g14512 OAI21_X1 + PLACED ( 20900 14000 ) FS ;
+    - g14513 NOR3_X1 + PLACED ( 23560 14000 ) FS ;
+    - g14628 AND2_X1 + PLACED ( 33440 50400 ) N ;
+    - g14935 XNOR2_X1 + PLACED ( 49400 25200 ) FS ;
+    - g14936 AND2_X1 + PLACED ( 52820 28000 ) N ;
+    - g14940 AND2_X1 + PLACED ( 34960 50400 ) N ;
+    - g14969 OAI211_X1 + PLACED ( 9120 44800 ) N ;
+    - g14980 OAI21_X1 + PLACED ( 36480 42000 ) FS ;
+    - g15018 OAI211_X1 + PLACED ( 14820 44800 ) N ;
+    - g15019 AOI21_X2 + PLACED ( 6080 42000 ) FS ;
+    - g15020 OAI21_X1 + PLACED ( 5320 39200 ) N ;
+    - g15038 OAI21_X2 + PLACED ( 16720 44800 ) N ;
+    - g15039 NAND2_X1 + PLACED ( 12920 16800 ) N ;
+    - g15042 INV_X1 + PLACED ( 8740 42000 ) FS ;
+    - g15043 INV_X1 + PLACED ( 4180 33600 ) N ;
+    - g15045 AND4_X1 + PLACED ( 11020 36400 ) FS ;
+    - g15048 INV_X1 + PLACED ( 32680 42000 ) FS ;
+    - g15049 AND2_X1 + PLACED ( 12540 50400 ) N ;
+    - g15051 AND2_X1 + PLACED ( 13300 36400 ) FS ;
+    - g15057 OAI22_X1 + PLACED ( 25460 33600 ) N ;
+    - g15225 OR2_X1 + PLACED ( 6080 30800 ) FS ;
+    - g15226 INV_X1 + PLACED ( 7600 30800 ) FS ;
+    - g223 AOI21_X1 + PLACED ( 25080 16800 ) N ;
+    - g225 NAND2_X1 + PLACED ( 41420 14000 ) FS ;
+    - g227 OR2_X1 + PLACED ( 42560 14000 ) FS ;
+    - g23 AOI21_X1 + PLACED ( 47880 25200 ) FS ;
+    - g24 INV_X1 + PLACED ( 51680 22400 ) N ;
+    - g28 NOR2_X1 + PLACED ( 39140 8400 ) FS ;
+    - g3 NAND2_X1 + PLACED ( 44080 50400 ) N ;
+    - g30 INV_X1 + PLACED ( 42560 16800 ) N ;
+    - g381 OAI21_X1 + PLACED ( 38760 44800 ) N ;
+    - g382 OR2_X1 + PLACED ( 33440 42000 ) FS ;
+    - g383 NAND2_X1 + PLACED ( 39520 42000 ) FS ;
+    - g384 INV_X1 + PLACED ( 36100 47600 ) FS ;
+    - g389 INV_X1 + PLACED ( 40280 44800 ) N ;
+    - g390 AND2_X1 + PLACED ( 39140 39200 ) N ;
+    - g391 INV_X1 + PLACED ( 38380 39200 ) N ;
+    - g393 OR2_X1 + PLACED ( 40660 39200 ) N ;
+    - g43 OR2_X1 + PLACED ( 6840 50400 ) N ;
+    - g443 OAI21_X1 + PLACED ( 36480 25200 ) FS ;
+    - g446 NAND2_X1 + PLACED ( 52820 30800 ) FS ;
+    - g449 NAND2_X1 + PLACED ( 27360 25200 ) FS ;
+    - g451 NOR2_X1 + PLACED ( 51680 30800 ) FS ;
+    - g48 AND2_X1 + PLACED ( 14060 50400 ) N ;
+    - g52 AOI22_X1 + PLACED ( 30400 16800 ) N ;
+    - g53 AOI22_X1 + PLACED ( 36100 16800 ) N ;
+    - g63 NAND2_X1 + PLACED ( 17100 39200 ) N ;
+    - g7 NOR2_X1 + PLACED ( 35720 22400 ) N ;
+    - g78 OAI221_X1 + PLACED ( 47880 39200 ) N ;
+    - g79 INV_X1 + PLACED ( 43320 39200 ) N ;
+    - g80 XNOR2_X1 + PLACED ( 42180 42000 ) FS ;
+    - g96 OAI21_X1 + PLACED ( 15580 36400 ) FS ;
+    - g97 NAND2_X1 + PLACED ( 21660 30800 ) FS ;
+    - g98 OR2_X1 + PLACED ( 16340 30800 ) FS ;
+    - g99 AND2_X1 + PLACED ( 14820 30800 ) FS ;
+END COMPONENTS
+PINS 54 ;
+    - clk + NET clk + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 50350 70 ) N ;
+    - req_msg[0] + NET req_msg[0] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 29830 70 ) N ;
+    - req_msg[10] + NET req_msg[10] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 45790 70 ) N ;
+    - req_msg[11] + NET req_msg[11] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 30590 70 ) N ;
+    - req_msg[12] + NET req_msg[12] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 28310 70 ) N ;
+    - req_msg[13] + NET req_msg[13] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 27550 70 ) N ;
+    - req_msg[14] + NET req_msg[14] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 41990 70 ) N ;
+    - req_msg[15] + NET req_msg[15] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 41230 70 ) N ;
+    - req_msg[16] + NET req_msg[16] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 42750 70 ) N ;
+    - req_msg[17] + NET req_msg[17] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 25270 70 ) N ;
+    - req_msg[18] + NET req_msg[18] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 24510 70 ) N ;
+    - req_msg[19] + NET req_msg[19] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 32110 70 ) N ;
+    - req_msg[1] + NET req_msg[1] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 46550 70 ) N ;
+    - req_msg[20] + NET req_msg[20] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 49590 70 ) N ;
+    - req_msg[21] + NET req_msg[21] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 32870 70 ) N ;
+    - req_msg[22] + NET req_msg[22] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 33630 70 ) N ;
+    - req_msg[23] + NET req_msg[23] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 21470 70 ) N ;
+    - req_msg[24] + NET req_msg[24] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 48830 70 ) N ;
+    - req_msg[25] + NET req_msg[25] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 19950 70 ) N ;
+    - req_msg[26] + NET req_msg[26] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 35910 70 ) N ;
+    - req_msg[27] + NET req_msg[27] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 19190 70 ) N ;
+    - req_msg[28] + NET req_msg[28] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 18430 70 ) N ;
+    - req_msg[29] + NET req_msg[29] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 43510 70 ) N ;
+    - req_msg[2] + NET req_msg[2] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 34390 70 ) N ;
+    - req_msg[30] + NET req_msg[30] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 31350 70 ) N ;
+    - req_msg[31] + NET req_msg[31] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 47310 70 ) N ;
+    - req_msg[3] + NET req_msg[3] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 17670 70 ) N ;
+    - req_msg[4] + NET req_msg[4] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 35150 70 ) N ;
+    - req_msg[5] + NET req_msg[5] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 26030 70 ) N ;
+    - req_msg[6] + NET req_msg[6] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 20710 70 ) N ;
+    - req_msg[7] + NET req_msg[7] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 26790 70 ) N ;
+    - req_msg[8] + NET req_msg[8] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 44270 70 ) N ;
+    - req_msg[9] + NET req_msg[9] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 36670 70 ) N ;
+    - req_rdy + NET req_rdy + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 16150 70 ) N ;
+    - req_val + NET req_val + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 16910 70 ) N ;
+    - reset + NET reset + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 38950 70 ) N ;
+    - resp_msg[0] + NET resp_msg[0] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 29070 70 ) N ;
+    - resp_msg[10] + NET resp_msg[10] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 15390 70 ) N ;
+    - resp_msg[11] + NET resp_msg[11] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 14630 70 ) N ;
+    - resp_msg[12] + NET resp_msg[12] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 37430 70 ) N ;
+    - resp_msg[13] + NET resp_msg[13] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 12350 70 ) N ;
+    - resp_msg[14] + NET resp_msg[14] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 11590 70 ) N ;
+    - resp_msg[15] + NET resp_msg[15] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 22230 70 ) N ;
+    - resp_msg[1] + NET resp_msg[1] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 38190 70 ) N ;
+    - resp_msg[2] + NET resp_msg[2] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 45030 70 ) N ;
+    - resp_msg[3] + NET resp_msg[3] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 10830 70 ) N ;
+    - resp_msg[4] + NET resp_msg[4] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 13870 70 ) N ;
+    - resp_msg[5] + NET resp_msg[5] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 48070 70 ) N ;
+    - resp_msg[6] + NET resp_msg[6] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 40470 70 ) N ;
+    - resp_msg[7] + NET resp_msg[7] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 23750 70 ) N ;
+    - resp_msg[8] + NET resp_msg[8] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 13110 70 ) N ;
+    - resp_msg[9] + NET resp_msg[9] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 39710 70 ) N ;
+    - resp_rdy + NET resp_rdy + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 10070 70 ) N ;
+    - resp_val + NET resp_val + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER M2 ( -70 -70 ) ( 70 70 )
+        + PLACED ( 22990 70 ) N ;
+END PINS
+NETS 371 ;
+    - FE_DBTN0_n_2200 ( g63 A2 ) ( g15051 A1 ) ( g15045 A3 ) ( FE_DBTC0_n_2200 ZN ) + USE SIGNAL ;
+    - FE_DBTN1_n_2149 ( g15057 B1 ) ( g13681__14106 A1 ) ( g13680__14103 A1 ) ( g13679__2398 A1 ) ( g13678__14125 A1 ) ( g13677__14112 A1 ) ( g13676__14241 A1 )
+      ( g13674__1666 A1 ) ( g13673__2346 A1 ) ( g13672__14078 A1 ) ( g13671__5115 A1 ) ( g13670__14117 A1 ) ( g13669__6161 A1 ) ( g13668__4733 A1 ) ( g13667__7482 A1 )
+      ( g13666__14114 A1 ) ( FE_DBTC1_n_2149 ZN ) + USE SIGNAL ;
+    - FE_DBTN2_n_1173 ( g78 C1 ) ( g43 A1 ) ( g14357 C1 ) ( g14354 C1 ) ( g14300 C1 ) ( g13665__14406 C1 ) ( g13664__3680 C1 )
+      ( g13663__2802 C1 ) ( g13662__1705 C1 ) ( g13661__5122 C1 ) ( g13660__8246 C1 ) ( g13659__1881 C1 ) ( g13658__6131 C1 ) ( g13649__7098 C1 ) ( g13648__14529 C1 )
+      ( g13644__14055 C1 ) ( FE_DBTC2_n_1173 ZN ) + USE SIGNAL ;
+    - FE_DBTN3_n_2127 ( g13744__4319 A1 ) ( g13715__14480 A ) ( FE_DBTC3_n_2127 ZN ) + USE SIGNAL ;
+    - FE_DBTN4_dpath_b_reg_out_4 ( g14433 A1 ) ( g13895__3680 A2 ) ( FE_DBTC4_dpath_b_reg_out_4 ZN ) + USE SIGNAL ;
+    - FE_DBTN5_dpath_b_reg_out_12 ( g13898__7410 A2 ) ( g13877__9945 A2 ) ( FE_DBTC5_dpath_b_reg_out_12 ZN ) + USE SIGNAL ;
+    - FE_DBTN6_dpath_a_reg_out_0 ( g28 A1 ) ( g13811__8428 B2 ) ( g13791__6417 B2 ) ( FE_DBTC6_dpath_a_reg_out_0 ZN ) + USE SIGNAL ;
+    - FE_DBTN7_dpath_a_reg_out_2 ( g13904__2398 A1 ) ( g13871__5115 A1 ) ( g13813__5526 B2 ) ( g13794__5107 B2 ) ( FE_DBTC7_dpath_a_reg_out_2 ZN ) + USE SIGNAL ;
+    - FE_DBTN8_dpath_a_reg_out_7 ( g449 A1 ) ( g13901__7482 A1 ) ( g13819__6131 B2 ) ( g13812__1617 B2 ) ( FE_DBTC8_dpath_a_reg_out_7 ZN ) + USE SIGNAL ;
+    - UNCONNECTED ( dpath_a_reg_out_reg\[11\] Q ) + USE SIGNAL ;
+    - UNCONNECTED0 ( dpath_a_reg_out_reg\[14\] Q ) + USE SIGNAL ;
+    - UNCONNECTED1 ( dpath_a_reg_out_reg\[13\] Q ) + USE SIGNAL ;
+    - UNCONNECTED10 ( dpath_a_reg_out_reg\[2\] Q ) + USE SIGNAL ;
+    - UNCONNECTED11 ( dpath_a_reg_out_reg\[0\] Q ) + USE SIGNAL ;
+    - UNCONNECTED12 ( dpath_a_reg_out_reg\[1\] Q ) + USE SIGNAL ;
+    - UNCONNECTED13 ( dpath_b_reg_out_reg\[1\] Q ) + USE SIGNAL ;
+    - UNCONNECTED14 ( dpath_b_reg_out_reg\[0\] Q ) + USE SIGNAL ;
+    - UNCONNECTED15 ( dpath_b_reg_out_reg\[4\] Q ) + USE SIGNAL ;
+    - UNCONNECTED16 ( dpath_b_reg_out_reg\[2\] Q ) + USE SIGNAL ;
+    - UNCONNECTED17 ( dpath_b_reg_out_reg\[6\] Q ) + USE SIGNAL ;
+    - UNCONNECTED18 ( dpath_b_reg_out_reg\[12\] Q ) + USE SIGNAL ;
+    - UNCONNECTED19 ( dpath_b_reg_out_reg\[7\] Q ) + USE SIGNAL ;
+    - UNCONNECTED2 ( dpath_a_reg_out_reg\[12\] Q ) + USE SIGNAL ;
+    - UNCONNECTED20 ( ctrl_state_out_reg\[0\] Q ) + USE SIGNAL ;
+    - UNCONNECTED21 ( ctrl_state_out_reg\[1\] Q ) + USE SIGNAL ;
+    - UNCONNECTED3 ( dpath_a_reg_out_reg\[15\] Q ) + USE SIGNAL ;
+    - UNCONNECTED4 ( dpath_a_reg_out_reg\[9\] Q ) + USE SIGNAL ;
+    - UNCONNECTED5 ( dpath_a_reg_out_reg\[7\] Q ) + USE SIGNAL ;
+    - UNCONNECTED6 ( dpath_a_reg_out_reg\[4\] Q ) + USE SIGNAL ;
+    - UNCONNECTED7 ( dpath_a_reg_out_reg\[5\] Q ) + USE SIGNAL ;
+    - UNCONNECTED8 ( dpath_a_reg_out_reg\[3\] Q ) + USE SIGNAL ;
+    - UNCONNECTED9 ( dpath_a_reg_out_reg\[6\] Q ) + USE SIGNAL ;
+    - clk ( PIN clk ) ( dpath_b_reg_out_reg\[9\] CK ) ( dpath_b_reg_out_reg\[8\] CK ) ( dpath_b_reg_out_reg\[7\] CK ) ( dpath_b_reg_out_reg\[6\] CK ) ( dpath_b_reg_out_reg\[5\] CK ) ( dpath_b_reg_out_reg\[4\] CK )
+      ( dpath_b_reg_out_reg\[3\] CK ) ( dpath_b_reg_out_reg\[2\] CK ) ( dpath_b_reg_out_reg\[1\] CK ) ( dpath_b_reg_out_reg\[15\] CK ) ( dpath_b_reg_out_reg\[14\] CK ) ( dpath_b_reg_out_reg\[13\] CK ) ( dpath_b_reg_out_reg\[12\] CK ) ( dpath_b_reg_out_reg\[11\] CK )
+      ( dpath_b_reg_out_reg\[10\] CK ) ( dpath_b_reg_out_reg\[0\] CK ) ( dpath_a_reg_out_reg\[9\] CK ) ( dpath_a_reg_out_reg\[8\] CK ) ( dpath_a_reg_out_reg\[7\] CK ) ( dpath_a_reg_out_reg\[6\] CK ) ( dpath_a_reg_out_reg\[5\] CK ) ( dpath_a_reg_out_reg\[4\] CK )
+      ( dpath_a_reg_out_reg\[3\] CK ) ( dpath_a_reg_out_reg\[2\] CK ) ( dpath_a_reg_out_reg\[1\] CK ) ( dpath_a_reg_out_reg\[15\] CK ) ( dpath_a_reg_out_reg\[14\] CK ) ( dpath_a_reg_out_reg\[13\] CK ) ( dpath_a_reg_out_reg\[12\] CK ) ( dpath_a_reg_out_reg\[11\] CK )
+      ( dpath_a_reg_out_reg\[10\] CK ) ( dpath_a_reg_out_reg\[0\] CK ) ( ctrl_state_out_reg\[1\] CK ) ( ctrl_state_out_reg\[0\] CK ) + USE SIGNAL ;
+    - ctrl_state$out[0] ( g15039 A2 ) ( g13947 A ) ( g13892__2883 A2 ) ( g13841__7098 B2 ) ( ctrl_state_out_reg\[0\] QN ) + USE SIGNAL ;
+    - ctrl_state$out[1] ( g15039 A1 ) ( g15018 B ) ( g13948 A ) ( g13891__8428 A1 ) ( g13841__7098 A ) ( ctrl_state_out_reg\[1\] QN ) + USE SIGNAL ;
+    - dpath_a_reg$out[0] ( g13845__5526 B1 ) ( dpath_a_reg_out_reg\[0\] QN ) ( FE_DBTC6_dpath_a_reg_out_0 A ) + USE SIGNAL ;
+    - dpath_a_reg$out[10] ( g13911 A ) ( g13900__14113 A2 ) ( dpath_a_reg_out_reg\[10\] QN ) + USE SIGNAL ;
+    - dpath_a_reg$out[11] ( g15225 A2 ) ( g13931 A ) ( g13906__14126 A2 ) ( dpath_a_reg_out_reg\[11\] QN ) + USE SIGNAL ;
+    - dpath_a_reg$out[12] ( g13941 A ) ( g13898__7410 A1 ) ( g13877__9945 A1 ) ( dpath_a_reg_out_reg\[12\] QN ) + USE SIGNAL ;
+    - dpath_a_reg$out[13] ( g3 A2 ) ( g13934 A ) ( g13893__14104 A2 ) ( g13870__14629 A2 ) ( dpath_a_reg_out_reg\[13\] QN ) + USE SIGNAL ;
+    - dpath_a_reg$out[14] ( g393 A2 ) ( g390 A2 ) ( g13909 A ) ( dpath_a_reg_out_reg\[14\] QN ) + USE SIGNAL ;
+    - dpath_a_reg$out[15] ( g13914 A ) ( g13894__14116 A1 ) ( g13873__14115 A2 ) ( dpath_a_reg_out_reg\[15\] QN ) + USE SIGNAL ;
+    - dpath_a_reg$out[1] ( g227 A2 ) ( g13932 A ) ( g13868__1617 A1 ) ( dpath_a_reg_out_reg\[1\] QN ) + USE SIGNAL ;
+    - dpath_a_reg$out[2] ( dpath_a_reg_out_reg\[2\] QN ) ( FE_DBTC7_dpath_a_reg_out_2 A ) + USE SIGNAL ;
+    - dpath_a_reg$out[3] ( g14147 A ) ( g13897__14318 A2 ) ( dpath_a_reg_out_reg\[3\] QN ) + USE SIGNAL ;
+    - dpath_a_reg$out[4] ( g14433 A2 ) ( g13916 A ) ( g13895__3680 A1 ) ( dpath_a_reg_out_reg\[4\] QN ) + USE SIGNAL ;
+    - dpath_a_reg$out[5] ( g451 A2 ) ( g446 A2 ) ( g13912 A ) ( dpath_a_reg_out_reg\[5\] QN ) + USE SIGNAL ;
+    - dpath_a_reg$out[6] ( fopt14366 A ) ( dpath_a_reg_out_reg\[6\] QN ) + USE SIGNAL ;
+    - dpath_a_reg$out[7] ( dpath_a_reg_out_reg\[7\] QN ) ( FE_DBTC8_dpath_a_reg_out_7 A ) + USE SIGNAL ;
+    - dpath_a_reg$out[8] ( g13902__15058 A2 ) ( dpath_a_reg_out_reg\[8\] QN ) + USE SIGNAL ;
+    - dpath_a_reg$out[9] ( g99 A2 ) ( g98 A2 ) ( g14309 A ) ( dpath_a_reg_out_reg\[9\] QN ) + USE SIGNAL ;
+    - dpath_b_reg$out[0] ( g28 A2 ) ( g13922 A ) ( g13839__9315 A3 ) ( g13667__7482 B2 ) ( g13664__3680 C2 ) ( dpath_b_reg_out_reg\[0\] QN ) + USE SIGNAL ;
+    - dpath_b_reg$out[10] ( g43 A2 ) ( g13905__14970 A2 ) ( g13838__5526 A1 ) ( g13677__14112 B2 ) ( dpath_b_reg_out_reg\[10\] QN ) + USE SIGNAL ;
+    - dpath_b_reg$out[11] ( g15226 A ) ( g14354 C2 ) ( g13838__5526 A3 ) ( g13678__14125 B2 ) ( dpath_b_reg_out_reg\[11\] QN ) + USE SIGNAL ;
+    - dpath_b_reg$out[12] ( g14357 C2 ) ( g13837__14416 A3 ) ( g13679__2398 B2 ) ( dpath_b_reg_out_reg\[12\] QN ) ( FE_DBTC5_dpath_b_reg_out_12 A ) + USE SIGNAL ;
+    - dpath_b_reg$out[13] ( g13840__14058 A2 ) ( g13680__14103 B2 ) ( g13644__14055 C2 ) ( dpath_b_reg_out_reg\[13\] QN ) + USE SIGNAL ;
+    - dpath_b_reg$out[14] ( g14300 C2 ) ( g13838__5526 A2 ) ( g13681__14106 B2 ) ( dpath_b_reg_out_reg\[14\] QN ) + USE SIGNAL ;
+    - dpath_b_reg$out[15] ( g78 C2 ) ( g13837__14416 A2 ) ( g13666__14114 B2 ) ( dpath_b_reg_out_reg\[15\] QN ) + USE SIGNAL ;
+    - dpath_b_reg$out[1] ( g30 A ) ( g13839__9315 A1 ) ( g13829__8428 B2 ) ( g13668__4733 B2 ) ( g13659__1881 C2 ) ( dpath_b_reg_out_reg\[1\] QN ) + USE SIGNAL ;
+    - dpath_b_reg$out[2] ( g13904__2398 A2 ) ( g13871__5115 A2 ) ( g13839__9315 A4 ) ( g13669__6161 B2 ) ( g13660__8246 C2 ) ( dpath_b_reg_out_reg\[2\] QN ) + USE SIGNAL ;
+    - dpath_b_reg$out[3] ( g13864__14243 A2 ) ( g13839__9315 A2 ) ( g13676__14241 B2 ) ( g13661__5122 C2 ) ( dpath_b_reg_out_reg\[3\] QN ) + USE SIGNAL ;
+    - dpath_b_reg$out[4] ( g13840__14058 A4 ) ( g13671__5115 B2 ) ( g13662__1705 C2 ) ( dpath_b_reg_out_reg\[4\] QN ) ( FE_DBTC4_dpath_b_reg_out_4 A ) + USE SIGNAL ;
+    - dpath_b_reg$out[5] ( fopt14165 A ) ( dpath_b_reg_out_reg\[5\] QN ) + USE SIGNAL ;
+    - dpath_b_reg$out[6] ( g7 A1 ) ( g14324 A2 ) ( g13840__14058 A1 ) ( g13673__2346 B2 ) ( g13658__6131 C2 ) ( dpath_b_reg_out_reg\[6\] QN ) + USE SIGNAL ;
+    - dpath_b_reg$out[7] ( g449 A2 ) ( g13901__7482 A2 ) ( g13837__14416 A1 ) ( g13674__1666 B2 ) ( g13649__7098 C2 ) ( dpath_b_reg_out_reg\[7\] QN ) + USE SIGNAL ;
+    - dpath_b_reg$out[8] ( g97 A2 ) ( g15057 A2 ) ( g13837__14416 A4 ) ( g13665__14406 C2 ) ( dpath_b_reg_out_reg\[8\] QN ) + USE SIGNAL ;
+    - dpath_b_reg$out[9] ( g13838__5526 A4 ) ( g13670__14117 B2 ) ( g13648__14529 C2 ) ( fopt2 A ) ( dpath_b_reg_out_reg\[9\] QN ) + USE SIGNAL ;
+    - n_100 ( g13821__5122 ZN ) ( g13678__14125 A2 ) + USE SIGNAL ;
+    - n_101 ( g13820__1705 ZN ) ( g13670__14117 A2 ) + USE SIGNAL ;
+    - n_1016 ( g79 ZN ) ( g78 B1 ) + USE SIGNAL ;
+    - n_1017 ( g78 ZN ) ( dpath_a_reg_out_reg\[15\] D ) + USE SIGNAL ;
+    - n_102 ( g13818__2802 ZN ) ( g13679__2398 A2 ) + USE SIGNAL ;
+    - n_1021 ( g14355 ZN ) ( g14354 B1 ) + USE SIGNAL ;
+    - n_1022 ( g14354 ZN ) ( dpath_a_reg_out_reg\[11\] D ) + USE SIGNAL ;
+    - n_1024 ( g14358 ZN ) ( g14357 B1 ) + USE SIGNAL ;
+    - n_1025 ( g14357 ZN ) ( dpath_a_reg_out_reg\[12\] D ) + USE SIGNAL ;
+    - n_1032 ( g7 ZN ) ( g443 B2 ) ( g13860 A ) ( g13705__14322 B2 ) + USE SIGNAL ;
+    - n_104 ( g13815__3680 ZN ) ( g13671__5115 A2 ) + USE SIGNAL ;
+    - n_105 ( g14359 B ) ( g13825__6783 ZN ) + USE SIGNAL ;
+    - n_1053 ( g13706__4733 C1 ) ( g13704__14174 B1 ) ( fopt14360 ZN ) + USE SIGNAL ;
+    - n_106 ( g13813__5526 ZN ) ( g13669__6161 A2 ) + USE SIGNAL ;
+    - n_1060 ( g13846__5115 A1 ) ( fopt14363 ZN ) + USE SIGNAL ;
+    - n_1064 ( g7 A2 ) ( g53 A2 ) ( g52 A2 ) ( g14324 A1 ) ( fopt14366 ZN ) + USE SIGNAL ;
+    - n_107 ( g13811__8428 ZN ) ( g13667__7482 A2 ) + USE SIGNAL ;
+    - n_108 ( g13810__4319 ZN ) ( g13677__14112 A2 ) + USE SIGNAL ;
+    - n_11 ( g13922 ZN ) ( g13845__5526 B2 ) + USE SIGNAL ;
+    - n_110 ( g13808__5107 ZN ) ( g13681__14106 A2 ) + USE SIGNAL ;
+    - n_1106 ( g13802__14407 ZN ) ( g13665__14406 A ) + USE SIGNAL ;
+    - n_1107 ( g13665__14406 ZN ) ( dpath_a_reg_out_reg\[8\] D ) + USE SIGNAL ;
+    - n_111 ( g13807__2398 ZN ) ( g13666__14114 A2 ) + USE SIGNAL ;
+    - n_1110 ( g15057 B2 ) ( g13809__14409 ZN ) + USE SIGNAL ;
+    - n_1116 ( g13837__14416 ZN ) ( g13772__5107 A2 ) + USE SIGNAL ;
+    - n_112 ( g13814__5477 ZN ) ( g13676__14241 A2 ) + USE SIGNAL ;
+    - n_1132 ( g23 A ) ( g14435 B2 ) ( g14433 ZN ) ( g13826__1705 A1 ) + USE SIGNAL ;
+    - n_1135 ( g443 B1 ) ( g14435 ZN ) ( g14030 A ) + USE SIGNAL ;
+    - n_114 ( g14313 A1 ) ( g14311 B1 ) ( g13898__7410 ZN ) ( g13825__6783 A1 ) ( g13706__4733 B ) + USE SIGNAL ;
+    - n_1141 ( g13766__5115 B1 ) ( fopt14439 ZN ) + USE SIGNAL ;
+    - n_1169 ( g48 A1 ) ( g14477 B1 ) ( g13736__14471 ZN ) ( g13719__14475 B1 ) ( g13716__14472 A ) ( g13715__14480 B1 ) ( g13714__14479 B1 )
+      ( g13707__14476 B1 ) ( g13702__14478 B1 ) ( g109 B1 ) ( fopt14360 A ) + USE SIGNAL ;
+    - n_1173 ( g13719__14475 ZN ) ( FE_DBTC2_n_1173 A ) + USE SIGNAL ;
+    - n_1174 ( g14224 A ) ( g13707__14476 ZN ) ( g13694__14225 A ) + USE SIGNAL ;
+    - n_1175 ( g78 B2 ) ( g14969 C1 ) ( g14477 ZN ) ( g14357 B2 ) ( g14354 B2 ) ( g14300 B2 ) ( g13665__14406 B1 )
+      ( g13664__3680 B1 ) ( g13663__2802 B1 ) ( g13662__1705 B1 ) ( g13661__5122 B1 ) ( g13660__8246 B1 ) ( g13659__1881 B1 ) ( g13658__6131 B1 ) ( g13649__7098 B1 )
+      ( g13648__14529 B1 ) ( g13644__14055 B1 ) + USE SIGNAL ;
+    - n_1176 ( g80 A ) ( g13702__14478 ZN ) + USE SIGNAL ;
+    - n_1177 ( g14356 A ) ( g13714__14479 ZN ) + USE SIGNAL ;
+    - n_1178 ( g14359 A ) ( g13715__14480 ZN ) + USE SIGNAL ;
+    - n_118 ( g13932 ZN ) ( g13829__8428 B1 ) ( g13801__2346 B2 ) ( g13792__5477 B2 ) + USE SIGNAL ;
+    - n_119 ( g13801__2346 ZN ) ( g13668__4733 A2 ) + USE SIGNAL ;
+    - n_122 ( g14512 B1 ) ( g13871__5115 ZN ) ( g13857 A ) ( g13739__7482 A ) + USE SIGNAL ;
+    - n_127 ( g13816__6161 ZN ) ( g13672__14078 A2 ) + USE SIGNAL ;
+    - n_128 ( g13860 ZN ) ( g13850__14325 A1 ) ( g13789__2802 A1 ) + USE SIGNAL ;
+    - n_131 ( g13846__5115 ZN ) ( g13697__2802 B ) + USE SIGNAL ;
+    - n_1322 ( g63 ZN ) ( g13696__1705 B ) + USE SIGNAL ;
+    - n_133 ( g13819__6131 ZN ) ( g13674__1666 A2 ) + USE SIGNAL ;
+    - n_1333 ( g223 A ) ( g14512 ZN ) + USE SIGNAL ;
+    - n_1334 ( g223 B1 ) ( g14513 ZN ) + USE SIGNAL ;
+    - n_1335 ( g227 ZN ) ( g225 A1 ) + USE SIGNAL ;
+    - n_1336 ( g225 ZN ) ( g223 B2 ) ( g13756__6783 A1 ) + USE SIGNAL ;
+    - n_1337 ( g223 ZN ) ( g14033 A ) ( g13736__14471 B1 ) ( g13734__3680 A ) + USE SIGNAL ;
+    - n_134 ( g14513 A2 ) ( g13904__2398 ZN ) ( g13834__7098 A2 ) ( g13739__7482 B2 ) + USE SIGNAL ;
+    - n_135 ( g13834__7098 ZN ) ( g13742__4733 B ) + USE SIGNAL ;
+    - n_1356 ( g14356 B ) ( g13827__14526 ZN ) + USE SIGNAL ;
+    - n_1357 ( g13648__14529 ZN ) ( dpath_a_reg_out_reg\[9\] D ) + USE SIGNAL ;
+    - n_141 ( g13826__1705 ZN ) ( g13734__3680 B ) + USE SIGNAL ;
+    - n_142 ( g13901__7482 ZN ) ( g13835__3680 A1 ) ( g13789__2802 A3 ) ( g13745__7098 A2 ) + USE SIGNAL ;
+    - n_144 ( g13789__2802 ZN ) ( g13736__14471 B2 ) + USE SIGNAL ;
+    - n_1458 ( g3 ZN ) ( g14628 A1 ) + USE SIGNAL ;
+    - n_1459 ( g14940 A2 ) ( g14628 ZN ) ( g13823 A ) + USE SIGNAL ;
+    - n_1460 ( g14313 A2 ) ( g14311 B2 ) ( g13870__14629 ZN ) ( fopt14363 A ) + USE SIGNAL ;
+    - n_151 ( g13829__8428 ZN ) ( g13767__9315 A ) + USE SIGNAL ;
+    - n_153 ( g15045 A1 ) ( g15042 ZN ) ( g13798__14947 A2 ) ( g111 A1 ) + USE SIGNAL ;
+    - n_157 ( g13774 ZN ) ( g13664__3680 B2 ) + USE SIGNAL ;
+    - n_162 ( g13772__5107 ZN ) ( g13770 A ) ( g13748__6131 B1 ) + USE SIGNAL ;
+    - n_163 ( g13770 ZN ) ( g13749__8246 B1 ) + USE SIGNAL ;
+    - n_165 ( g15018 C1 ) ( g13775 ZN ) ( g13743__14186 B2 ) ( g13724__15023 C2 ) + USE SIGNAL ;
+    - n_173 ( g382 A1 ) ( g13823 ZN ) ( g13754__6161 A2 ) ( g13738__14824 B2 ) + USE SIGNAL ;
+    - n_175 ( g13754__6161 ZN ) ( g13707__14476 B2 ) + USE SIGNAL ;
+    - n_1756 ( g13738__14824 ZN ) ( g13707__14476 A ) + USE SIGNAL ;
+    - n_176 ( g13756__6783 ZN ) ( g13742__4733 A ) ( g13739__7482 B1 ) + USE SIGNAL ;
+    - n_178 ( g13739__7482 ZN ) ( g13722__2802 A ) + USE SIGNAL ;
+    - n_18 ( g13838__5526 ZN ) ( g13772__5107 A1 ) + USE SIGNAL ;
+    - n_181 ( g13766__5115 ZN ) ( g13714__14479 A ) + USE SIGNAL ;
+    - n_183 ( g13755__1881 ZN ) ( g13702__14478 B2 ) + USE SIGNAL ;
+    - n_185 ( g13757 ZN ) ( g13659__1881 B2 ) + USE SIGNAL ;
+    - n_1865 ( g52 A1 ) ( g15039 ZN ) ( g15038 A ) ( g13822__8246 B1 ) ( g13821__5122 B1 ) ( g13820__1705 B1 ) ( g13819__6131 B1 )
+      ( g13818__2802 B1 ) ( g13816__6161 B1 ) ( g13815__3680 B1 ) ( g13814__5477 B1 ) ( g13813__5526 B1 ) ( g13811__8428 B1 ) ( g13810__4319 B1 ) ( g13809__14409 B1 )
+      ( g13808__5107 B1 ) ( g13807__2398 B1 ) ( g13801__2346 B1 ) ( FE_DBTC9_n_1865 A ) + USE SIGNAL ;
+    - n_187 ( g13947 ZN ) ( g13891__8428 A2 ) ( g13749__8246 B2 ) ( g13748__6131 A ) + USE SIGNAL ;
+    - n_1875 ( g23 ZN ) ( g14935 A ) + USE SIGNAL ;
+    - n_1879 ( g24 ZN ) ( g13826__1705 A2 ) + USE SIGNAL ;
+    - n_188 ( g13748__6131 ZN ) ( g13725__8428 B1 ) + USE SIGNAL ;
+    - n_189 ( g13745__7098 ZN ) ( g13736__14471 A ) + USE SIGNAL ;
+    - n_1890 ( g14936 ZN ) ( g14935 B ) + USE SIGNAL ;
+    - n_1900 ( g15049 A2 ) ( g14940 ZN ) ( g13775 A ) + USE SIGNAL ;
+    - n_191 ( g13740 ZN ) ( g13660__8246 B2 ) + USE SIGNAL ;
+    - n_194 ( g13749__8246 ZN ) ( g13737__6783 A1 ) + USE SIGNAL ;
+    - n_1956 ( g13798__14947 ZN ) ( g13714__14479 B2 ) + USE SIGNAL ;
+    - n_1969 ( g13687__14223 A ) ( g109 ZN ) ( g108 A ) + USE SIGNAL ;
+    - n_1970 ( g111 ZN ) ( g110 A ) ( g108 B ) + USE SIGNAL ;
+    - n_1971 ( g14969 C2 ) ( g108 ZN ) + USE SIGNAL ;
+    - n_1972 ( g13687__14223 B ) ( g110 ZN ) + USE SIGNAL ;
+    - n_2 ( g30 ZN ) ( g227 A1 ) ( g13868__1617 A2 ) + USE SIGNAL ;
+    - n_200 ( g13737__6783 ZN ) ( ctrl_state_out_reg\[1\] D ) + USE SIGNAL ;
+    - n_203 ( g13725__8428 ZN ) ( ctrl_state_out_reg\[0\] D ) + USE SIGNAL ;
+    - n_205 ( g13721 ZN ) ( g13661__5122 B2 ) + USE SIGNAL ;
+    - n_2056 ( g14969 ZN ) ( dpath_a_reg_out_reg\[10\] D ) + USE SIGNAL ;
+    - n_2057 ( g13905__14970 A1 ) ( dpath_a_reg_out_reg\[10\] Q ) + USE SIGNAL ;
+    - n_2058 ( g15042 A ) ( g13905__14970 ZN ) ( g13842__15021 A1 ) ( g13766__5115 B2 ) + USE SIGNAL ;
+    - n_206 ( g13744__4319 ZN ) ( g13706__4733 A ) + USE SIGNAL ;
+    - n_2077 ( g14980 ZN ) ( g13702__14478 A ) + USE SIGNAL ;
+    - n_2125 ( g15020 ZN ) ( g15019 A ) + USE SIGNAL ;
+    - n_2126 ( g15019 B2 ) ( g13842__15021 ZN ) + USE SIGNAL ;
+    - n_2127 ( g15019 ZN ) ( g15018 C2 ) ( g14980 B2 ) ( g13743__14186 B1 ) ( g13738__14824 B1 ) ( g13724__15023 C1 ) ( FE_DBTC3_n_2127 A ) + USE SIGNAL ;
+    - n_2128 ( g15038 B2 ) ( g15018 ZN ) + USE SIGNAL ;
+    - n_2131 ( g13724__15023 ZN ) ( g13719__14475 A ) + USE SIGNAL ;
+    - n_2148 ( g48 ZN ) ( g15038 B1 ) + USE SIGNAL ;
+    - n_2149 ( g15057 A1 ) ( g15038 ZN ) ( g13681__14106 B1 ) ( g13680__14103 B1 ) ( g13679__2398 B1 ) ( g13678__14125 B1 ) ( g13677__14112 B1 )
+      ( g13676__14241 B1 ) ( g13674__1666 B1 ) ( g13673__2346 B1 ) ( g13672__14078 B1 ) ( g13671__5115 B1 ) ( g13670__14117 B1 ) ( g13669__6161 B1 ) ( g13668__4733 B1 )
+      ( g13667__7482 B1 ) ( g13666__14114 B1 ) ( FE_DBTC1_n_2149 A ) + USE SIGNAL ;
+    - n_215 ( g13727 ZN ) ( g13662__1705 B2 ) + USE SIGNAL ;
+    - n_2153 ( g15045 A2 ) ( g15043 ZN ) ( g13827__14526 A1 ) + USE SIGNAL ;
+    - n_2155 ( g15049 A1 ) ( g15048 A ) ( g15045 ZN ) ( g13752__15044 A1 ) ( g13715__14480 B2 ) + USE SIGNAL ;
+    - n_2156 ( g13752__15044 ZN ) ( g13706__4733 C2 ) + USE SIGNAL ;
+    - n_2158 ( g15048 ZN ) ( g13755__1881 A1 ) ( g13754__6161 A1 ) + USE SIGNAL ;
+    - n_2159 ( g48 A2 ) ( g15049 ZN ) ( g14477 C1 ) ( g13719__14475 B2 ) + USE SIGNAL ;
+    - n_2160 ( g15051 ZN ) ( g13798__14947 A1 ) ( g109 B2 ) + USE SIGNAL ;
+    - n_2166 ( g15057 ZN ) ( dpath_b_reg_out_reg\[8\] D ) + USE SIGNAL ;
+    - n_2167 ( g13902__15058 A1 ) ( dpath_b_reg_out_reg\[8\] Q ) + USE SIGNAL ;
+    - n_2168 ( g15051 A2 ) ( g15045 A4 ) ( g13902__15058 ZN ) ( g13885 A ) ( g13833__14154 A2 ) + USE SIGNAL ;
+    - n_217 ( g13735__1705 ZN ) ( g13717__7410 A ) ( g13705__14322 B1 ) + USE SIGNAL ;
+    - n_2199 ( g98 ZN ) ( g96 A ) ( g63 A1 ) + USE SIGNAL ;
+    - n_2200 ( g99 ZN ) ( g96 B1 ) ( FE_DBTC0_n_2200 A ) + USE SIGNAL ;
+    - n_2201 ( g97 ZN ) ( g96 B2 ) ( g13833__14154 A1 ) ( g13704__14174 A ) + USE SIGNAL ;
+    - n_2202 ( g96 ZN ) ( g15019 B1 ) ( g109 A ) ( fopt14439 A ) + USE SIGNAL ;
+    - n_221 ( g13709 ZN ) ( g13658__6131 B2 ) + USE SIGNAL ;
+    - n_228 ( g13710 ZN ) ( g13663__2802 B2 ) + USE SIGNAL ;
+    - n_231 ( g13706__4733 ZN ) ( g13697__2802 A ) + USE SIGNAL ;
+    - n_24 ( g13841__7098 ZN ) ( g13749__8246 A ) + USE SIGNAL ;
+    - n_241 ( g13708 ZN ) ( g13665__14406 B2 ) + USE SIGNAL ;
+    - n_243 ( g13691 ZN ) ( g13649__7098 B2 ) + USE SIGNAL ;
+    - n_2449 ( g15226 ZN ) ( g15225 A1 ) + USE SIGNAL ;
+    - n_245 ( g13692 ZN ) ( g13648__14529 B2 ) + USE SIGNAL ;
+    - n_2450 ( g15225 ZN ) ( g15020 A ) ( g13827__14526 A2 ) + USE SIGNAL ;
+    - n_247 ( g13693 ZN ) ( g13644__14055 B2 ) + USE SIGNAL ;
+    - n_259 ( g13679__2398 ZN ) ( dpath_b_reg_out_reg\[12\] D ) + USE SIGNAL ;
+    - n_265 ( g13674__1666 ZN ) ( dpath_b_reg_out_reg\[7\] D ) + USE SIGNAL ;
+    - n_266 ( g13673__2346 ZN ) ( dpath_b_reg_out_reg\[6\] D ) + USE SIGNAL ;
+    - n_27 ( g24 A ) ( g23 B2 ) ( g13895__3680 ZN ) ( g13849__14166 A2 ) + USE SIGNAL ;
+    - n_270 ( g13669__6161 ZN ) ( dpath_b_reg_out_reg\[2\] D ) + USE SIGNAL ;
+    - n_272 ( g13668__4733 ZN ) ( dpath_b_reg_out_reg\[1\] D ) + USE SIGNAL ;
+    - n_276 ( g13667__7482 ZN ) ( dpath_b_reg_out_reg\[0\] D ) + USE SIGNAL ;
+    - n_277 ( g13671__5115 ZN ) ( dpath_b_reg_out_reg\[4\] D ) + USE SIGNAL ;
+    - n_278 ( g13659__1881 ZN ) ( dpath_a_reg_out_reg\[1\] D ) + USE SIGNAL ;
+    - n_279 ( g13658__6131 ZN ) ( dpath_a_reg_out_reg\[6\] D ) + USE SIGNAL ;
+    - n_280 ( g13649__7098 ZN ) ( dpath_a_reg_out_reg\[7\] D ) + USE SIGNAL ;
+    - n_281 ( g13660__8246 ZN ) ( dpath_a_reg_out_reg\[2\] D ) + USE SIGNAL ;
+    - n_282 ( g13661__5122 ZN ) ( dpath_a_reg_out_reg\[3\] D ) + USE SIGNAL ;
+    - n_283 ( g13662__1705 ZN ) ( dpath_a_reg_out_reg\[4\] D ) + USE SIGNAL ;
+    - n_284 ( g13663__2802 ZN ) ( dpath_a_reg_out_reg\[5\] D ) + USE SIGNAL ;
+    - n_287 ( g13664__3680 ZN ) ( dpath_a_reg_out_reg\[0\] D ) + USE SIGNAL ;
+    - n_29 ( g13857 ZN ) ( g13834__7098 A1 ) + USE SIGNAL ;
+    - n_30 ( g13824__8246 ZN ) ( g13725__8428 B2 ) + USE SIGNAL ;
+    - n_33 ( g14628 A2 ) ( g13877__9945 ZN ) ( g13825__6783 A2 ) ( g13752__15044 A2 ) ( g13744__4319 A2 ) + USE SIGNAL ;
+    - n_357 ( g98 A1 ) ( fopt2 ZN ) + USE SIGNAL ;
+    - n_36 ( g14513 A1 ) ( g13868__1617 ZN ) ( g13853 A ) ( g13829__8428 A ) + USE SIGNAL ;
+    - n_371 ( g13840__14058 A3 ) ( g13672__14078 B2 ) ( g13663__2802 C2 ) ( fopt14054 ZN ) + USE SIGNAL ;
+    - n_38 ( g14477 A ) ( g13892__2883 ZN ) ( g13724__15023 B ) + USE SIGNAL ;
+    - n_390 ( g14936 A1 ) ( g14024 ZN ) + USE SIGNAL ;
+    - n_397 ( g14030 ZN ) ( g13735__1705 A ) + USE SIGNAL ;
+    - n_403 ( g23 B1 ) ( g14033 ZN ) ( g13735__1705 B1 ) + USE SIGNAL ;
+    - n_41 ( g13879 ZN ) ( g13784__14183 A ) + USE SIGNAL ;
+    - n_425 ( g13644__14055 ZN ) ( dpath_a_reg_out_reg\[13\] D ) + USE SIGNAL ;
+    - n_426 ( g13840__14058 ZN ) ( g13772__5107 A3 ) + USE SIGNAL ;
+    - n_43 ( g13885 ZN ) ( g13704__14174 B2 ) + USE SIGNAL ;
+    - n_445 ( g13672__14078 ZN ) ( dpath_b_reg_out_reg\[5\] D ) + USE SIGNAL ;
+    - n_446 ( g451 A1 ) ( fopt14054 A ) ( dpath_b_reg_out_reg\[5\] Q ) + USE SIGNAL ;
+    - n_46 ( g13786__2802 ZN ) ( g13661__5122 A ) + USE SIGNAL ;
+    - n_470 ( g13680__14103 ZN ) ( dpath_b_reg_out_reg\[13\] D ) + USE SIGNAL ;
+    - n_471 ( g3 A1 ) ( g13893__14104 A1 ) ( g13870__14629 A1 ) ( dpath_b_reg_out_reg\[13\] Q ) + USE SIGNAL ;
+    - n_472 ( g383 A1 ) ( g14311 A ) ( g13893__14104 ZN ) ( g13846__5115 A2 ) + USE SIGNAL ;
+    - n_474 ( g13681__14106 ZN ) ( dpath_b_reg_out_reg\[14\] D ) + USE SIGNAL ;
+    - n_475 ( g393 A1 ) ( g390 A1 ) ( dpath_b_reg_out_reg\[14\] Q ) + USE SIGNAL ;
+    - n_479 ( g13897__14318 A1 ) ( dpath_b_reg_out_reg\[3\] Q ) + USE SIGNAL ;
+    - n_482 ( g13677__14112 ZN ) ( dpath_b_reg_out_reg\[10\] D ) + USE SIGNAL ;
+    - n_483 ( g13900__14113 A1 ) ( dpath_b_reg_out_reg\[10\] Q ) + USE SIGNAL ;
+    - n_484 ( g15020 B2 ) ( g13900__14113 ZN ) ( g13766__5115 A ) ( g111 A2 ) + USE SIGNAL ;
+    - n_485 ( g13666__14114 ZN ) ( dpath_b_reg_out_reg\[15\] D ) + USE SIGNAL ;
+    - n_486 ( g13894__14116 A2 ) ( g13873__14115 A1 ) ( dpath_b_reg_out_reg\[15\] Q ) + USE SIGNAL ;
+    - n_487 ( g13873__14115 ZN ) ( g13844__1881 A2 ) ( g13828__14179 A2 ) ( g13784__14183 B1 ) + USE SIGNAL ;
+    - n_488 ( g13894__14116 ZN ) ( g13879 A ) ( g13844__1881 A1 ) + USE SIGNAL ;
+    - n_489 ( g13670__14117 ZN ) ( dpath_b_reg_out_reg\[9\] D ) + USE SIGNAL ;
+    - n_490 ( g99 A1 ) ( dpath_b_reg_out_reg\[9\] Q ) + USE SIGNAL ;
+    - n_497 ( g13678__14125 ZN ) ( dpath_b_reg_out_reg\[11\] D ) + USE SIGNAL ;
+    - n_498 ( g13906__14126 A1 ) ( dpath_b_reg_out_reg\[11\] Q ) + USE SIGNAL ;
+    - n_499 ( g15043 A ) ( g15020 B1 ) ( g13906__14126 ZN ) ( g13842__15021 A2 ) + USE SIGNAL ;
+    - n_50 ( g13812__1617 ZN ) ( g13649__7098 A ) + USE SIGNAL ;
+    - n_52 ( g13835__3680 ZN ) ( g13695__5122 B ) + USE SIGNAL ;
+    - n_520 ( g14147 ZN ) ( g13864__14243 A1 ) ( g13814__5477 B2 ) ( g13786__2802 B2 ) + USE SIGNAL ;
+    - n_524 ( g13843__14150 ZN ) ( g13722__2802 B ) + USE SIGNAL ;
+    - n_529 ( g13833__14154 ZN ) ( g13716__14472 B ) + USE SIGNAL ;
+    - n_53 ( g13914 ZN ) ( g13807__2398 B2 ) ( g13806__6783 B2 ) + USE SIGNAL ;
+    - n_537 ( g446 A1 ) ( fopt14165 ZN ) + USE SIGNAL ;
+    - n_54 ( g78 A ) ( g13806__6783 ZN ) + USE SIGNAL ;
+    - n_540 ( g13849__14166 ZN ) ( g13789__2802 A2 ) ( g13735__1705 B2 ) + USE SIGNAL ;
+    - n_541 ( g446 ZN ) ( g14936 A2 ) ( g14435 B1 ) ( g13849__14166 A1 ) + USE SIGNAL ;
+    - n_55 ( g13909 ZN ) ( g13808__5107 B2 ) ( g13805__5526 B2 ) + USE SIGNAL ;
+    - n_550 ( g13704__14174 ZN ) ( g13696__1705 A ) + USE SIGNAL ;
+    - n_553 ( g14940 A1 ) ( g13828__14179 ZN ) ( g13764__14182 B1 ) + USE SIGNAL ;
+    - n_555 ( g13784__14183 ZN ) ( g13764__14182 A ) + USE SIGNAL ;
+    - n_556 ( g15018 A ) ( g13764__14182 ZN ) ( g13743__14186 A ) ( g13724__15023 A ) + USE SIGNAL ;
+    - n_56 ( g14300 A ) ( g13805__5526 ZN ) + USE SIGNAL ;
+    - n_560 ( g14477 C2 ) ( g14477 B2 ) ( g13743__14186 ZN ) + USE SIGNAL ;
+    - n_57 ( g13934 ZN ) ( g13822__8246 B2 ) ( g13788__8428 B2 ) + USE SIGNAL ;
+    - n_58 ( g13788__8428 ZN ) ( g13644__14055 A ) + USE SIGNAL ;
+    - n_59 ( g13911 ZN ) ( g13810__4319 B2 ) ( g13803__4319 B2 ) + USE SIGNAL ;
+    - n_596 ( g14300 B1 ) ( g14224 Z ) + USE SIGNAL ;
+    - n_60 ( g14969 B ) ( g13803__4319 ZN ) + USE SIGNAL ;
+    - n_612 ( g13676__14241 ZN ) ( dpath_b_reg_out_reg\[3\] D ) + USE SIGNAL ;
+    - n_614 ( g14512 A ) ( g13864__14243 ZN ) ( g13843__14150 A1 ) + USE SIGNAL ;
+    - n_636 ( g97 A1 ) ( g13809__14409 B2 ) ( g13802__14407 B2 ) ( dpath_a_reg_out_reg\[8\] Q ) + USE SIGNAL ;
+    - n_64 ( g13794__5107 ZN ) ( g13660__8246 A ) + USE SIGNAL ;
+    - n_66 ( g13793__2398 ZN ) ( g13648__14529 A ) + USE SIGNAL ;
+    - n_67 ( g13792__5477 ZN ) ( g13659__1881 A ) + USE SIGNAL ;
+    - n_69 ( g13791__6417 ZN ) ( g13664__3680 A ) + USE SIGNAL ;
+    - n_70 ( g13931 ZN ) ( g13821__5122 B2 ) ( g13804__7410 B2 ) + USE SIGNAL ;
+    - n_71 ( g14354 A ) ( g13804__7410 ZN ) + USE SIGNAL ;
+    - n_748 ( g449 ZN ) ( g14326 A2 ) ( g13835__3680 A2 ) + USE SIGNAL ;
+    - n_75 ( g13941 ZN ) ( g13818__2802 B2 ) ( g13781__9945 B2 ) + USE SIGNAL ;
+    - n_750 ( g451 ZN ) ( g14435 A ) ( g14024 A ) + USE SIGNAL ;
+    - n_755 ( g443 ZN ) ( g13745__7098 A1 ) + USE SIGNAL ;
+    - n_758 ( g28 ZN ) ( g225 A2 ) ( g13858 A ) ( g13767__9315 B ) + USE SIGNAL ;
+    - n_76 ( g14357 A ) ( g13781__9945 ZN ) + USE SIGNAL ;
+    - n_78 ( g13839__9315 ZN ) ( g13772__5107 A4 ) + USE SIGNAL ;
+    - n_79 ( g13912 ZN ) ( g13816__6161 B2 ) ( g13782__6161 B2 ) + USE SIGNAL ;
+    - n_80 ( g13782__6161 ZN ) ( g13663__2802 A ) + USE SIGNAL ;
+    - n_823 ( g390 ZN ) ( g389 A ) ( g382 A2 ) ( g13847__5115 A2 ) ( g13828__14179 A1 ) + USE SIGNAL ;
+    - n_824 ( g389 ZN ) ( g381 A ) + USE SIGNAL ;
+    - n_826 ( g393 ZN ) ( g391 A ) ( g383 A2 ) ( g13784__14183 B2 ) + USE SIGNAL ;
+    - n_828 ( g383 ZN ) ( g381 B2 ) + USE SIGNAL ;
+    - n_829 ( g381 ZN ) ( g14980 A ) + USE SIGNAL ;
+    - n_83 ( g13858 ZN ) ( g13845__5526 A ) + USE SIGNAL ;
+    - n_830 ( g382 ZN ) ( g14980 B1 ) ( g13755__1881 A2 ) + USE SIGNAL ;
+    - n_835 ( g391 ZN ) ( g13847__5115 A1 ) + USE SIGNAL ;
+    - n_837 ( g384 ZN ) ( g13738__14824 A ) + USE SIGNAL ;
+    - n_84 ( g13853 ZN ) ( g13756__6783 A2 ) + USE SIGNAL ;
+    - n_857 ( g43 ZN ) ( g14969 A ) + USE SIGNAL ;
+    - n_86 ( g13916 ZN ) ( g13815__3680 B2 ) ( g13785__7482 B2 ) + USE SIGNAL ;
+    - n_861 ( g14300 ZN ) ( dpath_a_reg_out_reg\[14\] D ) + USE SIGNAL ;
+    - n_867 ( g52 ZN ) ( g13673__2346 A2 ) + USE SIGNAL ;
+    - n_868 ( g53 ZN ) ( g13658__6131 A ) + USE SIGNAL ;
+    - n_87 ( g53 A1 ) ( g13948 ZN ) ( g13892__2883 A1 ) ( g13812__1617 B1 ) ( g13806__6783 B1 ) ( g13805__5526 B1 ) ( g13804__7410 B1 )
+      ( g13803__4319 B1 ) ( g13802__14407 B1 ) ( g13794__5107 B1 ) ( g13793__2398 B1 ) ( g13792__5477 B1 ) ( g13791__6417 B1 ) ( g13788__8428 B1 ) ( g13786__2802 B1 )
+      ( g13785__7482 B1 ) ( g13782__6161 B1 ) ( g13781__9945 B1 ) ( g13748__6131 B2 ) + USE SIGNAL ;
+    - n_88 ( g13785__7482 ZN ) ( g13662__1705 A ) + USE SIGNAL ;
+    - n_89 ( g14224 B ) ( g13847__5115 ZN ) ( g13694__14225 B ) + USE SIGNAL ;
+    - n_892 ( g14309 ZN ) ( g13820__1705 B2 ) ( g13793__2398 B2 ) + USE SIGNAL ;
+    - n_894 ( g384 A ) ( g14311 ZN ) ( g13764__14182 B2 ) + USE SIGNAL ;
+    - n_896 ( g381 B1 ) ( g14313 ZN ) + USE SIGNAL ;
+    - n_898 ( g14513 A3 ) ( g14512 B2 ) ( g14316 A ) ( g13897__14318 ZN ) + USE SIGNAL ;
+    - n_900 ( g14316 ZN ) ( g13843__14150 A2 ) + USE SIGNAL ;
+    - n_904 ( g14326 A1 ) ( g14324 ZN ) ( g13850__14325 A2 ) ( g13705__14322 A ) + USE SIGNAL ;
+    - n_906 ( g13705__14322 ZN ) ( g13695__5122 A ) + USE SIGNAL ;
+    - n_907 ( g13850__14325 ZN ) ( g13717__7410 B ) + USE SIGNAL ;
+    - n_908 ( g443 A ) ( g14326 ZN ) + USE SIGNAL ;
+    - n_91 ( g80 B ) ( g13844__1881 ZN ) + USE SIGNAL ;
+    - n_99 ( g13822__8246 ZN ) ( g13680__14103 A2 ) + USE SIGNAL ;
+    - req_msg[0] ( PIN req_msg[0] ) ( g13811__8428 A2 ) + USE SIGNAL ;
+    - req_msg[10] ( PIN req_msg[10] ) ( g13810__4319 A2 ) + USE SIGNAL ;
+    - req_msg[11] ( PIN req_msg[11] ) ( g13821__5122 A2 ) + USE SIGNAL ;
+    - req_msg[12] ( PIN req_msg[12] ) ( g13818__2802 A2 ) + USE SIGNAL ;
+    - req_msg[13] ( PIN req_msg[13] ) ( g13822__8246 A2 ) + USE SIGNAL ;
+    - req_msg[14] ( PIN req_msg[14] ) ( g13808__5107 A2 ) + USE SIGNAL ;
+    - req_msg[15] ( PIN req_msg[15] ) ( g13807__2398 A2 ) + USE SIGNAL ;
+    - req_msg[16] ( PIN req_msg[16] ) ( g13791__6417 A2 ) + USE SIGNAL ;
+    - req_msg[17] ( PIN req_msg[17] ) ( g13792__5477 A2 ) + USE SIGNAL ;
+    - req_msg[18] ( PIN req_msg[18] ) ( g13794__5107 A2 ) + USE SIGNAL ;
+    - req_msg[19] ( PIN req_msg[19] ) ( g13786__2802 A2 ) + USE SIGNAL ;
+    - req_msg[1] ( PIN req_msg[1] ) ( g13801__2346 A2 ) + USE SIGNAL ;
+    - req_msg[20] ( PIN req_msg[20] ) ( g13785__7482 A2 ) + USE SIGNAL ;
+    - req_msg[21] ( PIN req_msg[21] ) ( g13782__6161 A2 ) + USE SIGNAL ;
+    - req_msg[22] ( PIN req_msg[22] ) ( g53 B2 ) + USE SIGNAL ;
+    - req_msg[23] ( PIN req_msg[23] ) ( g13812__1617 A2 ) + USE SIGNAL ;
+    - req_msg[24] ( PIN req_msg[24] ) ( g13802__14407 A2 ) + USE SIGNAL ;
+    - req_msg[25] ( PIN req_msg[25] ) ( g13793__2398 A2 ) + USE SIGNAL ;
+    - req_msg[26] ( PIN req_msg[26] ) ( g13803__4319 A2 ) + USE SIGNAL ;
+    - req_msg[27] ( PIN req_msg[27] ) ( g13804__7410 A2 ) + USE SIGNAL ;
+    - req_msg[28] ( PIN req_msg[28] ) ( g13781__9945 A2 ) + USE SIGNAL ;
+    - req_msg[29] ( PIN req_msg[29] ) ( g13788__8428 A2 ) + USE SIGNAL ;
+    - req_msg[2] ( PIN req_msg[2] ) ( g13813__5526 A2 ) + USE SIGNAL ;
+    - req_msg[30] ( PIN req_msg[30] ) ( g13805__5526 A2 ) + USE SIGNAL ;
+    - req_msg[31] ( PIN req_msg[31] ) ( g13806__6783 A2 ) + USE SIGNAL ;
+    - req_msg[3] ( PIN req_msg[3] ) ( g13814__5477 A2 ) + USE SIGNAL ;
+    - req_msg[4] ( PIN req_msg[4] ) ( g13815__3680 A2 ) + USE SIGNAL ;
+    - req_msg[5] ( PIN req_msg[5] ) ( g13816__6161 A2 ) + USE SIGNAL ;
+    - req_msg[6] ( PIN req_msg[6] ) ( g52 B2 ) + USE SIGNAL ;
+    - req_msg[7] ( PIN req_msg[7] ) ( g13819__6131 A2 ) + USE SIGNAL ;
+    - req_msg[8] ( PIN req_msg[8] ) ( g13809__14409 A2 ) + USE SIGNAL ;
+    - req_msg[9] ( PIN req_msg[9] ) ( g13820__1705 A2 ) + USE SIGNAL ;
+    - req_rdy ( PIN req_rdy ) ( g53 B1 ) ( g52 B1 ) ( g13824__8246 A1 ) ( g13822__8246 A1 ) ( g13821__5122 A1 ) ( g13820__1705 A1 )
+      ( g13819__6131 A1 ) ( g13818__2802 A1 ) ( g13816__6161 A1 ) ( g13815__3680 A1 ) ( g13814__5477 A1 ) ( g13813__5526 A1 ) ( g13812__1617 A1 ) ( g13811__8428 A1 )
+      ( g13810__4319 A1 ) ( g13809__14409 A1 ) ( g13808__5107 A1 ) ( g13807__2398 A1 ) ( g13806__6783 A1 ) ( g13805__5526 A1 ) ( g13804__7410 A1 ) ( g13803__4319 A1 )
+      ( g13802__14407 A1 ) ( g13801__2346 A1 ) ( g13794__5107 A1 ) ( g13793__2398 A1 ) ( g13792__5477 A1 ) ( g13791__6417 A1 ) ( g13788__8428 A1 ) ( g13786__2802 A1 )
+      ( g13785__7482 A1 ) ( g13782__6161 A1 ) ( g13781__9945 A1 ) ( FE_DBTC9_n_1865 ZN ) + USE SIGNAL ;
+    - req_val ( PIN req_val ) ( g13824__8246 A2 ) + USE SIGNAL ;
+    - reset ( PIN reset ) ( g13737__6783 A2 ) ( g13725__8428 A ) + USE SIGNAL ;
+    - resp_msg[0] ( PIN resp_msg[0] ) ( g13845__5526 ZN ) ( g13774 A ) + USE SIGNAL ;
+    - resp_msg[10] ( PIN resp_msg[10] ) ( g13687__14223 ZN ) + USE SIGNAL ;
+    - resp_msg[11] ( PIN resp_msg[11] ) ( g14356 ZN ) ( g14355 A ) + USE SIGNAL ;
+    - resp_msg[12] ( PIN resp_msg[12] ) ( g14359 ZN ) ( g14358 A ) + USE SIGNAL ;
+    - resp_msg[13] ( PIN resp_msg[13] ) ( g13697__2802 ZN ) ( g13693 A ) + USE SIGNAL ;
+    - resp_msg[14] ( PIN resp_msg[14] ) ( g13694__14225 ZN ) + USE SIGNAL ;
+    - resp_msg[15] ( PIN resp_msg[15] ) ( g80 ZN ) ( g79 A ) + USE SIGNAL ;
+    - resp_msg[1] ( PIN resp_msg[1] ) ( g13767__9315 ZN ) ( g13757 A ) + USE SIGNAL ;
+    - resp_msg[2] ( PIN resp_msg[2] ) ( g13742__4733 ZN ) ( g13740 A ) + USE SIGNAL ;
+    - resp_msg[3] ( PIN resp_msg[3] ) ( g13722__2802 ZN ) ( g13721 A ) + USE SIGNAL ;
+    - resp_msg[4] ( PIN resp_msg[4] ) ( g13734__3680 ZN ) ( g13727 A ) + USE SIGNAL ;
+    - resp_msg[5] ( PIN resp_msg[5] ) ( g14935 ZN ) ( g13710 A ) + USE SIGNAL ;
+    - resp_msg[6] ( PIN resp_msg[6] ) ( g13717__7410 ZN ) ( g13709 A ) + USE SIGNAL ;
+    - resp_msg[7] ( PIN resp_msg[7] ) ( g13695__5122 ZN ) ( g13691 A ) + USE SIGNAL ;
+    - resp_msg[8] ( PIN resp_msg[8] ) ( g13716__14472 ZN ) ( g13708 A ) + USE SIGNAL ;
+    - resp_msg[9] ( PIN resp_msg[9] ) ( g13696__1705 ZN ) ( g13692 A ) + USE SIGNAL ;
+    - resp_rdy ( PIN resp_rdy ) ( g13841__7098 B1 ) + USE SIGNAL ;
+    - resp_val ( PIN resp_val ) ( g13891__8428 ZN ) + USE SIGNAL ;
+END NETS
+END DESIGN
