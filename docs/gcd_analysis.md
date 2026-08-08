@@ -59,7 +59,21 @@
 
 输出文件 `gcd_hbt_out.txt` 中 `Terminal` 条目即为 HBT 位置：
 
-![HBT Analysis](../figures/gcd_hbt_analysis.png)
+![HBT Positions](../figures/gcd_hbt_pos.png)
+
+HBT 均匀分布在整个 die 区域，无明显聚集。
+
+![HBT Density](../figures/gcd_hbt_density.png)
+
+密度较均匀，中心区域略高于边缘。
+
+![HBT Spacing](../figures/gcd_hbt_spacing.png)
+
+最近邻间距集中在 0.5–1.5 µm，平均 0.98 µm——间距远小于混合键合工艺的典型能力（亚 10 µm），说明键合点资源极度充裕，不是瓶颈。
+
+![HBT X/Y](../figures/gcd_hbt_xy.png)
+
+X/Y 边缘分布近均匀。
 
 | 指标 | 值 |
 |------|-----|
