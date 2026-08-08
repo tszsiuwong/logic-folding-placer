@@ -73,13 +73,7 @@ HBT 位置覆盖在上下 Die 图上。
 
 ![HBT Local Density](../figures/gcd_hbt_density_dist.png)
 
-166 个非空 bin 的 HBT 计数分布。中位=1（刚好在容量上限），均值=1.3，最大=3。
-
-| 指标 | 值 |
-|------|-----|
-| HBT 数量 | 221（排除了 37 个 IO pin） |
-
-HBT 以红叉标注，均匀覆盖在上下 Die 的全部区域。与 log 中报告的 236 数量接近（差异来自计入了部分 IO terminal）。
+166 个非空 bin 的 HBT 计数分布。中位=1，均值=1.3，最大=3。
 
 ### 层分布
 
