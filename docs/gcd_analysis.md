@@ -59,7 +59,7 @@
 
 输出文件 `gcd_hbt_out.txt` 中 `Terminal` 条目即为 HBT 位置：
 
-![HBT](../figures/gcd_hbt.png)
+![HBT Analysis](../figures/gcd_hbt_analysis.png)
 
 | 指标 | 值 |
 |------|-----|
