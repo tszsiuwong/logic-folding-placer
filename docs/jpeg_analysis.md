@@ -1,4 +1,4 @@
-# jpeg 实验数据（未对齐面积）
+    # jpeg 实验数据（未对齐面积）
 
 **设计**: jpeg_encoder（39,866 实例，48,436 网线，47 IO），NanGate45 同质双裸片堆叠。
 
@@ -13,6 +13,10 @@
 | 备注 | 原始 Innovus floorplan | heteroplace3d 内生 |
 
 ![2D Placement](../figures/jpeg_2d.png)
+
+单元 bounding box 仅占 die 面积的 28%（195–496 µm × 11–441 µm）。底部和右侧大面积空白——原始 Innovus floorplan 将 IO 集中放置于左侧和顶部边缘。
+
+![2D Density](../figures/jpeg_2d_density.png)
 
 ## HPWL（同算法：Verilog+DEF）
 
