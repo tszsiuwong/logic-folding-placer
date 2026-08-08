@@ -1,38 +1,46 @@
-# Agent 友好性评估：HeteroPlace3D
+# Agent 友好性评估
 
-## 友好 ✅
+> 基于 gcd case 的完整实验流程。
 
-| 点 | 说明 |
-|----|------|
-| sidecar partition 文件 | cell → tier 映射独立输出，Agent 无需解析 DEF |
-| 分钟级延迟 | gcd 66s，ariane133 4.7min |
-| 确定性输出 | 同 seed 同结果 |
-| `partition_input` 接口存在 | 已预留 |
+## 可直接使用 ✅
 
-## 不友好 ❌
-
-### 致命
-
-| 问题 | 说明 |
+| 能力 | 说明 |
 |------|------|
-| **无结构化输出** | HPWL/Die 分布埋在 log 文本中 |
-| **partition 是软约束** | `partition_input` 仅作热启动，2.5D 覆盖 |
-| **无增量模式** | 改一个 tier 也要全量重跑 |
-| **面积效应无法回避** | 2D(面积A): 3.30M, 3D(面积2A): 5.53M — 168%，Agent 不能拿绝对 HPWL 当信号 |
+| 2D baseline | OpenROAD RePlAce，LEF/DEF 输入，分钟级 |
+| 3D placement | heteroplace3d，分钟级 |
+| partition 解析 | sidecar `.def.partition` 文件，cell→tier 映射 |
+| HBT 位置 | `Terminal` 行在 DBL 输出中，221 个坐标 |
+| 逐单元位移 | 2D/3D DEF 中实例名相同，可对位计算 |
+| 网线级 HPWL | Verilog + DEF 同算法计算，可按 Die 内/跨 Die 分类 |
+| 单元面积 | DBL `LibCell` 条目查 cell 尺寸 |
+| Rent p | 递归谱分割，约 30 秒 |
 
-### 严重
+## 需适配 ⚠️
 
-| 问题 | 说明 |
+| 问题 | 影响 |
 |------|------|
-| 纯 2D baseline 工具链极脆弱 | 需 OpenROAD + 手动 tracks + 正确 layer 名，8+ 次尝试才成功 |
-| HBT 不在输出中 | log 有，DEF 无 |
-| 输出/输入不可 diff | `partition_input` vs 产出无对照 |
+| HPWL 在 log 文本中 | Agent 需 grep + 正则提取 |
+| OpenROAD GPL 逐迭代 HPWL 为 0 | 2D 收敛曲线只有阶段节点 |
+| 3D BIHPWL vs 2D HPWL 不可比 | 不能直接做逐迭代对比 |
+| 路径全相对 + symlink | 部署耦合 |
+| `partition_input` 软约束 | Agent 改 tier 不保证生效 |
 
-### 一般
+## 需工具侧支持 ❌
 
-| 问题 | 说明 |
+| 需求 | 说明 |
 |------|------|
-| 错误处理是 segfault | 非法参数 crash 无错误原因 |
-| 路径全相对 | 依赖 symlink |
+| 增量模式 | 改一个 tier 需全量重跑（66s） |
+| 结构化摘要 | 每次运行输出 JSON/YAML 格式的 PPA |
+| partition 硬约束 | locked 态的 tier 不被 placer 覆盖 |
+| HBT 写入最终 DEF | 目前只在中间 DBL 输出有 |
 
-> 实测基准: gcd, 2D=OpenROAD RePlAce, 3D=heteroplace3d, HPWL 同算法(Verilog+DEF)
+## 数据获取方式
+
+| 数据 | 来源 |
+|------|------|
+| 2D HPWL | OpenROAD log → legalized HPWL，或 Verilog+DEF 同算法 |
+| 3D HPWL | heteroplace3d log → detailed placement finished，或 Verilog+DEF |
+| HBT 位置 | `dbl_custom_write` 输出 → `Terminal` 行 |
+| 单元面积 | `gcd.dbl` → `LibCell` 条目 |
+| 网线分类 | Verilog + 3D DEF → 跨 Die vs Die 内 |
+| 位移 | 2D DEF + 3D DEF → 同名实例坐标差 |
