@@ -63,9 +63,9 @@
 
 HBT 均匀分布在整个 die 区域，无明显聚集。
 
-![HBT Density](../figures/gcd_hbt_density.png)
+![HBT Demand & Overflow](../figures/gcd_hbt_congestion.png)
 
-以 1.5 µm 间距为约束：**74%（163/221）的 HBT 在 1.5 µm 内有邻居，42%（92 个）有 3 个以上邻居。** 无孤立 HBT。局部密度集中在 die 中心区域最高。
+以 1.5 µm 间距为约束：**50/440 个 bin（11%）存在 HBT 溢出，最大溢出 2× 容量。** 右图红区直接显示哪些局部区域超出了工艺能力。
 
 ![HBT Spacing](../figures/gcd_hbt_spacing.png)
 
