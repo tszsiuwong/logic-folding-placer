@@ -40,9 +40,19 @@
 
 ![3D Dies](../figures/jpeg_3d_dies.png)
 
-3D 每 Die 的 cell bbox 占 die 面积 98%——heteroplace3d 将 floorplan 压缩到了刚好容纳单元。
-
 ![3D Density](../figures/jpeg_3d_density.png)
+
+以 20×20 µm bin 统计局部密度：
+
+| | Bottom | Top |
+|---|---|---|
+| 非空 bin | 289 / 289 | 289 / 289 |
+| P50 (cells/bin) | 71 | 69 |
+| P10–P90 | 53–85 | 52–84 |
+| CV | 0.20 | 0.20 |
+
+两个 Die 均无空白 bin，局部密度高度均匀。
+
 | HBT | 11,587 |
 | 最终 HPWL | 485,570 µm（placer 内部报告） |
 
