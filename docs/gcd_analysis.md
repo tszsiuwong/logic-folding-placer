@@ -26,9 +26,17 @@
 | 工具 | heteroplace3d v20260807（DREAMPlace） |
 | GPU | NVIDIA TITAN RTX 24GB，CUDA 13.0 |
 | 输入 | `2_2_floorplan_io.def`（Innovus 2D floorplan）+ `.v` 网表 |
-| Floorplan | **Bottom/Upper 各 63080×57680 DBU（31.54×28.84 µm），面积 909 µm²/Die，总计 1819 µm²** |
 | 工艺 | NanGate45，双 Die 同质 F2F 堆叠 |
-| 目标密度 | 0.2 per die（含 HBT filler） |
+
+### Floorplan
+
+| | X (DBU) | Y (DBU) | X (µm) | Y (µm) | 面积 (µm²) |
+|---|---|---|---|---|---|
+| Bottom Die | 0–63080 | 0–57680 | 0–31.54 | 0–28.84 | 909 |
+| Top Die | 0–63080 | 0–57680 | 0–31.54 | 0–28.84 | 909 |
+| 总计 | — | — | — | — | **1819** |
+
+上下 Die 同 footprint、无水平偏移（F2F 对齐），垂直间距 = cell depth（872.8 µm DBU / 0.44 µm）。
 
 ### 流水线
 
