@@ -67,9 +67,7 @@ HBT 位置覆盖在上下 Die 图上。
 
 以 1.5 µm 间距为约束：**50/440 个 bin（11%）存在 HBT 溢出，最大溢出 2× 容量。** 右图红区直接显示哪些局部区域超出了工艺能力。
 
-![HBT Spacing](../figures/gcd_hbt_spacing.png)
 
-最近邻间距分布。
 
 ![HBT X/Y](../figures/gcd_hbt_xy.png)
 
