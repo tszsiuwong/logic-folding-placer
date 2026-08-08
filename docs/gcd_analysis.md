@@ -16,6 +16,8 @@
 | 实例 | 301 可移动，0 固定 |
 | HPWL | **3500 µm**（Verilog+DEF 同算法计算） |
 
+![2D HPWL](../figures/gcd_2d_journey.png)
+
 ![2D Placement](../figures/gcd_2d.png)
 
 ---
