@@ -39,6 +39,10 @@
 | 层分布 | Die0=19,735（49.4%），Die1=20,178（50.6%） |
 
 ![3D Dies](../figures/jpeg_3d_dies.png)
+
+3D 每 Die 的 cell bbox 占 die 面积 98%——heteroplace3d 将 floorplan 压缩到了刚好容纳单元。
+
+![3D Density](../figures/jpeg_3d_density.png)
 | HBT | 11,587 |
 | 最终 HPWL | 485,570 µm（placer 内部报告） |
 
