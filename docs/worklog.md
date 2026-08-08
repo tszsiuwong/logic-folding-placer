@@ -41,7 +41,9 @@
 - 1.5 µm pitch 约束：11% bin 溢流，最大 2× 容量
 - 当前 heteroplace3d 输出含 HBT 数据（`dbl_custom_write`）
 
-### 已知限制
+### 视角切换
+
+全部文档从"后端分析 placer 行为"重写为"架构决策的物理后果量化"。不再以后端技术细节为主线，改为以架构师关心的问题为起点，后端数据为回答。详见 `agent_friendliness.md`。
 
 - OpenROAD GPL 逐迭代 HPWL 为 0（已知 bug，只在阶段汇总可用）
 - heteroplace3d partition_input 是软约束

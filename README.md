@@ -1,67 +1,55 @@
 # logic-folding-placer
 
-异构 3D 布局器行为分析——为 Agentic Partition 提供经验规则。
+架构决策的物理后果量化——从 placement 数据中回答架构师关心的问题。
 
-## 定位
+## 为什么需要这个
 
-TAO 物理设计流程中的**内环引擎**（Step 2）：
+架构师决定模块的层次归属、数据通路的跨层边界、键合点的密度预算。这些决策直接影响 PPA，但传统流程中，架构师能看到的反馈只有一个全局 HPWL 数字。
 
-```
-logic-folding-geometry     →  几何上界预测（纯理论）
-    ↓
-logic-folding-placer       →  真实 placer 行为分析（本项目）
-    ↓
-agentic_3d_partition       →  Agent 策略生成
-    ↓
-agentic_tao_physical_design_flow → 全流程框架
-```
+HPWL 降了 2%——是所有线均匀改善，还是一半变好一半变坏？关键路径上的那几根线到底怎样了？"模块 A 和 B 分到不同层"这个决策的物理代价是多少？
 
-目标：从 heteroplace3d 的实验数据中，逆向挖掘 placer 的行为规律，给 Agent 喂经验知识（类似 `logic-folding-geometry` 从几何第一性原理推导出 d₂≥5 阈值）。
+这些问题在传统 EDA 流程中没有答案。本仓库试图用实验数据回答其中一部分。
 
-## 实验环境
+## 方法
 
-- 3D placer：HeteroPlace3D v20260807（DREAMPlace），TITAN RTX 24GB，CUDA 13.0
-- 2D placer：OpenROAD 26Q1-951（RePlAce + ABCDPlace）
-- 基准：NanGate45 3D（TaiWei-Pin-3D），同质双 Die F2F 堆叠
+不从 placer 的报告里 grep。直接从 placement 的标准输出文件（DEF、Verilog、partition）中读数据，按实例名对齐，在 Python 里做统计。详细方法见 [agent_friendliness.md](docs/agent_friendliness.md)。
 
-## 当前进展
+## 当前实验：gcd（301 实例）
 
-### 完成
+### 实验条件
 
-- [x] gcd 2D/3D placement，同面积对比：3D/2D = 79%
-- [x] 逐单元位移分析：r=0.919，平均 47.4 µm
-- [x] 网线级拆解：71% 跨 Die，长短线分布变化
-- [x] HBT 数据：221 个，溢流分析（11% bin 超限）
-- [x] HPWL 收敛曲线：3D 1000 次迭代 + 2D 三阶段
-- [x] Rent 指数：p = 0.698
-- [x] Agent 友好性评估
-
-### 核心数据
-
-| 指标 | 2D | 3D |
-|------|-----|-----|
-| HPWL | 3500 µm | 2765 µm |
+| | 2D | 3D |
+|---|---|---|
+| 工具 | OpenROAD RePlAce | heteroplace3d |
+| Die 面积 | 44.61×40.79 µm (1819 µm²) | 2 × 31.54×28.84 µm (1819 µm²) |
 | 利用率 | 23.6% | 23.6% |
-| 跨 Die 网线 | — | 71% |
-| 中位线长 | 7.5 µm | 7.7 µm |
-| HBT | — | 221 |
-| Rent p | 0.698 | — |
 
-### 受阻
+### 架构决策 → 量化反馈
 
-- [ ] 模块亲和性：gcd 层级太浅，需更大设计验证
+| 架构师想知道 | 数据 |
+|---|---|
+| 3D 堆叠全局省多少线长？ | 3D HPWL = 2D × 79% |
+| 长线真的受益吗？ | 20µm 以上线 90% 变短（p<0.001）；5µm 以下线 86% 变长 |
+| 层指派是否保留了有结构的信号组？ | 总线 req_msg (32)/resp_msg (16) 完整在 Die1；匿名逻辑分散 45/55 |
+| 键合点密度有风险吗？ | 1.5µm pitch：11% bin 溢流，最大 2× 容量 |
+| 单元在 3D 中被移动了多少？ | 平均位移 47.4µm，r=0.919（离中心越远位移越大） |
+
+### 局限
+
+- 只在极小设计（301 实例）上验证
+- 数据来自 placement 最终输出，非增量观测
+- 没有时序信息
+- 分析描述"发生了什么"，不替代架构决策
 
 ## 文档
 
 | 文件 | 内容 |
 |------|------|
-| [gcd_analysis.md](docs/gcd_analysis.md) | gcd 完整分析报告 |
-| [worklog.md](docs/worklog.md) | 实验过程日志 |
-| [agent_friendliness.md](docs/agent_friendliness.md) | Agent 友好性评估 |
-| [gcd_2d_vs_3d.png](figures/gcd_2d_vs_3d.png) | 2D vs 3D 等比对比图 |
-| [gcd_displacement.png](figures/gcd_displacement.png) | 逐单元位移分析 |
+| [agent_friendliness.md](docs/agent_friendliness.md) | 方法论文档：架构决策的物理后果量化 |
+| [gcd_analysis.md](docs/gcd_analysis.md) | gcd 实验详细数据 |
+| [worklog.md](docs/worklog.md) | 实验过程记录 |
 
 ## 关联仓库
 
-- [logic-folding-geometry](https://github.com/tszsiuwong/logic-folding-geometry) — 几何分析（Step 1）
+- [logic-folding-geometry](https://github.com/tszsiuwong/logic-folding-geometry) — 3D 折叠的几何分析
 - [agentic_circuit_optimizer](https://github.com/hengliao1972/agentic_circuit_optimizer) — TAO 全流程设计文档
