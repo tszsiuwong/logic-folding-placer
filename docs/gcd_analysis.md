@@ -188,6 +188,10 @@ Die1 单元数少但面积大——上层分配了更多大尺寸寄存器（DFF
 
 跨 Die 网线在 2D 中平均 15.3 µm，Die 内 7.9 µm。3D/2D 比值三个类别接近（71-80%）。
 
+![Per-net HPWL](../figures/gcd_per_net_hpwl.png)
+
+逐网线 2D vs 3D HPWL：**129 条变短，134 条变长**（50/50）。蓝点在斜线下方（3D 更短），橙点在上方（3D 更长）。全局 21% 的下降幅度由偏长线的绝对线长变化主导。
+
 ### 线长分布变化
 
 ![Wirelength Distribution](../figures/gcd_wl_dist.png)
