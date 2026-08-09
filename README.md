@@ -1,104 +1,39 @@
 # logic-folding-placer
 
-通过实验数据回应 [Agentic TAO Physical Design Flow](https://github.com/hengliao1972/agentic_circuit_optimizer/blob/main/agentic_tao_physical_design_flow.md) 的当前状态：哪些能力已有低保真验证，哪些差距仍待填补。
+架构师做层指派决策时，缺少物理后果的量化反馈。这个仓库用 placement 实验数据来填这个空白。
 
-## 我们在做什么
+## 做了什么
 
-跑了两个 benchmark 的 2D/3D placement：
-
-| | gcd | jpeg |
-|---|---|---|
-| 实例数 | 301 | ~40K |
-| 3D placer | heteroplace3d | heteroplace3d |
-| 2D placer | OpenROAD RePlAce | OpenROAD RePlAce |
-
-从 placement 输出中逐网线、逐单元地提取数据，做统计分析。方法详见 [agent_friendliness.md](docs/agent_friendliness.md)。
-
-## 回应 TAO §3.1–§3.2：观测粒度与查询即报告
-
-TAO 文档批判了批处理模型的"观测粒度失配"——Agent 只能看到全设计文本报告，无法做单元/路径级的细粒度观测。
-
-**当前状态**：在 placement 完成后，从 DEF/Verilog/partition 文件中提取数据，实现了逐网线的 2D/3D HPWL 对比、逐单元的位移追踪、逐 bin 的 HBT 溢流分析。但这些分析是静态的——在 placement 完成后做，而非在 placement 过程中做增量观测。
-
-**差距**：缺少"事务级变异 API"（`move_cells(ids, tier=1)`）和"增量传感器"（改 100 个单元后毫秒级更新受影响路径）。当前每次变异需要全量重跑 placer（gcd 66s，jpeg 198s），无法支撑内环的百轮探索。
-
-## 回应 TAO §3.3：单一真源
-
-TAO 文档设想一个统一数据库容纳逻辑、物理、层指派、约束与度量。
-
-**当前状态**：用 DEF + Verilog + partition 三个文件在 Python 中按实例名 join，构成临时的分析视图。gcd 上覆盖率 100%（301/301）。
-
-**差距**：文件级 join 依赖工具命名保真度，无一致性保证。综合重命名后的覆盖率未验证。
-
-## 回应 TAO §1.2：细粒度逻辑折叠的质量
-
-TAO 文档的核心物理假设：分割方案的质量直接决定最终 PPA。
-
-**当前状态（gcd 数据）**：
-
-- 3D HPWL = 2D × 79%
-- 逐线统计：129 变短、134 变长（50/50）
-- 20µm 以上线 90% 受益（p<0.001），5µm 以下线 86% 受损
-- 层指派与 2D 空间邻近性无关（同/跨 Die 邻居原始距离均为 41µm）
-- 11,587 个 HBT，1.5µm pitch 下 11% bin 溢流
-
-**差距**：只有 gcd 一个极小设计的完整数据。jpeg 实验进行中。没有时序信息。分析是"跑完了回头看"，不是 per-move 反馈。
-
-## 回应 TAO §2.3：路径感知网表分割器
-
-TAO 文档规格了分割器的核心算法需求：关键度加权的路径折叠、增量接口、稳定 ID。
-
-**当前状态**：异质 3D placer 已实现切分与布局的联合执行，但分割质量取决于线长启发式而非时序关键度。partition_input 是软约束——Agent 改了 tier，2.5D 阶段可能覆盖。
-
-**差距**：无硬约束 tier assignment。无增量接口。placer 不支持"对特定单元簇重指派 tier 并评估增量影响"。
-
-## 从路线二到路线三的关键缺口
-
-结合实验数据，TAO 文档描述的路线三（一体化新工具）需要以下四项工具侧改进：
-
-1. **增量 placement**：没有增量，Agent 的"每步变异→评估"循环无法高频运行
-2. **结构化输出**：DEF 正则解析是脆弱的格式适配，新工具应以 API/结构化格式直接输出
-3. **Tier 硬约束**：Agent 需要"这 50 个单元锁死在 Die0，其余自由"
-4. **穿透综合的稳定 ID**：前端标注到门级网表的归因链不能断
+在 gcd（301 实例）和 jpeg（40K 实例）上跑了 2D/3D placement，从输出文件中提取逐网线、逐单元的数据，向上聚合到架构师关心的维度。
 
 ## 当前状态 vs TAO 构想
 
-TAO 文档构想的 Agent 系统是一个闭环：架构师做外层决策 → Agent 做内层搜索 → placer 给逐步反馈 → 架构师根据数据修正假设。
+现在做的是离线分析——placement 跑完 → 读 DEF → 做统计。TAO 构想的 Agent 是在线闭环，从离线到在线还需要 placer 工具侧的增量接口和结构化输出。
 
-当前状态离这个闭环还有结构性差距：
+## gcd 实验（完成）
 
-- **没有增量反馈**：所有分析都在 placement 完成后做静态统计——读 DEF、算 HPWL、画图。不是"边跑边看"，是"跑完了回头看"。
-- **没有 Agent**：实验流程是人工操作——手动写配置、提交任务、下载文件、跑 Python 分析。不存在自动化变异-评估循环。
-- **没有 human-in-the-loop 架构**：架构师看不到任何数据直到整轮 placement 跑完。反馈延迟 = placement 时间（gcd 66s, jpeg 198s）。
-- **placer 是黑盒**：2D 和 3D placer 的优化策略不可干预。单元为什么挤在中心、为什么 density flag 无效——只能从输出反推，不能在中途调整。
+| 架构师想知道 | 数据 |
+|---|---|
+| 3D 堆叠全局省多少线长？ | 2D/3D 同面积同密度，3D HPWL = 2D × 79% |
+| 长线真的受益吗？ | 20µm 以上线 90% 变短（p<0.001）；5µm 以下 86% 变长 |
+| 层指派是否保留了有结构的信号组？ | 总线 req_msg/resp_msg 完整在 Die1；匿名逻辑分散 45/55 |
+| 键合点密度有风险吗？ | 221 HBT，1.5µm pitch 下 11% bin 溢流 |
+| 单元在 3D 中被移动了多少？ | 平均位移 47µm，r=0.919 |
 
-当前仓库的贡献是证明了"细粒度量化反馈是可能的"——但这个反馈是离线、手动、单次的。从离线分析到在线 Agent，还需要 placer 工具侧提供增量接口和结构化输出。
+详见 [gcd_analysis.md](docs/gcd_analysis.md)
 
+## jpeg 实验（暂停）
 
-## 下一步
+同引擎 2D/3D 对比的前提条件不满足。待 DREAMPlace 2D 的 Verilog bus 修复后继续。详见 [jpeg_analysis.md](docs/jpeg_analysis.md)
 
-**我们能做的（不依赖工具侧改动）：**
-
-1. 自动化分析管线——从 config 生成到报告产出，一键完成
-2. 更大 benchmark 验证（jpeg 进行中，后续 ariane133 等）
-3. 定义 Agent 需要的结构化输出 schema，写给 placer 开发者
-
-**需要工具侧支持：**
-
-| 优先级 | 需求 | 依赖方 |
-|--------|------|--------|
-| P0 | 增量 placement——per-move 的快速评估 | heteroplace3d / OpenROAD |
-| P0 | 结构化输出——JSON/API 替代 DEF 解析 | heteroplace3d / OpenROAD |
-| P1 | tier 硬约束——locked 态不被 placer 覆盖 | heteroplace3d |
-| P1 | 穿透综合的稳定 ID——前端标注到门级网表 | 综合工具链 |
 ## 文档
 
 | 文件 | 内容 |
 |------|------|
 | [agent_friendliness.md](docs/agent_friendliness.md) | 方法论：架构决策的物理后果量化 |
-| [gcd_analysis.md](docs/gcd_analysis.md) | gcd 实验数据（完整） |
+| [gcd_analysis.md](docs/gcd_analysis.md) | gcd 实验数据 |
+| [jpeg_analysis.md](docs/jpeg_analysis.md) | jpeg 实验数据 |
 | [worklog.md](docs/worklog.md) | 实验过程记录 |
-| [figures/](figures/) | 所有可视化图表 |
 
 ## 关联仓库
 
