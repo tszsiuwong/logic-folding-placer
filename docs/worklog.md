@@ -50,3 +50,15 @@
 - OpenROAD GPL 逐迭代 HPWL 为 0（已知 bug，只在阶段汇总可用）
 - heteroplace3d partition_input 是软约束
 - 3D 阶段 HPWL 只有 BIHPWL，与 2D 阶段 HPWL 不可比
+
+### 2D/3D 公平对比的坑
+
+不同工具的参数体系不对称：
+- OpenROAD：`initialize_floorplan` 可控 die 面积，`-density` 控 filler 压缩
+- heteroplace3d：die 面积由输入 DEF 的 DIEAREA 固定，`target_density` 只控优化目标
+
+面积对齐陷阱：
+- 2D 自然密度下单元挤在 die 中心（gcd bbox 55%, jpeg bbox 55%），四周空白拉低 HPWL
+- 3D placer 自动把单元铺满 die（bbox 98%），HPWL 天然更高
+- `-density 0.5` 在过大的 die 上会导致单元溢出边界——物理上不可达
+- 同利用率下的公平对比需双方密度/面积都对齐——两个工具参数体系不对称，调整一条就破坏另一条
