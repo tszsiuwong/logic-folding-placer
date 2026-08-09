@@ -46,9 +46,9 @@ jpeg（40K 实例）的同引擎 2D/3D 对比因 Verilog bus 问题暂停，待 
 
 | 需求 | 依赖方 |
 |------|--------|
-| 增量 placement（per-move 评估） | heteroplace3d / DREAMPlace |
-| 结构化输出（JSON/API） | heteroplace3d / DREAMPlace |
-| Tier 硬约束（locked 态） | heteroplace3d |
+| 增量 placement（per-move 评估） | DREAMPlace / OpenROAD 3D |
+| 结构化输出（JSON/API） | DREAMPlace / OpenROAD 3D |
+| Tier 硬约束（locked 态） | DREAMPlace / OpenROAD 3D |
 | 穿透综合的稳定 ID | 综合工具链 |
 | 全流程步骤 3–11 的细粒度观测 | 对应各步骤的 EDA 工具 |
 | 端到端 Agent 闭环 | TAO 整体架构设计 |
