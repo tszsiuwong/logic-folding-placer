@@ -38,6 +38,8 @@
 | 网线 | 48,436 |
 | 层分布 | Die0=19,735（49.4%），Die1=20,178（50.6%） |
 
+全局利用率 35.2%（Bottom 35.3%，Top 35.0%），总硅面积 232,560 µm²。
+
 ![3D Dies](../figures/jpeg_3d_dies.png)
 
 ![3D Density](../figures/jpeg_3d_density.png)
