@@ -51,6 +51,14 @@
 - heteroplace3d partition_input 是软约束
 - 3D 阶段 HPWL 只有 BIHPWL，与 2D 阶段 HPWL 不可比
 
+## 2026-08-09: jpeg 实验 + 2D/3D 公平对比的方法论问题
+
+### jpeg 实验
+
+- 3D placement 完成：198s，39.9K 节点，Die 面积 342×340 µm ×2，利用率 35%
+- 2D placement 完成：面积对齐到 232K µm²，HPWL 220,252 µm
+- 同面积同利用率：3D/2D = 159%
+
 ### 2D/3D 公平对比的坑
 
 不同工具的参数体系不对称：
