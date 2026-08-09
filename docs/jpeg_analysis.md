@@ -22,6 +22,8 @@
 | 2D tight | 140,000 | 90% | 237,061 µm |
 | 3D (total) | 232,184 | 98% | 349,983 µm |
 
+![2D Tight vs 3D](../figures/jpeg_2d_tight.png)
+
 ## 局部密度（20×20 µm bin）
 
 | | 空 bin | P50 | P10–P90 | >50% bin |
