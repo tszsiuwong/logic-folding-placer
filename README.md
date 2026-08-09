@@ -74,6 +74,23 @@ TAO 文档构想的 Agent 系统是一个闭环：架构师做外层决策 → A
 
 当前仓库的贡献是证明了"细粒度量化反馈是可能的"——但这个反馈是离线、手动、单次的。从离线分析到在线 Agent，还需要 placer 工具侧提供增量接口和结构化输出。
 
+
+## 下一步
+
+**我们能做的（不依赖工具侧改动）：**
+
+1. 自动化分析管线——从 config 生成到报告产出，一键完成
+2. 更大 benchmark 验证（jpeg 进行中，后续 ariane133 等）
+3. 定义 Agent 需要的结构化输出 schema，写给 placer 开发者
+
+**需要工具侧支持：**
+
+| 优先级 | 需求 | 依赖方 |
+|--------|------|--------|
+| P0 | 增量 placement——per-move 的快速评估 | heteroplace3d / OpenROAD |
+| P0 | 结构化输出——JSON/API 替代 DEF 解析 | heteroplace3d / OpenROAD |
+| P1 | tier 硬约束——locked 态不被 placer 覆盖 | heteroplace3d |
+| P1 | 穿透综合的稳定 ID——前端标注到门级网表 | 综合工具链 |
 ## 文档
 
 | 文件 | 内容 |
