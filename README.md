@@ -1,47 +1,57 @@
 # logic-folding-placer
 
-架构师做层指派决策时，缺少物理后果的量化反馈。这个仓库用 placement 实验数据，逐节回应 [agentic_tao_physical_design_flow](https://github.com/hengliao1972/agentic_circuit_optimizer/blob/main/agentic_tao_physical_design_flow.md) 的构想——哪些能做了、哪些还差。
+架构师做层指派决策时，缺少物理后果的量化反馈。这个仓库用 placement 实验数据，回应 [agentic_tao_physical_design_flow](https://github.com/hengliao1972/agentic_circuit_optimizer/blob/main/agentic_tao_physical_design_flow.md) 的构想。
 
-> 当前是离线分析——placement 跑完 → 读 DEF → 做统计。离 TAO 构想的在线 Agent 闭环还需要 placer 工具侧的增量接口。
+## 一、TAO 需要回答的问题全貌
 
-## 回应 §1.2：细粒度逻辑折叠
+TAO 文档描述了一条从 RTL 到多层版图的完整物理实现链（§2.2，步骤 1–11），并构想了 Agent 在其中扮演的角色（§3，§5）。将这些问题按粒度分层：
 
-TAO 判断分割方案的质量直接决定 PPA。gcd 上测了：
+| 层次 | 问题 | 我们当前状态 |
+|------|------|-------------|
+| 单步 placement | 层指派的质量如何？长线是否受益？ | ✅ gcd 已覆盖 |
+| placement 过程 | 能否做到 per-move 的增量反馈？ | ❌ 缺少增量接口 |
+| 全流程（步骤 3–11） | CTS、布线、STA、热、签核——每一步能否细粒度观测？ | ❌ 未触及 |
+| 端到端闭环 | 前端变异 → 综合 → 物理实现 → PPA 回流到架构师 | ❌ 依赖综合和稳定 ID |
+| Agent 决策层 | §3.2 的事务 API、快照/分支、归因链 | ❌ 需要工具侧全新设计 |
 
-| 架构师想知道 | 数据 |
-|---|---|
-| 3D 省多少线？ | 同面积同密度，3D HPWL = 2D × 79% |
-| 长线真的受益？ | 20µm 以上 90% 变短（p<0.001），5µm 以下 86% 变长 |
-| 层指派保留信号组了吗？ | 总线 req_msg/resp_msg 完整在 Die1；匿名逻辑分散 |
-| HBT 密度有风险？ | 221 个，1.5µm pitch 下 11% bin 溢流 |
-| 单元被移了多少？ | 平均位移 47µm，r=0.919 |
+## 二、我们现在做了哪些
+
+在 gcd（301 实例）上完成了 2D/3D placement 的细粒度分析，回应了 §1.2 的核心判断：
+
+- 同面积同密度，3D HPWL = 2D × 79%
+- 20µm 以上线 90% 变短（p<0.001），5µm 以下 86% 变长
+- 层指派保留了总线信号组（req_msg/resp_msg 完整在 Die1），匿名逻辑分散
+- 221 HBT，1.5µm pitch 下 11% bin 溢流
+
+数据来源：从 DEF/Verilog/partition 文件中提取，不需要修改任何 EDA 工具。
 
 详见 [gcd_analysis.md](docs/gcd_analysis.md)
 
-## 回应 §3.1–§3.2：观测粒度与查询即报告
+此外在以下方面做了低保真验证：
 
-TAO 批判了批处理模型的"观测粒度失配"。我们在 placement 完成后从 DEF/Verilog 提取了逐网线、逐单元的数据——观测粒度达到了细粒度，但不是增量的。缺少"事务级变异 API"和"增量传感器"。
+- 观测粒度（回应 §3.1）：逐网线 HPWL 对比、逐单元位移、逐 bin HBT 密度——但都是 placement 完成后的静态分析
+- 单一真源（回应 §3.3）：DEF + Verilog + partition 按实例名 join，gcd 覆盖率 100%
+- 路径感知分割器（回应 §2.3）：确认了 partition_input 是软约束
 
-## 回应 §3.3：单一真源
+jpeg（40K 实例）的同引擎 2D/3D 对比因 Verilog bus 问题暂停，待 DREAMPlace 2D 修复后继续。
 
-用 DEF + Verilog + partition 三个文件按实例名 join。gcd 上覆盖率 100%（301/301）。但依赖工具命名保真度，没有一致性保证。
+## 三、我们后面计划做哪些
 
-## 回应 §2.3：路径感知分割器
+1. 自动化分析管线：config → placement → 数据提取 → 报告，一键完成
+2. 更大 benchmark：jpeg 续跑，随后 ariane133（128K 实例），验证规模效应
+3. DREAMPlace 2D 跑通后用同引擎做公平 2D/3D 对比
+4. 写入时序数据（HeteroSTA lib 配置后）
 
-异质 3D placer 已实现切分与布局联合执行。但 partition_input 是软约束，Agent 改 tier 可能被 2.5D 覆盖。无增量接口。
+## 四、哪些单靠我们做不了
 
-## 从路线二到路线三
-
-需要工具侧支持：
-
-1. **增量 placement**：改一个 tier 不用全量重跑
-2. **结构化输出**：JSON/API 替代 DEF 解析
-3. **Tier 硬约束**：Agent 说"这 50 个锁在 Die0"
-4. **穿透综合的稳定 ID**：前端标注到门级网表的归因链
-
-## jpeg 实验（暂停）
-
-同引擎 2D/3D 对比的前提条件不满足。待 DREAMPlace 2D 的 Verilog bus 修复后继续。[jpeg_analysis.md](docs/jpeg_analysis.md)
+| 需求 | 依赖方 |
+|------|--------|
+| 增量 placement（per-move 评估） | heteroplace3d / DREAMPlace |
+| 结构化输出（JSON/API） | heteroplace3d / DREAMPlace |
+| Tier 硬约束（locked 态） | heteroplace3d |
+| 穿透综合的稳定 ID | 综合工具链 |
+| 全流程步骤 3–11 的细粒度观测 | 对应各步骤的 EDA 工具 |
+| 端到端 Agent 闭环 | TAO 整体架构设计 |
 
 ## 文档
 
