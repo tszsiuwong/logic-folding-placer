@@ -44,14 +44,20 @@ jpeg（40K 实例）的同引擎 2D/3D 对比因 Verilog bus 问题暂停，待 
 
 ## 四、哪些单靠我们做不了
 
-| 需求 | 依赖方 |
-|------|--------|
-| 增量 placement（per-move 评估） | DREAMPlace / OpenROAD 3D |
-| 结构化输出（JSON/API） | DREAMPlace / OpenROAD 3D |
-| Tier 硬约束（locked 态） | DREAMPlace / OpenROAD 3D |
-| 穿透综合的稳定 ID | 综合工具链 |
-| 全流程步骤 3–11 的细粒度观测 | 对应各步骤的 EDA 工具 |
-| 端到端 Agent 闭环 | TAO 整体架构设计 |
+TAO 文档 §2.1 列出了完整的 SOTA 工具链。我们当前只在其中 placement 这一步做了细粒度分析，其余步骤均需对应工具侧的配合：
+
+| TAO 步骤 | 开源工具 | 需要什么 |
+|----------|---------|---------|
+| ① 综合 | Yosys + ABC | tier 标注穿透 |
+| ② 路径感知分割 | DREAMPlace / OpenROAD 3D | tier 硬约束、增量接口、结构化输出 |
+| ③ 布图规划 | OpenROAD | 多层耦合 PDN |
+| ④ 3D 布局 | DREAMPlace / OpenROAD 3D（**当前已覆盖**） | 增量评估 |
+| ⑤-⑦ 键合点/CTS/布线 | OpenROAD | 跨层感知、HBT 合法化 |
+| ⑧ STA | OpenSTA / HeteroSTA | 跨层统一时序图 |
+| ⑨ 热/IR | OpenROAD | 增量热估计 |
+| ⑩-⑪ 签核/LEC | 商业 EDA | 多层 DRC/LVS、LEC |
+
+我们当前做的——placement 这一步的细粒度分析——只覆盖了 11 步中的第 ④ 步的一部分。
 
 ## 文档
 
