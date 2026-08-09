@@ -16,9 +16,9 @@
 | 实例 | 301 可移动，0 固定 |
 | HPWL | **3500 µm**（Verilog+DEF 同算法计算） |
 
-![2D HPWL](../figures/gcd_2d_journey.png)
+![2D HPWL](../figures/gcd/placement/gcd_2d_journey.png)
 
-![2D Placement](../figures/gcd_2d.png)
+![2D Placement](../figures/gcd/placement/gcd_2d.png)
 
 ---
 
@@ -53,7 +53,7 @@
 
 线长轨迹：2,499 µm（3D 统一空间）→ 分 Die 后跳升至 12,370 µm → HBT 映射骤降至 7,737 µm（−38%）→ 细节布局压至 4,902 µm（−37%）。
 
-![HPWL](../figures/gcd_hpwl_journey.png)
+![HPWL](../figures/gcd/placement/gcd_hpwl_journey.png)
 
 物理变换：2D 355 节点 → 2.5D 591 节点（+236 HBT），371 网线 → 607（+236 跨层）。输出时 HBT 节点被剔除，恢复 301 组件。
 
@@ -61,11 +61,11 @@
 
 输出文件 `gcd_hbt_out.txt` 中 `Terminal` 条目即为 HBT 位置：
 
-![HBT Positions](../figures/gcd_hbt_pos.png)
+![HBT Positions](../figures/gcd/hbt/gcd_hbt_pos.png)
 
 HBT 位置覆盖在上下 Die 图上。
 
-![HBT Demand & Overflow](../figures/gcd_hbt_congestion.png)
+![HBT Demand & Overflow](../figures/gcd/hbt/gcd_hbt_congestion.png)
 
 以 1.5 µm 间距为约束：**50/440 个 bin（11%）存在 HBT 溢出，最大溢出 2× 容量。** 右图红区直接显示哪些局部区域超出了工艺能力。
 
@@ -73,7 +73,7 @@ HBT 位置覆盖在上下 Die 图上。
 
 
 
-![HBT Local Density](../figures/gcd_hbt_density_dist.png)
+![HBT Local Density](../figures/gcd/hbt/gcd_hbt_density_dist.png)
 
 166 个非空 bin 的 HBT 计数分布。中位=1，均值=1.3，最大=3。
 
@@ -86,7 +86,7 @@ HBT 位置覆盖在上下 Die 图上。
 
 Die1 单元数少但面积大——上层分配了更多大尺寸寄存器（DFF_X1 等），单位利用率略高。
 
-![3D Bottom vs Top Die](../figures/gcd_3d_dies.png)
+![3D Bottom vs Top Die](../figures/gcd/placement/gcd_3d_dies.png)
 
 ---
 
@@ -105,13 +105,13 @@ Die1 单元数少但面积大——上层分配了更多大尺寸寄存器（DFF
 | max | 88.5 |
 | mean ± σ | 47.4 ± 20.1 |
 
-![Displacement Histogram](../figures/gcd_disp_hist.png)
+![Displacement Histogram](../figures/gcd/displacement/gcd_disp_hist.png)
 
 ### 距离-位移相关性
 
 **r = 0.919**。离 2D 中心越远的单元，位移越大。
 
-![Correlation](../figures/gcd_disp_corr.png)
+![Correlation](../figures/gcd/displacement/gcd_disp_corr.png)
 
 ### 方向偏差
 
@@ -129,19 +129,19 @@ Die1 单元数少但面积大——上层分配了更多大尺寸寄存器（DFF
 | Die0 | 159 | 44.6 µm |
 | Die1 | 142 | 50.6 µm |
 
-![By Die](../figures/gcd_disp_die.png)
+![By Die](../figures/gcd/displacement/gcd_disp_die.png)
 
 ### 位移方向向量
 
 灰色箭头：采样 20 个单元的移动方向。蓝=Die0，橙=Die1。浅色背景点为全部 301 个单元。
 
-![Vectors](../figures/gcd_disp_vec.png)
+![Vectors](../figures/gcd/displacement/gcd_disp_vec.png)
 
 ### 位移热力图
 
 颜色越红，位移越大。外围单元被压缩向中心。
 
-![Heatmap](../figures/gcd_disp_heat.png)
+![Heatmap](../figures/gcd/displacement/gcd_disp_heat.png)
 
 ### 2D 邻近性与 Die 分配
 
@@ -152,7 +152,7 @@ Die1 单元数少但面积大——上层分配了更多大尺寸寄存器（DFF
 
 **完全相同。** placer 的层指派与 2D 空间邻近性无关——Die 分配是HPWL-密度折中的结果（除总线信号外）。
 
-![Die Map](../figures/gcd_disp_diemap.png)
+![Die Map](../figures/gcd/displacement/gcd_disp_diemap.png)
 
 ---
 
@@ -162,7 +162,7 @@ Die1 单元数少但面积大——上层分配了更多大尺寸寄存器（DFF
 
 2D die = 44.61×40.79 µm (1819 µm²)，利用率 23.6%。3D 每 Die = 31.54×28.84 µm (909 µm²)，总 1819 µm²，上/下 Die 利用率 23.1%/24.1%，总利用率 23.6%。
 
-![2D vs 3D](../figures/gcd_2d_vs_3d.png)
+![2D vs 3D](../figures/gcd/placement/gcd_2d_vs_3d.png)
 
 | | HPWL (µm) |
 |---|---|
@@ -188,7 +188,7 @@ Die1 单元数少但面积大——上层分配了更多大尺寸寄存器（DFF
 
 跨 Die 网线在 2D 中平均 15.3 µm，Die 内 7.9 µm。3D/2D 比值三个类别接近（71-80%）。
 
-![Per-net HPWL](../figures/gcd_per_net_hpwl.png)
+![Per-net HPWL](../figures/gcd/wirelength/gcd_per_net_hpwl.png)
 
 逐网线 2D vs 3D HPWL：129 变短，134 变长（50/50）。**但分区间看差异极显著**：
 
@@ -204,7 +204,7 @@ Die1 单元数少但面积大——上层分配了更多大尺寸寄存器（DFF
 
 ### 线长分布变化
 
-![Wirelength Distribution](../figures/gcd_wl_dist.png)
+![Wirelength Distribution](../figures/gcd/wirelength/gcd_wl_dist.png)
 
 | 长度区间 | 2D | 3D | 变化 |
 |---|---|---|---|

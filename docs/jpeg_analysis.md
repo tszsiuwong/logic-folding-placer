@@ -30,9 +30,9 @@
 | HBT | 11,587 |
 | 局部密度（20µm bin） | P50=72%，0% 空 bin |
 
-![3D Dies](../figures/jpeg_3d_dies.png)
+![3D Dies](../figures/jpeg/density/jpeg_3d_dies.png)
 
-![3D Density](../figures/jpeg_3d_density.png)
+![3D Density](../figures/jpeg/density/jpeg_3d_density.png)
 
 ## 2D Placement 详情
 
@@ -40,7 +40,7 @@
 |------|-----|
 | 工具 | OpenROAD 26Q1（RePlAce + ABCDPlace） |
 
-![2D Tight vs 3D](../figures/jpeg_2d_tight.png)
+![2D Tight vs 3D](../figures/jpeg/placement/jpeg_2d_tight.png)
 
 ## 待完成
 
