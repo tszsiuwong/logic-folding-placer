@@ -10,7 +10,7 @@
 |---|---|---|
 | 工具 | OpenROAD 26Q1（RePlAce） | heteroplace3d v20260807 |
 | Die 面积 | 684×679 µm（464,369 µm²） | 每 Die 342×340 µm（116,092 µm²），总 232,184 µm² |
-| 备注 | 原始 Innovus floorplan | heteroplace3d 内生 |
+| 备注 | 原始 Innovus floorplan（全局利用率 18%） | heteroplace3d 内生（全局利用率 35%） |
 
 ![2D Placement](../figures/jpeg_2d.png)
 
