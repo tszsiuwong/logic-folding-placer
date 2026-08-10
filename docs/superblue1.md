@@ -24,6 +24,8 @@
 | 最终 GP HPWL | 3.80e8 |
 | 细节布局 | 未运行（ntuplace3 引擎未包含） |
 
+
+![HPWL Convergence](../figures/superblue1_hpwl.png)
 ## 结论
 
 LEF/DEF 输入路径完全正常。1.2M 组件的工业级 benchmark 在 90s 内完成全局布局。
